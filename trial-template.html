@@ -126,20 +126,21 @@
   .theatres .d { color: var(--ink); }
   @media (max-width: 700px) {
     .theatres thead { display: none; }
-    .theatres, .theatres tbody, .theatres tr, .theatres td { display: block; width: 100% !important; }
-    .theatres tr { border-bottom: 1px solid var(--rule); padding: 1rem 0; }
-    .theatres td { border: 0; padding: 0; }
-    .theatres .n { display: inline; font-size: 0.8rem; }
-    .theatres .t { display: inline; font-size: 1rem; }
-    .theatres .p { margin: 0.35rem 0 0.5rem; }
-    .theatres .p::before, .theatres .d::before {
-      content: attr(data-label);
-      display: block;
-      font: 500 0.66rem/1.4 var(--mono);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-3);
+    .theatres, .theatres tbody { display: block; }
+    .theatres tr {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      column-gap: 0.5rem;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid var(--rule);
     }
+    .theatres tr:first-child { border-top: 1px solid var(--ink); }
+    .theatres td { display: block; width: auto !important; border: 0; padding: 0; }
+    .theatres .n { grid-column: 1; grid-row: 1; font-size: 0.8rem; line-height: 1.6rem; }
+    .theatres .t { grid-column: 2; grid-row: 1; font-size: 1.05rem; line-height: 1.6rem; }
+    .theatres .p { grid-column: 2; grid-row: 2; font-size: 0.84rem; line-height: 1.45; color: var(--ink-3); margin: 0.15rem 0 0.55rem; }
+    .theatres .d { grid-column: 2; grid-row: 3; font-size: 0.95rem; line-height: 1.6; }
+    .bluf p { font-size: 1rem; line-height: 1.6; }
   }
 
   /* ===== Learning topics ===== */
@@ -218,6 +219,11 @@
   @media (hover: none) { .hint-touch { display: inline; } .hint-mouse { display: none; } }
 
   .map-frame { position: relative; border: 1px solid var(--ink); background: var(--paper); overflow: hidden; min-height: 220px; }
+  @media (max-width: 639px) {
+    .map-frame { margin: 0 -1rem; border-left: 0; border-right: 0; }
+    .map-btn { font-size: 0.74rem; padding: 0.38rem 0.62rem; }
+    .map-legend { font-size: 0.74rem; gap: 0.35rem 0.9rem; }
+  }
   .map-frame svg { display: block; width: 100%; height: auto; cursor: grab; }
   .map-frame svg:active { cursor: grabbing; }
   .map-err { padding: 2rem 1rem; font-size: 0.9rem; color: var(--ink-2); }
@@ -233,7 +239,9 @@
   .m-dot.s-watch { fill: #ffffff; stroke: var(--ink); stroke-width: 1.75; }
   .m-dot.s-archive { fill: #b3b0a8; }
   .m-ring { fill: none; stroke: var(--ink); stroke-width: 1.5; display: none; }
-  .m-mk.is-sel .m-ring, .m-mk:hover .m-ring { display: block; }
+  .m-mk { outline: none; }
+  .m-mk.is-sel .m-ring, .m-mk:hover .m-ring, .m-mk:focus-visible .m-ring { display: block; }
+  .m-mk:focus-visible .m-ring { stroke: var(--accent); stroke-width: 2; }
   .m-hit { fill: transparent; cursor: pointer; }
   .m-lead { stroke: var(--ink); stroke-width: 0.75; }
   .m-true { fill: var(--ink); }
@@ -250,7 +258,7 @@
     pointer-events: none;
   }
   .m-labels-off .m-lab { display: none; }
-  .m-mk.is-sel .m-lab, .m-mk:hover .m-lab { display: block; }
+  .m-mk.is-sel .m-lab, .m-mk:hover .m-lab, .m-mk:focus-visible .m-lab { display: block; }
 
   .map-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem 1.1rem; font-size: 0.78rem; color: var(--ink-2); margin: 0.75rem 0 1.25rem; }
   .map-legend > span { display: inline-flex; align-items: center; gap: 0.4rem; }
@@ -360,6 +368,8 @@
       <noscript><p class="map-err">The interactive map needs JavaScript.</p></noscript>
     </div>
 
+    <div class="map-detail" id="map-detail" aria-live="polite"></div>
+
     <div class="map-legend" aria-label="Map legend">
       <span><span class="md-swatch s-priority"></span>Priority</span>
       <span><span class="md-swatch s-active"></span>Active</span>
@@ -369,8 +379,7 @@
       <span id="legend-move"><span style="color:var(--accent)">▲</span>▼ Status moved this period</span>
     </div>
 
-    <div class="map-detail" id="map-detail" aria-live="polite"></div>
-    <div class="map-list" id="map-list"></div>
+    <div class="map-list" id="map-list" hidden></div>
   </section>
 
   <!-- ===== 02 Key conflict developments ===== -->
@@ -572,7 +581,7 @@
       latest: "A severe diplomatic crisis persists, marked by Beijing’s export curbs on dual-use materials and rare earths alongside sharp drops in tourism." },
     { code: 'KOR', name: 'Korean Peninsula tensions', status: 'watch', tier: 3, at: [127.2, 38.3], lab: 'r', shade: ['North Korea', 'South Korea'],
       latest: "Pyongyang has updated ruling party structures to consolidate wartime nuclear command and control, aligning with Seoul’s hardening defence posture." },
-    { code: 'IND-PAK', name: 'India–Pakistan tensions', status: 'watch', tier: 3, at: [75.3, 33.8], lab: 't', shade: ['India', 'Pakistan'],
+    { code: 'IND-PAK', name: 'India–Pakistan tensions', status: 'watch', tier: 3, at: [75.3, 33.8], lab: 'r', shade: ['India', 'Pakistan'],
       latest: "Diplomatic friction has deepened following an accidental naval ship collision in the Arabian Sea and ongoing disputes over the Indus Waters Treaty." },
     { code: 'MMR', name: 'Myanmar civil war', status: 'watch', tier: 3, at: [96.0, 21.0], lab: 'l', shade: ['Myanmar'],
       latest: "The junta has escalated aerial bombing campaigns, notably striking a crowded market in Rakhine State, causing massive civilian casualties." },
@@ -591,6 +600,7 @@
   var TIER_R = { 1: 7.5, 2: 6, 3: 4.5 };
   var REGIONS = {
     world:       [[-100, -22], [150, 64]],
+    hotspots:    [[8, 0], [146, 56]],        // opening view on phones: Europe to Japan
     europe:      [[-12, 35], [52, 66]],
     middleeast:  [[22, 10], [64, 40]],
     southasia:   [[60, 6], [100, 37]],
@@ -601,7 +611,8 @@
   var frame = document.getElementById('map');
   var detail = document.getElementById('map-detail');
   var list = document.getElementById('map-list');
-  var state = { focus: 'world', selected: null, hover: null };
+  var narrow = function () { return frame.clientWidth < 560; };
+  var state = { focus: null, selected: null, hover: null };
   var world, W, H, projection, svg, gMap, zones, markers, pattern, zoom;
   var transform = null;
 
@@ -626,7 +637,7 @@
   function build() {
     frame.innerHTML = '';
     W = frame.clientWidth;
-    H = Math.round(Math.max(220, W * 0.46));
+    H = W < 560 ? Math.round(W * 0.82) : Math.round(Math.max(220, W * 0.46));
     var ms = Math.max(0.7, Math.min(1, W / 700));   // smaller markers on narrow screens
     var land = topojson.feature(world, world.objects.countries);
     land.features = land.features.filter(function (f) { return f.properties.name !== 'Antarctica'; });
@@ -663,7 +674,9 @@
     zones = gOver.append('g').selectAll('circle').data(CONFLICTS.filter(function (c) { return c.zone; })).join('circle')
       .attr('class', function (c) { return 'm-zone s-' + c.status; });
 
-    markers = gOver.append('g').selectAll('g').data(CONFLICTS).join('g').attr('class', 'm-mk');
+    markers = gOver.append('g').selectAll('g').data(CONFLICTS).join('g').attr('class', 'm-mk')
+      .attr('tabindex', 0).attr('role', 'button')
+      .attr('aria-label', function (c) { return c.name + ', ' + STATUS[c.status].label; });
     markers.each(function (c) {
       var g = d3.select(this), r = TIER_R[c.tier] * ms, off = (c.off || [0, 0]).map(function (v) { return v * ms; });
       if (c.off) {
@@ -686,7 +699,10 @@
     markers
       .on('click', function (ev, c) { ev.stopPropagation(); select(c.code, false); })
       .on('mouseenter', function (ev, c) { state.hover = c.code; renderDetail(); })
-      .on('mouseleave', function () { state.hover = null; renderDetail(); });
+      .on('mouseleave', function () { state.hover = null; renderDetail(); })
+      .on('keydown', function (ev, c) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); select(c.code, false); }
+      });
 
     zoom = d3.zoom()
       .scaleExtent([1, 16])
@@ -699,7 +715,7 @@
       .on('zoom', function (ev) { transform = ev.transform; draw(); });
     svg.call(zoom).on('dblclick.zoom', null).style('touch-action', 'pan-y');
 
-    focus(state.focus, false);
+    focus(state.focus || (narrow() ? 'hotspots' : 'world'), false);
     updateSelection();
   }
 
@@ -760,7 +776,7 @@
   function renderDetail() {
     var c = byCode(state.hover || state.selected);
     if (!c) {
-      detail.innerHTML = '<p class="md-empty">Select a conflict on the map or in the list below to see its status.</p>';
+      detail.innerHTML = '<p class="md-empty">Select a conflict on the map to see its latest development.</p>';
       return;
     }
     var bits = [STATUS[c.status].label, 'Tier ' + c.tier];
@@ -812,7 +828,7 @@
   });
   document.querySelector('[data-zoom="in"]').addEventListener('click', function () { if (svg) svg.transition().duration(300).call(zoom.scaleBy, 1.6); });
   document.querySelector('[data-zoom="out"]').addEventListener('click', function () { if (svg) svg.transition().duration(300).call(zoom.scaleBy, 1 / 1.6); });
-  document.querySelector('[data-zoom="reset"]').addEventListener('click', function () { if (svg) focus('world'); });
+  document.querySelector('[data-zoom="reset"]').addEventListener('click', function () { if (svg) focus(narrow() ? 'hotspots' : 'world'); });
 
   buildList();
   renderDetail();
@@ -820,6 +836,7 @@
 
   if (typeof d3 === 'undefined' || typeof topojson === 'undefined') {
     frame.innerHTML = '<p class="map-err">The map could not load. The list below shows every monitored conflict.</p>';
+    list.hidden = false;
     return;
   }
   fetch('assets/countries-110m.json')
@@ -839,6 +856,7 @@
     })
     .catch(function () {
       frame.innerHTML = '<p class="map-err">The map could not load. The list below shows every monitored conflict.</p>';
+      list.hidden = false;
     });
 })();
 </script>
