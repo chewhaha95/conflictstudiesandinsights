@@ -108,6 +108,11 @@
   .note--inline { margin: 0 0 2rem; }
 
   .sub-head { border-bottom: 1px solid var(--ink); padding-bottom: 0.5rem; margin: 2.5rem 0 1.5rem; }
+  .kcd-list { border-top: 1px solid var(--rule); }
+  .kcd { display: grid; grid-template-columns: 2.25rem 1fr; gap: 0 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+  .kcd-n { font: 500 0.8rem/1.6rem var(--mono); color: var(--ink-3); }
+  .kcd-name { font-size: 1rem; font-weight: 700; line-height: 1.6rem; margin: 0 0 0.2rem; }
+  .kcd-text { font-size: 0.95rem; line-height: 1.6; }
   .kcd-scope { font-size: 0.9rem; color: var(--ink-2); margin: -0.75rem 0 1.25rem; }
   .kcd-scope .label { margin-right: 0.5rem; }
   .kcd-scope .nw { white-space: nowrap; }
@@ -349,10 +354,43 @@
     <div class="map-list" id="map-list" hidden></div>
 
     <div class="sub-head" id="developments"><h3>Key Conflict Developments</h3></div>
-    <p class="kcd-scope"><span class="label">Covering</span><span class="nw">Russia–Ukraine</span> · <span class="nw">Israel–Gaza</span> · <span class="nw">Israel–Lebanon</span> · <span class="nw">US–Israel–Iran</span></p>
-    <div class="bluf">
-      <div class="label">BLUF — Bottom Line Up Front</div>
-      <p>Across all five global theatres, operations have shifted decisively toward permanent area denial, subterranean denial, and multi-theatre A2/AD consolidation: Ukraine disrupted Russian infiltration corridors via UGV demining and EW interdiction; Israel fortified permanent security postures in Lebanon and Gaza to prevent force reconstitution; Iran and its proxies expanded a dual-chokepoint maritime and subterranean threat envelope.</p>
+    <p class="kcd-scope"><span class="label">Covering</span><span class="nw">Russia–Ukraine</span> · <span class="nw">Israel–Lebanon</span> · <span class="nw">Israel–Gaza</span> · <span class="nw">US–Israel–Iran</span> · <span class="nw">Thailand–Cambodia</span></p>
+    <div class="kcd-list">
+    <article class="kcd">
+      <div class="kcd-n">01</div>
+      <div>
+        <h4 class="kcd-name">Russia–Ukraine</h4>
+        <p class="kcd-text">Ukraine adapted Operation Vivaldi by deploying UGVs to demine 30 km of supply routes while utilising EW, UAS interdiction, and counter-drone strikes to sever the ISR–C2–logistics chain supporting Russian motorcycle- and ATV-borne infiltration units north of Lyman. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-26-2026/" target="_blank" rel="noopener">ISW, 26 Sep</a></span></p>
+      </div>
+    </article>
+    <article class="kcd">
+      <div class="kcd-n">02</div>
+      <div>
+        <h4 class="kcd-name">Israel–Lebanon</h4>
+        <p class="kcd-text">Israel reorganised its footprint into a permanent Yellow Zone posture using hardened C2 nodes, concealed vehicle parks, and overhead protection, utilising sensor-to-shooter links with indirect fires to counter Hezbollah’s dispersed UAS and ATGM threats. <span class="cite">Source: <a href="https://www.aa.com.tr/en/middle-east/israeli-army-prepares-for-new-phase-of-fighting-in-southern-lebanon-report/4068944" target="_blank" rel="noopener">Anadolu Agency</a></span></p>
+      </div>
+    </article>
+    <article class="kcd">
+      <div class="kcd-n">03</div>
+      <div>
+        <h4 class="kcd-name">Israel–Gaza</h4>
+        <p class="kcd-text">Israel transitioned to a persistent counter-reconstitution campaign along the Yellow Line, fusing FININT and real-time ISR to dismantle a 2 km subterranean tunnel network and execute precision strikes against Hamas’s leadership and financial infrastructure. <span class="cite">Source: <a href="https://caliber.az/en/post/israeli-army-says-troops-dismantled-two-kilometre-tunnel-in-southern-gaza" target="_blank" rel="noopener">Caliber.az</a></span></p>
+      </div>
+    </article>
+    <article class="kcd">
+      <div class="kcd-n">04</div>
+      <div>
+        <h4 class="kcd-name">US–Israel–Iran</h4>
+        <p class="kcd-text">Tehran and its proxies expanded a multi-theatre A2/AD envelope—combining Strait of Hormuz harassment, subterranean expansion at Natanz, and Houthi consolidation over the Bab al-Mandeb choke point—prompting US air-route supply interdictions and explicit Israeli preparation for deep-penetration counter-facility strikes. <span class="cite">Source: <a href="https://www.timesofisrael.com/report-israeli-official-claims-renewed-strikes-on-iran-only-a-matter-of-time/" target="_blank" rel="noopener">Times of Israel</a> · <a href="https://m.koreaherald.com/article/10886187" target="_blank" rel="noopener">The Korea Herald</a></span></p>
+      </div>
+    </article>
+    <article class="kcd">
+      <div class="kcd-n">05</div>
+      <div>
+        <h4 class="kcd-name">Thailand–Cambodia</h4>
+        <p class="kcd-text">The Thai Army placed forward troops along sensitive border sectors—including Mounts 225/350 and the Ta Kwai temple area—on high combat readiness, establishing a dispersed, hardened defensive posture to deter localised indirect fires, mine hazards, and UAS escalation. <span class="cite">Source: <a href="https://www.thaipbsworld.com/thailand-cambodia-standoff/army-chief-orders-troops-on-alert-along-thai-cambodian-border" target="_blank" rel="noopener">Thai PBS World</a></span></p>
+      </div>
+    </article>
     </div>
   </section>
 
