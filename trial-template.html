@@ -252,6 +252,7 @@
   .map-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem 1.1rem; font-size: 0.78rem; color: var(--ink-2); margin: 0.75rem 0 1.25rem; }
   .map-legend > span { display: inline-flex; align-items: center; gap: 0.4rem; }
   .map-legend svg { display: block; overflow: visible; }
+  .map-legend > [hidden] { display: none; }
 
   .md-swatch { display: inline-block; flex: none; width: 10px; height: 10px; border-radius: 50%; }
   .md-swatch.s-priority { background: var(--accent); }
@@ -358,7 +359,7 @@
       <span><span class="md-swatch s-watch"></span>Watch</span>
       <span><svg width="34" height="14" aria-hidden="true"><circle cx="6" cy="7" r="6" fill="#6b6b6b"/><circle cx="19" cy="7" r="4.5" fill="#6b6b6b"/><circle cx="29" cy="7" r="3.2" fill="#6b6b6b"/></svg>Tier 1 (large) to Tier 3 (small)</span>
       <span><svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="#111" stroke-dasharray="3 3"/></svg>Maritime / zone watch</span>
-      <span><span style="color:var(--accent)">▲</span>▼ Status moved this period</span>
+      <span id="legend-move"><span style="color:var(--accent)">▲</span>▼ Status moved this period</span>
     </div>
 
     <div class="map-detail" id="map-detail" aria-live="polite"></div>
@@ -526,6 +527,7 @@
   /* ================================================================
      CONFLICTS MONITORED — update this list each edition.
      status : 'priority' | 'active' | 'watch' | 'archive'
+              Statuses are set by the CSI editor. Change one only when instructed.
      tier   : 1 (large marker) to 3 (small marker)
      at     : [longitude, latitude] of the marker
      off    : optional [x, y] screen-pixel nudge for crowded areas (draws a leader line)
@@ -541,15 +543,15 @@
     { code: 'ISR-LBN', name: 'Israel–Lebanon', status: 'priority', tier: 1, at: [35.8, 33.4], off: [9, -9], lab: 'l', shade: ['Lebanon'], brief: 'theatre-02' },
     { code: 'US-ISR-IRN', name: 'US–Israel–Iran', status: 'priority', tier: 1, at: [53.5, 32.5], lab: 't', zone: { at: [56.4, 26.5], r: 1.8 }, shade: ['Iran'], brief: 'theatre-04' },
     { code: 'THA-KHM', name: 'Thailand–Cambodia', status: 'active', tier: 1, at: [103.6, 14.3], lab: 'b', shade: ['Thailand', 'Cambodia'], brief: 'theatre-05' },
-    { code: 'US-VEN', name: 'US–Venezuela', status: 'active', tier: 2, at: [-66.5, 7.5], lab: 'b', zone: { at: [-67, 14], r: 5 }, shade: ['Venezuela'] },
-    { code: 'SCS', name: 'South China Sea / territorial disputes', status: 'priority', tier: 2, move: 'up', at: [114.5, 12.5], lab: 'b', zone: { at: [114.5, 12.5], r: 6.5 } },
+    { code: 'US-VEN', name: 'US–Venezuela', status: 'watch', tier: 2, at: [-66.5, 7.5], lab: 'b', zone: { at: [-67, 14], r: 5 }, shade: ['Venezuela'] },
+    { code: 'SCS', name: 'South China Sea / territorial disputes', status: 'active', tier: 2, at: [114.5, 12.5], lab: 'b', zone: { at: [114.5, 12.5], r: 6.5 } },
     { code: 'TWN', name: 'Taiwan Strait tensions', status: 'active', tier: 2, at: [120.9, 23.7], lab: 'r', zone: { at: [119.6, 24.2], r: 2.2 }, shade: ['Taiwan'] },
-    { code: 'CHN-JPN', name: 'China–Japan tensions', status: 'active', tier: 3, move: 'up', at: [124.5, 27.8], lab: 'r' },
+    { code: 'CHN-JPN', name: 'China–Japan tensions', status: 'active', tier: 3, at: [124.5, 27.8], lab: 'r' },
     { code: 'KOR', name: 'Korean Peninsula tensions', status: 'watch', tier: 3, at: [127.2, 38.3], lab: 'r', shade: ['North Korea', 'South Korea'] },
     { code: 'IND-PAK', name: 'India–Pakistan tensions', status: 'watch', tier: 3, at: [75.3, 33.8], lab: 't', shade: ['India', 'Pakistan'] },
-    { code: 'MMR', name: 'Myanmar civil war', status: 'active', tier: 3, move: 'up', at: [96.0, 21.0], lab: 'l', shade: ['Myanmar'] },
+    { code: 'MMR', name: 'Myanmar civil war', status: 'watch', tier: 3, at: [96.0, 21.0], lab: 'l', shade: ['Myanmar'] },
     { code: 'SDN', name: 'Sudanese civil war', status: 'watch', tier: 2, at: [29.5, 14.5], lab: 'l', shade: ['Sudan'] },
-    { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'priority', tier: 2, move: 'up', at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'] }
+    { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 2, at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'] }
   ];
 
   var STATUS = {
@@ -778,6 +780,7 @@
 
   buildList();
   renderDetail();
+  if (!CONFLICTS.some(function (c) { return c.move; })) document.getElementById('legend-move').hidden = true;
 
   if (typeof d3 === 'undefined' || typeof topojson === 'undefined') {
     frame.innerHTML = '<p class="map-err">The map could not load. The list below shows every monitored conflict.</p>';
