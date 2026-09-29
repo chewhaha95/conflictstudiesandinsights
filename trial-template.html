@@ -267,8 +267,11 @@
   .md-head h3 { font-size: 1.05rem; font-weight: 700; }
   .md-meta { font-size: 0.85rem; color: var(--ink-2); margin-bottom: 0.35rem; }
   .md-meta .up { color: var(--accent); }
-  .md-phase { font-size: 0.88rem; margin-bottom: 0.3rem; }
-  .md-phase .label { margin-right: 0.35rem; }
+  .md-latest { font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.3rem; }
+  .md-latest .label, .md-phase .label { margin-right: 0.4rem; }
+  .md-src { font-size: 0.78rem; color: var(--ink-3); margin-bottom: 0.4rem; }
+  .md-src a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+  .md-phase { font-size: 0.85rem; color: var(--ink-2); margin-bottom: 0.3rem; }
   .md-note { font-size: 0.85rem; color: var(--ink-3); }
   .md-link { font-size: 0.85rem; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -330,6 +333,7 @@
       <h2>Conflicts Monitored</h2>
       <span class="sec-sub">14 conflicts · status as of 28 September 2026</span>
     </div>
+    <div class="note note--inline"><span class="label">Draft note</span>The latest-development lines for the nine conflicts not in the development table were drafted from open-source reporting for 15–28 September. Please review them before publishing.</div>
 
     <div class="map-bar">
       <div class="map-focus" role="group" aria-label="Focus the map on a region">
@@ -536,22 +540,47 @@
      zone   : optional maritime / zone watch circle { at: [lon, lat], r: radius in degrees }
      shade  : countries shaded in the conflict's status colour (world-atlas names)
      brief  : id of this conflict's row in the Key Conflict Developments table, if covered
+     latest : one- or two-line latest development shown when the conflict is selected
+     src    : optional [[label, url], ...] sources for the latest line
      ================================================================ */
   var CONFLICTS = [
-    { code: 'RUS-UKR', name: 'Russia–Ukraine', status: 'priority', tier: 1, at: [37.5, 48.3], lab: 't', shade: ['Russia', 'Ukraine'], brief: 'theatre-01' },
-    { code: 'ISR-PAL', name: 'Israel–Palestine', status: 'active', tier: 1, at: [34.45, 31.45], off: [-9, 9], lab: 'l', shade: ['Israel', 'Palestine'], brief: 'theatre-03' },
-    { code: 'ISR-LBN', name: 'Israel–Lebanon', status: 'priority', tier: 1, at: [35.8, 33.4], off: [9, -9], lab: 'l', shade: ['Lebanon'], brief: 'theatre-02' },
-    { code: 'US-ISR-IRN', name: 'US–Israel–Iran', status: 'priority', tier: 1, at: [53.5, 32.5], lab: 't', zone: { at: [56.4, 26.5], r: 1.8 }, shade: ['Iran'], brief: 'theatre-04' },
-    { code: 'THA-KHM', name: 'Thailand–Cambodia', status: 'active', tier: 1, at: [103.6, 14.3], lab: 'b', shade: ['Thailand', 'Cambodia'], brief: 'theatre-05' },
-    { code: 'US-VEN', name: 'US–Venezuela', status: 'watch', tier: 2, at: [-66.5, 7.5], lab: 'b', zone: { at: [-67, 14], r: 5 }, shade: ['Venezuela'] },
-    { code: 'SCS', name: 'South China Sea / territorial disputes', status: 'active', tier: 2, at: [114.5, 12.5], lab: 'b', zone: { at: [114.5, 12.5], r: 6.5 } },
-    { code: 'TWN', name: 'Taiwan Strait tensions', status: 'active', tier: 2, at: [120.9, 23.7], lab: 'r', zone: { at: [119.6, 24.2], r: 2.2 }, shade: ['Taiwan'] },
-    { code: 'CHN-JPN', name: 'China–Japan tensions', status: 'active', tier: 3, at: [124.5, 27.8], lab: 'r' },
-    { code: 'KOR', name: 'Korean Peninsula tensions', status: 'watch', tier: 3, at: [127.2, 38.3], lab: 'r', shade: ['North Korea', 'South Korea'] },
-    { code: 'IND-PAK', name: 'India–Pakistan tensions', status: 'watch', tier: 3, at: [75.3, 33.8], lab: 't', shade: ['India', 'Pakistan'] },
-    { code: 'MMR', name: 'Myanmar civil war', status: 'watch', tier: 3, at: [96.0, 21.0], lab: 'l', shade: ['Myanmar'] },
-    { code: 'SDN', name: 'Sudanese civil war', status: 'watch', tier: 2, at: [29.5, 14.5], lab: 'l', shade: ['Sudan'] },
-    { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 2, at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'] }
+    { code: 'RUS-UKR', name: 'Russia–Ukraine', status: 'priority', tier: 1, at: [37.5, 48.3], lab: 't', shade: ['Russia', 'Ukraine'], brief: 'theatre-01',
+      latest: "Ukraine paired strikes on Russian logistics and energy supply with manoeuvre around Lyman; Russia kept up large drone attacks on Ukrainian logistics, ports and communications." },
+    { code: 'ISR-PAL', name: 'Israel–Palestine', status: 'active', tier: 1, at: [34.45, 31.45], off: [-9, 9], lab: 'l', shade: ['Israel', 'Palestine'], brief: 'theatre-03',
+      latest: "Israeli strikes continued to cause casualties in Gaza; talks remain deadlocked over Hamas disarmament and Israeli withdrawal." },
+    { code: 'ISR-LBN', name: 'Israel–Lebanon', status: 'priority', tier: 1, at: [35.8, 33.4], off: [9, -9], lab: 'l', shade: ['Lebanon'], brief: 'theatre-02',
+      latest: "Israeli strikes in southern Lebanon continued despite the ceasefire, raising concern over a renewed campaign." },
+    { code: 'US-ISR-IRN', name: 'US–Israel–Iran', status: 'priority', tier: 1, at: [53.5, 32.5], lab: 't', zone: { at: [56.4, 26.5], r: 1.8 }, shade: ['Iran'], brief: 'theatre-04',
+      latest: "US–Iran contacts explored a phased deal linking the reopening of Hormuz to reduced US pressure; Iran ruled out nuclear concessions." },
+    { code: 'THA-KHM', name: 'Thailand–Cambodia', status: 'active', tier: 1, at: [103.6, 14.3], lab: 'b', shade: ['Thailand', 'Cambodia'], brief: 'theatre-05',
+      latest: "Diplomatic engagement continued, but border crossings remain closed and displaced communities cannot return." },
+    { code: 'US-VEN', name: 'US–Venezuela', status: 'watch', tier: 2, at: [-66.5, 7.5], lab: 'b', zone: { at: [-67, 14], r: 5 }, shade: ['Venezuela'],
+      latest: "US strikes on suspected drug boats continued under Operation Southern Spear, including a 19 September Caribbean strike that killed four.",
+      src: [["Wikipedia (strike list)", "https://en.wikipedia.org/wiki/United_States_strikes_on_alleged_drug_traffickers_during_Operation_Southern_Spear"]] },
+    { code: 'SCS', name: 'South China Sea / territorial disputes', status: 'active', tier: 2, at: [114.5, 12.5], lab: 'b', zone: { at: [114.5, 12.5], r: 6.5 },
+      latest: "A China Coast Guard cutter rammed a Philippine fisheries vessel off Palawan on 18 September; on 25 September Manila said Chinese ships hindered a Second Thomas Shoal resupply.",
+      src: [["USNI News", "https://news.usni.org/2026/09/18/video-china-coast-guard-rams-philippine-fisheries-vessel-in-south-china-sea"], ["Bloomberg", "https://www.bloomberg.com/news/articles/2026-09-25/philippines-says-china-hindered-mission-to-disputed-sea-outpost"]] },
+    { code: 'TWN', name: 'Taiwan Strait tensions', status: 'active', tier: 2, at: [120.9, 23.7], lab: 'r', zone: { at: [119.6, 24.2], r: 2.2 }, shade: ['Taiwan'],
+      latest: "Chinese grey-zone pressure continued: Taiwan’s defence ministry reported 20 military aircraft and 14 naval and official ships around the island in the 24 hours to 19 September.",
+      src: [["Taiwan News", "https://www.taiwannews.com.tw/news/6442856"]] },
+    { code: 'CHN-JPN', name: 'China–Japan tensions', status: 'active', tier: 3, at: [124.5, 27.8], lab: 'r',
+      latest: "Beijing continued to press Tokyo to retract PM Takaichi’s Taiwan remarks, as the dispute keeps straining trade and rare-earth supplies.",
+      src: [["China Global South Project", "https://chinaglobalsouth.com/2026/09/29/china-japan-tensions-taiwan-remarks-trade/"]] },
+    { code: 'KOR', name: 'Korean Peninsula tensions', status: 'watch', tier: 3, at: [127.2, 38.3], lab: 'r', shade: ['North Korea', 'South Korea'],
+      latest: "North Korea fired two short-range ballistic missiles on 20 September, including what it called a new Hwasong-11-series hypersonic missile.",
+      src: [["CNN", "https://www.cnn.com/2026/09/20/asia/north-korea-missile-test-intl"], ["USNI News", "https://news.usni.org/2026/09/23/north-korea-tests-new-hypersonic-missile"]] },
+    { code: 'IND-PAK', name: 'India–Pakistan tensions', status: 'watch', tier: 3, at: [75.3, 33.8], lab: 't', shade: ['India', 'Pakistan'],
+      latest: "India summoned Pakistan’s chargé d’affaires after a Pakistani warship’s unsafe manoeuvre led to a collision with an Indian Navy ship in the Arabian Sea on 15 September.",
+      src: [["Al Jazeera", "https://www.aljazeera.com/news/2026/9/16/india-summons-pakistani-diplomat-after-incident-in-arabian-sea"]] },
+    { code: 'MMR', name: 'Myanmar civil war', status: 'watch', tier: 3, at: [96.0, 21.0], lab: 'l', shade: ['Myanmar'],
+      latest: "The Arakan Army pressed its counter-offensive around Sittwe, reportedly taking more junta outposts on 23–24 September.",
+      src: [["Burma Coup Resistance Notes", "https://burmacoupresistancenotes.substack.com/p/burma-coup-resistance-notes-september-0ac"]] },
+    { code: 'SDN', name: 'Sudanese civil war', status: 'watch', tier: 2, at: [29.5, 14.5], lab: 'l', shade: ['Sudan'],
+      latest: "Sudan’s army said it retook 11 areas in North Kordofan from the RSF on 17 September, pursuing fighters west of El Obeid toward Darfur.",
+      src: [["Sudan Tribune", "https://sudantribune.com/article/318891"]] },
+    { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 2, at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'],
+      latest: "After the Houthis seized Yemen’s remaining Red Sea coast and Bab al-Mandeb islands, the UN Security Council held an emergency meeting on 15 September.",
+      src: [["FDD", "https://www.fdd.org/analysis/2026/09/14/houthis-take-yemens-red-sea-coast-and-key-bab-al-mandeb-islands/"], ["UN", "https://press.un.org/en/2026/sc16453.doc.htm"]] }
   ];
 
   var STATUS = {
@@ -738,14 +767,22 @@
     var bits = [STATUS[c.status].label, 'Tier ' + c.tier];
     if (c.move) bits.push(c.move === 'up' ? '<span class="up">▲</span> Status raised this period' : '▼ Status lowered this period');
     if (c.zone) bits.push('Maritime / zone watch');
-    var body;
+    var body = '';
+    if (c.latest) {
+      body += '<p class="md-latest"><span class="label">Latest</span>' + c.latest + '</p>';
+    }
+    if (c.src && c.src.length) {
+      body += '<p class="md-src">Source: ' + c.src.map(function (x) {
+        return '<a href="' + x[1] + '" target="_blank" rel="noopener">' + x[0] + '</a>';
+      }).join(' · ') + '</p>';
+    }
     var row = c.brief && document.getElementById(c.brief);
     if (row) {
       var phase = row.querySelector('.p').textContent.trim();
-      body = '<p class="md-phase"><span class="label">Phase</span>' + phase + '</p>' +
-             '<a class="md-link" href="#' + c.brief + '">Latest development in Key Conflict Developments ↓</a>';
-    } else {
-      body = '<p class="md-note">Monitored. Not covered in this edition’s development table.</p>';
+      body += '<p class="md-phase"><span class="label">Phase</span>' + phase + '</p>' +
+              '<a class="md-link" href="#' + c.brief + '">Full entry in Key Conflict Developments ↓</a>';
+    } else if (!c.latest) {
+      body += '<p class="md-note">Monitored. Not covered in this edition’s development table.</p>';
     }
     detail.innerHTML = '<div class="md-head"><span class="md-swatch s-' + c.status + '"></span><code>' + c.code + '</code><h3>' + c.name + '</h3></div>' +
                        '<p class="md-meta">' + bits.join(' · ') + '</p>' + body;
