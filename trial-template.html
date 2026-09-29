@@ -107,41 +107,9 @@
   .note .label { color: var(--ink); margin-right: 0.4rem; }
   .note--inline { margin: 0 0 2rem; }
 
-  /* ===== Theatre table ===== */
-  .theatres { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-  .theatres th {
-    text-align: left;
-    font: 500 0.7rem/1.2 var(--mono);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    padding: 0 0.75rem 0.6rem 0;
-    border-bottom: 1px solid var(--ink);
-  }
-  .theatres td { vertical-align: top; padding: 0.9rem 0.75rem 0.9rem 0; border-bottom: 1px solid var(--rule); }
-  .theatres td:last-child, .theatres th:last-child { padding-right: 0; }
-  .theatres .n { font-family: var(--mono); color: var(--ink-3); width: 2.25rem; }
-  .theatres .t { font-weight: 600; width: 22%; }
-  .theatres .p { color: var(--ink-2); width: 26%; }
-  .theatres .d { color: var(--ink); }
-  @media (max-width: 700px) {
-    .theatres thead { display: none; }
-    .theatres, .theatres tbody { display: block; }
-    .theatres tr {
-      display: grid;
-      grid-template-columns: 2rem 1fr;
-      column-gap: 0.5rem;
-      padding: 1.15rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-    .theatres tr:first-child { border-top: 1px solid var(--ink); }
-    .theatres td { display: block; width: auto !important; border: 0; padding: 0; }
-    .theatres .n { grid-column: 1; grid-row: 1; font-size: 0.8rem; line-height: 1.6rem; }
-    .theatres .t { grid-column: 2; grid-row: 1; font-size: 1.05rem; line-height: 1.6rem; }
-    .theatres .p { grid-column: 2; grid-row: 2; font-size: 0.84rem; line-height: 1.45; color: var(--ink-3); margin: 0.15rem 0 0.55rem; }
-    .theatres .d { grid-column: 2; grid-row: 3; font-size: 0.95rem; line-height: 1.6; }
-    .bluf p { font-size: 1rem; line-height: 1.6; }
-  }
+  .sub-head { border-bottom: 1px solid var(--ink); padding-bottom: 0.5rem; margin: 2.5rem 0 1.5rem; }
+  .sub-head h3 { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  @media (max-width: 700px) { .bluf p { font-size: 1rem; line-height: 1.6; } }
 
   /* ===== Learning topics ===== */
   .topic { padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--rule); }
@@ -273,11 +241,12 @@
   .md-head h3 { font-size: 1.05rem; font-weight: 700; }
   .md-meta { font-size: 0.85rem; color: var(--ink-2); margin-bottom: 0.35rem; }
   .md-meta .up { color: var(--accent); }
-  .md-latest { font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.3rem; }
+  .md-latest { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.3rem; }
+  .md-latest .label, .md-phase .label { display: block; margin-bottom: 0.15rem; }
   .md-latest .label, .md-phase .label { margin-right: 0.4rem; }
   .md-src { font-size: 0.78rem; color: var(--ink-3); margin-bottom: 0.4rem; }
   .md-src a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
-  .md-phase { font-size: 0.85rem; color: var(--ink-2); margin-bottom: 0.3rem; }
+  .md-phase { font-size: 0.88rem; color: var(--ink-2); margin-bottom: 0.6rem; }
   .md-note { font-size: 0.85rem; color: var(--ink-3); }
   .md-link { font-size: 0.85rem; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -375,71 +344,19 @@
     </div>
 
     <div class="map-list" id="map-list" hidden></div>
-  </section>
 
-  <!-- ===== 02 Key conflict developments ===== -->
-  <section class="sec" id="developments">
-    <div class="sec-head">
-      <span class="sec-num">02</span>
-      <h2>Key Conflict Developments</h2>
-      <span class="sec-sub">Most active theatres</span>
-    </div>
-
+    <div class="sub-head" id="developments"><h3>Key Conflict Developments</h3></div>
     <div class="bluf">
       <div class="label">BLUF — Bottom Line Up Front</div>
       <p>Across all five global theatres, operations have shifted decisively toward permanent area denial, subterranean denial, and multi-theatre A2/AD consolidation: Ukraine disrupted Russian infiltration corridors via UGV demining and EW interdiction; Israel fortified permanent security postures in Lebanon and Gaza to prevent force reconstitution; Iran and its proxies expanded a dual-chokepoint maritime and subterranean threat envelope.</p>
     </div>
-    <div class="note"><span class="label">Draft note</span>The BLUF says five theatres, but the table below now has six. It does not mention Thailand–Cambodia or the US–Iran negotiation track.</div>
-
-    <table class="theatres">
-      <thead>
-        <tr><th>#</th><th>Theatre</th><th>Phase</th><th>Latest development</th></tr>
-      </thead>
-      <tbody>
-        <tr id="theatre-01">
-          <td class="n">01</td>
-          <td class="t">Russia–Ukraine</td>
-          <td class="p" data-label="Phase">Attritional war; high-tempo long-range strike and UAS contest</td>
-          <td class="d" data-label="Latest development">Ukraine reportedly combined strikes against Russian logistics and energy supply with manoeuvre activity. Russian forces continued large drone attacks and targeted Ukrainian logistics, drone-related sites, communications, port infrastructure and vessels.</td>
-        </tr>
-        <tr id="theatre-02">
-          <td class="n">02</td>
-          <td class="t">Israel–Lebanon</td>
-          <td class="p" data-label="Phase">Fragile ceasefire under pressure</td>
-          <td class="d" data-label="Latest development">Israeli strikes in southern Lebanon continued despite the ceasefire, with Reuters reporting rising concern over renewed campaign activity after escalating strikes.</td>
-        </tr>
-        <tr id="theatre-03">
-          <td class="n">03</td>
-          <td class="t">Israel–Gaza</td>
-          <td class="p" data-label="Phase">Ceasefire framework unresolved; continuing strikes</td>
-          <td class="d" data-label="Latest development">Continued Israeli strikes caused casualties. Negotiations remain deadlocked over Hamas disarmament and Israeli withdrawal, while humanitarian conditions remain severe.</td>
-        </tr>
-        <tr id="theatre-04">
-          <td class="n">04</td>
-          <td class="t">US–Israel–Iran</td>
-          <td class="p" data-label="Phase">Active coercive and negotiation contest centred on Hormuz</td>
-          <td class="d" data-label="Latest development">US–Iran contacts explored a phased arrangement linking reopening Hormuz with reduced US pressure, while Iran stated it would not make nuclear concessions and could keep the strait restricted.</td>
-        </tr>
-        <tr id="theatre-05">
-          <td class="n">05</td>
-          <td class="t">Thailand–Cambodia</td>
-          <td class="p" data-label="Phase">Fragile ceasefire; unresolved border tensions</td>
-          <td class="d" data-label="Latest development">Maritime conciliation began, but land-border displacement and closed crossings continue months after the ceasefire; reporting indicates that military positions and disputed territorial claims remain unresolved.</td>
-        </tr>
-        <tr id="theatre-06">
-          <td class="n">06</td>
-          <td class="t">Other Middle East spillover</td>
-          <td class="p" data-label="Phase">Active regional spillover and diplomatic containment</td>
-          <td class="d" data-label="Latest development">Houthi control and Saudi-focused pressure keep the Red Sea/Yemen strand volatile, while Oman-mediated contacts and a Saudi truce proposal remain unresolved. Iraq approaches the 30 September coalition-withdrawal deadline without a matching militia-disarmament settlement.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="note"><span class="label">Draft note</span>The BLUF says five theatres but does not mention Thailand–Cambodia or the US–Iran negotiation track.</div>
   </section>
 
-  <!-- ===== 03 Key learning topics ===== -->
+  <!-- ===== 02 Key learning topics ===== -->
   <section class="sec" id="learning">
     <div class="sec-head">
-      <span class="sec-num">03</span>
+      <span class="sec-num">02</span>
       <h2>Key Learning Topics</h2>
       <span class="sec-sub">Sense &amp; Strike · Manoeuvre · Sustainment</span>
     </div>
@@ -551,21 +468,26 @@
      move   : optional 'up' | 'down' if the status moved this period
      zone   : optional maritime / zone watch circle { at: [lon, lat], r: radius in degrees }
      shade  : countries shaded in the conflict's status colour (world-atlas names)
-     brief  : id of this conflict's row in the Key Conflict Developments table, if covered
-     latest : one- or two-line latest development shown when the conflict is selected
+     phase  : optional phase of the conflict, shown when the conflict is selected
+     latest : latest development shown when the conflict is selected (any length)
      src    : optional [[label, url], ...] sources for the latest line
      ================================================================ */
   var CONFLICTS = [
-    { code: 'RUS-UKR', name: 'Russia–Ukraine', status: 'priority', tier: 1, at: [37.5, 48.3], lab: 't', shade: ['Russia', 'Ukraine'], brief: 'theatre-01',
-      latest: "Russian forces have stepped up systematic drone and missile attacks targeting railway links and energy infrastructure, while making incremental territorial gains in eastern Ukraine." },
-    { code: 'ISR-PAL', name: 'Israel–Palestine', status: 'active', tier: 1, at: [34.45, 31.45], off: [-9, 9], lab: 'l', shade: ['Israel', 'Palestine'], brief: 'theatre-03',
-      latest: "The UN has warned that the two-state solution is nearing collapse amid accelerated West Bank settlement expansion and ongoing humanitarian crises in Gaza." },
-    { code: 'ISR-LBN', name: 'Israel–Lebanon', status: 'priority', tier: 1, at: [35.8, 33.4], off: [9, -9], lab: 'l', shade: ['Lebanon'], brief: 'theatre-02',
-      latest: "Lebanon’s Prime Minister is pressing for broader enforcement of ceasefire understandings following intense combat earlier in the year." },
-    { code: 'US-ISR-IRN', name: 'US–Israel–Iran', status: 'priority', tier: 1, at: [53.5, 32.5], lab: 't', zone: { at: [56.4, 26.5], r: 1.8 }, shade: ['Iran'], brief: 'theatre-04',
-      latest: "US and Iranian officials are engaging in indirect talks through international mediators to break the months-long military standoff and nuclear impasse." },
-    { code: 'THA-KHM', name: 'Thailand–Cambodia', status: 'active', tier: 1, at: [103.6, 14.3], lab: 'b', shade: ['Thailand', 'Cambodia'], brief: 'theatre-05',
-      latest: "Tensions persist at the UN General Assembly level as Cambodia defends its push for maritime conciliation under UNCLOS, while Thailand urges regional bilateral security cooperation." },
+    { code: 'RUS-UKR', name: 'Russia–Ukraine', status: 'priority', tier: 1, at: [37.5, 48.3], lab: 't', shade: ['Russia', 'Ukraine'],
+      phase: "Attritional war; high-tempo long-range strike and UAS contest",
+      latest: "Ukraine reportedly combined strikes against Russian logistics and energy supply with manoeuvre activity. Russian forces continued large drone attacks and targeted Ukrainian logistics, drone-related sites, communications, port infrastructure and vessels." },
+    { code: 'ISR-PAL', name: 'Israel–Palestine', status: 'active', tier: 1, at: [34.45, 31.45], off: [-9, 9], lab: 'l', shade: ['Israel', 'Palestine'],
+      phase: "Ceasefire framework unresolved; continuing strikes",
+      latest: "Continued Israeli strikes caused casualties. Negotiations remain deadlocked over Hamas disarmament and Israeli withdrawal, while humanitarian conditions remain severe." },
+    { code: 'ISR-LBN', name: 'Israel–Lebanon', status: 'priority', tier: 1, at: [35.8, 33.4], off: [9, -9], lab: 'l', shade: ['Lebanon'],
+      phase: "Fragile ceasefire under pressure",
+      latest: "Israeli strikes in southern Lebanon continued despite the ceasefire, with Reuters reporting rising concern over renewed campaign activity after escalating strikes." },
+    { code: 'US-ISR-IRN', name: 'US–Israel–Iran', status: 'priority', tier: 1, at: [53.5, 32.5], lab: 't', zone: { at: [56.4, 26.5], r: 1.8 }, shade: ['Iran'],
+      phase: "Active coercive and negotiation contest centred on Hormuz",
+      latest: "US–Iran contacts explored a phased arrangement linking reopening Hormuz with reduced US pressure, while Iran stated it would not make nuclear concessions and could keep the strait restricted." },
+    { code: 'THA-KHM', name: 'Thailand–Cambodia', status: 'active', tier: 1, at: [103.6, 14.3], lab: 'b', shade: ['Thailand', 'Cambodia'],
+      phase: "Fragile ceasefire; unresolved border tensions",
+      latest: "Maritime conciliation began, but land-border displacement and closed crossings continue months after the ceasefire; reporting indicates that military positions and disputed territorial claims remain unresolved." },
     { code: 'US-VEN', name: 'US–Venezuela', status: 'watch', tier: 2, at: [-66.5, 7.5], lab: 'b', zone: { at: [-67, 14], r: 5 }, shade: ['Venezuela'],
       latest: "Caracas remains under provisional leadership following the direct US intervention and removal of Nicolás Maduro, as exiled opposition figures push for internal transition." },
     { code: 'SCS', name: 'South China Sea / territorial disputes', status: 'active', tier: 2, at: [114.5, 12.5], lab: 'b', zone: { at: [114.5, 12.5], r: 6.5 },
@@ -582,8 +504,9 @@
       latest: "The junta has escalated aerial bombing campaigns, notably striking a crowded market in Rakhine State, causing massive civilian casualties." },
     { code: 'SDN', name: 'Sudanese civil war', status: 'watch', tier: 2, at: [29.5, 14.5], lab: 'l', shade: ['Sudan'],
       latest: "Catastrophic levels of displacement and food insecurity persist as fighting between the SAF and RSF ravages the Kordofan and Darfur regions." },
-    { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 1, at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'], brief: 'theatre-06',
-      latest: "Regional friction remains acute with Houthi forces continuing aggressive maritime enforcement and missile postures across Red Sea shipping lanes." }
+    { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 1, at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'],
+      phase: "Active regional spillover and diplomatic containment",
+      latest: "Houthi control and Saudi-focused pressure keep the Red Sea/Yemen strand volatile, while Oman-mediated contacts and a Saudi truce proposal remain unresolved. Iraq approaches the 30 September coalition-withdrawal deadline without a matching militia-disarmament settlement." }
   ];
 
   var STATUS = {
@@ -776,21 +699,16 @@
     if (c.move) bits.push(c.move === 'up' ? '<span class="up">▲</span> Status raised this period' : '▼ Status lowered this period');
     if (c.zone) bits.push('Maritime / zone watch');
     var body = '';
+    if (c.phase) {
+      body += '<p class="md-phase"><span class="label">Phase</span>' + c.phase + '</p>';
+    }
     if (c.latest) {
-      body += '<p class="md-latest"><span class="label">Latest</span>' + c.latest + '</p>';
+      body += '<p class="md-latest"><span class="label">Latest development</span>' + c.latest + '</p>';
     }
     if (c.src && c.src.length) {
       body += '<p class="md-src">Source: ' + c.src.map(function (x) {
         return '<a href="' + x[1] + '" target="_blank" rel="noopener">' + x[0] + '</a>';
       }).join(' · ') + '</p>';
-    }
-    var row = c.brief && document.getElementById(c.brief);
-    if (row) {
-      var phase = row.querySelector('.p').textContent.trim();
-      body += '<p class="md-phase"><span class="label">Phase</span>' + phase + '</p>' +
-              '<a class="md-link" href="#' + c.brief + '">Full entry in Key Conflict Developments ↓</a>';
-    } else if (!c.latest) {
-      body += '<p class="md-note">Monitored. Not covered in this edition’s development table.</p>';
     }
     detail.innerHTML = '<div class="md-head"><span class="md-swatch s-' + c.status + '"></span><code>' + c.code + '</code><h3>' + c.name + '</h3></div>' +
                        '<p class="md-meta">' + bits.join(' · ') + '</p>' + body;
