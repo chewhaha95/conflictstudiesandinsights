@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#f7f6f2">
 <title>[TRIAL] CSI Biweekly Conflict Insights — 15–28 September 2026</title>
 <meta property="og:title" content="CSI Biweekly Conflict Insights — 15–28 September 2026" />
-<meta property="og:description" content="Conflict Studies and Insights: key conflict developments across five theatres and key learning topics for the fortnight." />
+<meta property="og:description" content="Conflict Studies and Insights: the conflicts CSI monitors, the key theatres this fortnight, and key learning topics." />
 <meta property="og:type" content="article" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, p, table, dl { margin: 0; }
+  h1, h2, h3, h4, p, table, dl { margin: 0; }
 
   .trial-bar {
     border-bottom: 1px solid var(--ink);
@@ -107,39 +107,55 @@
   .note .label { color: var(--ink); margin-right: 0.4rem; }
   .note--inline { margin: 0 0 2rem; }
 
-  /* ===== Theatre table ===== */
-  .theatres { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-  .theatres th {
-    text-align: left;
-    font: 500 0.7rem/1.2 var(--mono);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    padding: 0 0.75rem 0.6rem 0;
-    border-bottom: 1px solid var(--ink);
+  /* ===== Key theatres & also monitored ===== */
+  .sub-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--ink); }
+  .sub-head h3 { font: 500 0.78rem/1.2 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
+  .kt, .am {
+    display: grid;
+    grid-template-columns: 2.25rem 13.5rem 1fr;
+    gap: 0.25rem 1.25rem;
+    padding: 1.1rem 0.75rem;
+    margin: 0 -0.75rem;
+    border-bottom: 1px solid var(--rule);
+    scroll-margin: 6rem 0;
   }
-  .theatres td { vertical-align: top; padding: 0.9rem 0.75rem 0.9rem 0; border-bottom: 1px solid var(--rule); }
-  .theatres td:last-child, .theatres th:last-child { padding-right: 0; }
-  .theatres .n { font-family: var(--mono); color: var(--ink-3); width: 2.25rem; }
-  .theatres .t { font-weight: 600; width: 22%; }
-  .theatres .p { color: var(--ink-2); width: 26%; }
-  .theatres .d { color: var(--ink); }
+  .am { padding-top: 0.85rem; padding-bottom: 0.85rem; }
+  .am-meta { grid-column: 2; }
+  .kt-n { font: 500 0.85rem/1.5 var(--mono); color: var(--ink-3); }
+  .kt-name { font-size: 1rem; font-weight: 700; line-height: 1.3; }
+  .kt-status { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: var(--ink-2); margin: 0.3rem 0 0.5rem; min-height: 1em; }
+  .kt-phase { font-size: 0.85rem; line-height: 1.45; color: var(--ink-2); }
+  .kt-phase .label { display: block; margin-bottom: 0.1rem; }
+  .kt-lead { font-weight: 600; line-height: 1.5; margin-bottom: 0.35rem; }
+  .kt-text { font-size: 0.92rem; line-height: 1.6; color: var(--ink-2); }
+  .am-text { font-size: 0.95rem; line-height: 1.55; }
+  .map-go {
+    display: none;
+    margin-top: 0.55rem;
+    font: 500 0.7rem/1 var(--mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--ink-3);
+    padding: 0.2rem 0;
+    cursor: pointer;
+  }
+  .has-map .map-go { display: inline-block; }
+  .map-go:hover { color: var(--ink); border-color: var(--ink); }
+  .map-go:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .kt.is-sel, .am.is-sel { background: var(--panel); }
+  .kt.flash, .am.flash { animation: rowflash 1.4s ease-out; }
+  @keyframes rowflash { from { background: #efc3c9; } to { background: var(--panel); } }
+  @media (prefers-reduced-motion: reduce) { .kt.flash, .am.flash { animation: none; } }
   @media (max-width: 700px) {
-    .theatres thead { display: none; }
-    .theatres, .theatres tbody, .theatres tr, .theatres td { display: block; width: 100% !important; }
-    .theatres tr { border-bottom: 1px solid var(--rule); padding: 1rem 0; }
-    .theatres td { border: 0; padding: 0; }
-    .theatres .n { display: inline; font-size: 0.8rem; }
-    .theatres .t { display: inline; font-size: 1rem; }
-    .theatres .p { margin: 0.35rem 0 0.5rem; }
-    .theatres .p::before, .theatres .d::before {
-      content: attr(data-label);
-      display: block;
-      font: 500 0.66rem/1.4 var(--mono);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-    }
+    .kt, .am { grid-template-columns: 2rem 1fr; }
+    .kt-body, .am-body { grid-column: 2; }
+    .kt-phase .label { display: inline; margin-right: 0.4rem; }
+    .kt-status { margin-bottom: 0.4rem; }
+    .kt-meta { margin-bottom: 0.7rem; }
+    .am-meta { margin-bottom: 0.35rem; }
   }
 
   /* ===== Learning topics ===== */
@@ -211,7 +227,7 @@
   }
   .map-btn:hover { background: var(--panel); }
   .map-btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-  .map-btn:focus-visible, .ml-chip:focus-visible, .md-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .map-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .map-btn--sq { border-radius: 3px; width: 2rem; height: 2rem; padding: 0; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; }
   .map-hint { font: 400 0.72rem/1.2 var(--mono); color: var(--ink-3); margin-left: 0.35rem; }
   .hint-touch { display: none; }
@@ -239,6 +255,8 @@
   .m-true { fill: var(--ink); }
   .m-move-up { fill: var(--accent); }
   .m-move-down { fill: var(--ink); }
+  .m-num { font: 600 8.5px var(--mono); fill: #ffffff; pointer-events: none; }
+  .m-num.on-light { fill: var(--ink); }
   .m-lab {
     font: 500 10.5px var(--mono);
     letter-spacing: 0.04em;
@@ -263,44 +281,8 @@
   .md-swatch.s-watch { background: #ffffff; box-shadow: inset 0 0 0 1.5px var(--ink); }
   .md-swatch.s-archive { background: #b3b0a8; }
 
-  .map-detail { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.9rem 0; min-height: 5.25rem; margin-bottom: 1.25rem; }
-  .md-empty { font-size: 0.88rem; color: var(--ink-3); }
-  .md-head { display: flex; align-items: center; flex-wrap: wrap; gap: 0.2rem 0.55rem; margin-bottom: 0.2rem; }
-  .md-head code { font: 500 0.75rem/1 var(--mono); letter-spacing: 0.06em; color: var(--ink-3); }
-  .md-head h3 { font-size: 1.05rem; font-weight: 700; }
-  .md-meta { font-size: 0.85rem; color: var(--ink-2); margin-bottom: 0.35rem; }
-  .md-meta .up { color: var(--accent); }
-  .md-latest { font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.3rem; }
-  .md-latest .label, .md-phase .label { margin-right: 0.4rem; }
-  .md-src { font-size: 0.78rem; color: var(--ink-3); margin-bottom: 0.4rem; }
-  .md-src a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
-  .md-phase { font-size: 0.85rem; color: var(--ink-2); margin-bottom: 0.3rem; }
-  .md-note { font-size: 0.85rem; color: var(--ink-3); }
-  .md-link { font-size: 0.85rem; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
-  .ml-group { display: flex; gap: 0.5rem 0.75rem; align-items: baseline; margin-bottom: 0.65rem; }
-  .ml-group > .label { flex: none; width: 4.75rem; }
-  .ml-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-  .ml-chip {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    font: 400 0.8rem/1.2 var(--sans);
-    color: var(--ink);
-    background: transparent;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    padding: 0.32rem 0.65rem;
-    cursor: pointer;
-    text-align: left;
-  }
-  .ml-chip:hover { border-color: var(--ink-3); }
-  .ml-chip[aria-pressed="true"] { border-color: var(--ink); background: var(--panel); }
-  .ml-chip code { font: 500 0.7rem/1 var(--mono); letter-spacing: 0.04em; color: var(--ink-3); }
-  .ml-move { color: var(--accent); font-size: 0.7rem; }
-  @media (max-width: 560px) {
-    .ml-group { display: block; }
-    .ml-group > .label { display: block; width: auto; margin-bottom: 0.35rem; }
-  }
-  @media print { .map-bar, .map-detail { display: none; } }
+  @media print { .map-bar, .map-go { display: none !important; } }
 
   /* ===== Footer ===== */
   footer {
@@ -330,13 +312,19 @@
     <p class="period">15–28 September 2026</p>
   </header>
 
-  <!-- ===== 01 Conflicts monitored (interactive map) ===== -->
-  <section class="sec" id="monitor">
+  <!-- ===== 01 Conflict picture: BLUF, map, key theatres, also monitored ===== -->
+  <section class="sec" id="picture">
     <div class="sec-head">
       <span class="sec-num">01</span>
-      <h2>Conflicts Monitored</h2>
-      <span class="sec-sub">14 conflicts · status as of 28 September 2026</span>
+      <h2>Conflict Picture</h2>
+      <span class="sec-sub">14 conflicts monitored · status as of 28 September 2026</span>
     </div>
+
+    <div class="bluf">
+      <div class="label">BLUF — Bottom Line Up Front</div>
+      <p>Across all five global theatres, operations have shifted decisively toward permanent area denial, subterranean denial, and multi-theatre A2/AD consolidation: Ukraine disrupted Russian infiltration corridors via UGV demining and EW interdiction; Israel fortified permanent security postures in Lebanon and Gaza to prevent force reconstitution; Iran and its proxies expanded a dual-chokepoint maritime and subterranean threat envelope.</p>
+    </div>
+    <div class="note"><span class="label">Draft note</span>The BLUF says five theatres, but six key theatres are listed below. It does not mention Thailand–Cambodia or the US–Iran negotiation track.</div>
 
     <div class="map-bar">
       <div class="map-focus" role="group" aria-label="Focus the map on a region">
@@ -361,6 +349,7 @@
     </div>
 
     <div class="map-legend" aria-label="Map legend">
+      <span><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#111"/><text x="9" y="9.5" text-anchor="middle" dominant-baseline="middle" fill="#fff" style="font:600 8px var(--mono)">01</text></svg>Key theatre</span>
       <span><span class="md-swatch s-priority"></span>Priority</span>
       <span><span class="md-swatch s-active"></span>Active</span>
       <span><span class="md-swatch s-watch"></span>Watch</span>
@@ -369,73 +358,173 @@
       <span id="legend-move"><span style="color:var(--accent)">▲</span>▼ Status moved this period</span>
     </div>
 
-    <div class="map-detail" id="map-detail" aria-live="polite"></div>
-    <div class="map-list" id="map-list"></div>
+    <div class="sub-head"><h3>Key theatres</h3><span class="sec-sub">Most active this period</span></div>
+      <article class="kt" id="c-RUS-UKR">
+        <div class="kt-n">01</div>
+        <div class="kt-meta">
+          <h4 class="kt-name">Russia–Ukraine</h4>
+          <div class="kt-status" data-status-for="RUS-UKR"></div>
+          <p class="kt-phase"><span class="label">Phase</span>Attritional war; high-tempo long-range strike and UAS contest</p>
+        </div>
+        <div class="kt-body">
+          <p class="kt-lead">Russian forces have stepped up systematic drone and missile attacks targeting railway links and energy infrastructure, while making incremental territorial gains in eastern Ukraine.</p>
+          <p class="kt-text">Ukraine reportedly combined strikes against Russian logistics and energy supply with manoeuvre activity. Russian forces continued large drone attacks and targeted Ukrainian logistics, drone-related sites, communications, port infrastructure and vessels.</p>
+          <button type="button" class="map-go" data-map="RUS-UKR">Show on map</button>
+        </div>
+      </article>
+      <article class="kt" id="c-ISR-LBN">
+        <div class="kt-n">02</div>
+        <div class="kt-meta">
+          <h4 class="kt-name">Israel–Lebanon</h4>
+          <div class="kt-status" data-status-for="ISR-LBN"></div>
+          <p class="kt-phase"><span class="label">Phase</span>Fragile ceasefire under pressure</p>
+        </div>
+        <div class="kt-body">
+          <p class="kt-lead">Lebanon’s Prime Minister is pressing for broader enforcement of ceasefire understandings following intense combat earlier in the year.</p>
+          <p class="kt-text">Israeli strikes in southern Lebanon continued despite the ceasefire, with Reuters reporting rising concern over renewed campaign activity after escalating strikes.</p>
+          <button type="button" class="map-go" data-map="ISR-LBN">Show on map</button>
+        </div>
+      </article>
+      <article class="kt" id="c-ISR-PAL">
+        <div class="kt-n">03</div>
+        <div class="kt-meta">
+          <h4 class="kt-name">Israel–Palestine</h4>
+          <div class="kt-status" data-status-for="ISR-PAL"></div>
+          <p class="kt-phase"><span class="label">Phase</span>Ceasefire framework unresolved; continuing strikes</p>
+        </div>
+        <div class="kt-body">
+          <p class="kt-lead">The UN has warned that the two-state solution is nearing collapse amid accelerated West Bank settlement expansion and ongoing humanitarian crises in Gaza.</p>
+          <p class="kt-text">Continued Israeli strikes caused casualties. Negotiations remain deadlocked over Hamas disarmament and Israeli withdrawal, while humanitarian conditions remain severe.</p>
+          <button type="button" class="map-go" data-map="ISR-PAL">Show on map</button>
+        </div>
+      </article>
+      <article class="kt" id="c-US-ISR-IRN">
+        <div class="kt-n">04</div>
+        <div class="kt-meta">
+          <h4 class="kt-name">US–Israel–Iran</h4>
+          <div class="kt-status" data-status-for="US-ISR-IRN"></div>
+          <p class="kt-phase"><span class="label">Phase</span>Active coercive and negotiation contest centred on Hormuz</p>
+        </div>
+        <div class="kt-body">
+          <p class="kt-lead">US and Iranian officials are engaging in indirect talks through international mediators to break the months-long military standoff and nuclear impasse.</p>
+          <p class="kt-text">US–Iran contacts explored a phased arrangement linking reopening Hormuz with reduced US pressure, while Iran stated it would not make nuclear concessions and could keep the strait restricted.</p>
+          <button type="button" class="map-go" data-map="US-ISR-IRN">Show on map</button>
+        </div>
+      </article>
+      <article class="kt" id="c-THA-KHM">
+        <div class="kt-n">05</div>
+        <div class="kt-meta">
+          <h4 class="kt-name">Thailand–Cambodia</h4>
+          <div class="kt-status" data-status-for="THA-KHM"></div>
+          <p class="kt-phase"><span class="label">Phase</span>Fragile ceasefire; unresolved border tensions</p>
+        </div>
+        <div class="kt-body">
+          <p class="kt-lead">Tensions persist at the UN General Assembly level as Cambodia defends its push for maritime conciliation under UNCLOS, while Thailand urges regional bilateral security cooperation.</p>
+          <p class="kt-text">Maritime conciliation began, but land-border displacement and closed crossings continue months after the ceasefire; reporting indicates that military positions and disputed territorial claims remain unresolved.</p>
+          <button type="button" class="map-go" data-map="THA-KHM">Show on map</button>
+        </div>
+      </article>
+      <article class="kt" id="c-ME-SPILL">
+        <div class="kt-n">06</div>
+        <div class="kt-meta">
+          <h4 class="kt-name">Middle East spillover (Syria, Iraq, Yemen)</h4>
+          <div class="kt-status" data-status-for="ME-SPILL"></div>
+          <p class="kt-phase"><span class="label">Phase</span>Active regional spillover and diplomatic containment</p>
+        </div>
+        <div class="kt-body">
+          <p class="kt-lead">Regional friction remains acute with Houthi forces continuing aggressive maritime enforcement and missile postures across Red Sea shipping lanes.</p>
+          <p class="kt-text">Houthi control and Saudi-focused pressure keep the Red Sea/Yemen strand volatile, while Oman-mediated contacts and a Saudi truce proposal remain unresolved. Iraq approaches the 30 September coalition-withdrawal deadline without a matching militia-disarmament settlement.</p>
+          <button type="button" class="map-go" data-map="ME-SPILL">Show on map</button>
+        </div>
+      </article>
+
+    <div class="sub-head"><h3>Also monitored</h3><span class="sec-sub">One-line update</span></div>
+      <div class="am" id="c-CHN-JPN">
+        <div class="am-meta">
+          <h4 class="kt-name">China–Japan tensions</h4>
+          <div class="kt-status" data-status-for="CHN-JPN"></div>
+        </div>
+        <div class="am-body">
+          <p class="am-text">A severe diplomatic crisis persists, marked by Beijing’s export curbs on dual-use materials and rare earths alongside sharp drops in tourism.</p>
+          <button type="button" class="map-go" data-map="CHN-JPN">Show on map</button>
+        </div>
+      </div>
+      <div class="am" id="c-TWN">
+        <div class="am-meta">
+          <h4 class="kt-name">Taiwan Strait tensions</h4>
+          <div class="kt-status" data-status-for="TWN"></div>
+        </div>
+        <div class="am-body">
+          <p class="am-text">Beijing continues intensive grey-zone operations designed to push US military presence back from the first island chain.</p>
+          <button type="button" class="map-go" data-map="TWN">Show on map</button>
+        </div>
+      </div>
+      <div class="am" id="c-SCS">
+        <div class="am-meta">
+          <h4 class="kt-name">South China Sea / territorial disputes</h4>
+          <div class="kt-status" data-status-for="SCS"></div>
+        </div>
+        <div class="am-body">
+          <p class="am-text">Frequent vessel blockades and ramming incidents continue between Chinese and Philippine coast guards near contested shoals.</p>
+          <button type="button" class="map-go" data-map="SCS">Show on map</button>
+        </div>
+      </div>
+      <div class="am" id="c-US-VEN">
+        <div class="am-meta">
+          <h4 class="kt-name">US–Venezuela</h4>
+          <div class="kt-status" data-status-for="US-VEN"></div>
+        </div>
+        <div class="am-body">
+          <p class="am-text">Caracas remains under provisional leadership following the direct US intervention and removal of Nicolás Maduro, as exiled opposition figures push for internal transition.</p>
+          <button type="button" class="map-go" data-map="US-VEN">Show on map</button>
+        </div>
+      </div>
+      <div class="am" id="c-IND-PAK">
+        <div class="am-meta">
+          <h4 class="kt-name">India–Pakistan tensions</h4>
+          <div class="kt-status" data-status-for="IND-PAK"></div>
+        </div>
+        <div class="am-body">
+          <p class="am-text">Diplomatic friction has deepened following an accidental naval ship collision in the Arabian Sea and ongoing disputes over the Indus Waters Treaty.</p>
+          <button type="button" class="map-go" data-map="IND-PAK">Show on map</button>
+        </div>
+      </div>
+      <div class="am" id="c-KOR">
+        <div class="am-meta">
+          <h4 class="kt-name">Korean Peninsula tensions</h4>
+          <div class="kt-status" data-status-for="KOR"></div>
+        </div>
+        <div class="am-body">
+          <p class="am-text">Pyongyang has updated ruling party structures to consolidate wartime nuclear command and control, aligning with Seoul’s hardening defence posture.</p>
+          <button type="button" class="map-go" data-map="KOR">Show on map</button>
+        </div>
+      </div>
+      <div class="am" id="c-MMR">
+        <div class="am-meta">
+          <h4 class="kt-name">Myanmar civil war</h4>
+          <div class="kt-status" data-status-for="MMR"></div>
+        </div>
+        <div class="am-body">
+          <p class="am-text">The junta has escalated aerial bombing campaigns, notably striking a crowded market in Rakhine State, causing massive civilian casualties.</p>
+          <button type="button" class="map-go" data-map="MMR">Show on map</button>
+        </div>
+      </div>
+      <div class="am" id="c-SDN">
+        <div class="am-meta">
+          <h4 class="kt-name">Sudanese civil war</h4>
+          <div class="kt-status" data-status-for="SDN"></div>
+        </div>
+        <div class="am-body">
+          <p class="am-text">Catastrophic levels of displacement and food insecurity persist as fighting between the SAF and RSF ravages the Kordofan and Darfur regions.</p>
+          <button type="button" class="map-go" data-map="SDN">Show on map</button>
+        </div>
+      </div>
   </section>
 
-  <!-- ===== 02 Key conflict developments ===== -->
-  <section class="sec" id="developments">
-    <div class="sec-head">
-      <span class="sec-num">02</span>
-      <h2>Key Conflict Developments</h2>
-      <span class="sec-sub">Most active theatres</span>
-    </div>
-
-    <div class="bluf">
-      <div class="label">BLUF — Bottom Line Up Front</div>
-      <p>Across all five global theatres, operations have shifted decisively toward permanent area denial, subterranean denial, and multi-theatre A2/AD consolidation: Ukraine disrupted Russian infiltration corridors via UGV demining and EW interdiction; Israel fortified permanent security postures in Lebanon and Gaza to prevent force reconstitution; Iran and its proxies expanded a dual-chokepoint maritime and subterranean threat envelope.</p>
-    </div>
-    <div class="note"><span class="label">Draft note</span>The BLUF says five theatres, but the table below now has six. It does not mention Thailand–Cambodia or the US–Iran negotiation track.</div>
-
-    <table class="theatres">
-      <thead>
-        <tr><th>#</th><th>Theatre</th><th>Phase</th><th>Latest development</th></tr>
-      </thead>
-      <tbody>
-        <tr id="theatre-01">
-          <td class="n">01</td>
-          <td class="t">Russia–Ukraine</td>
-          <td class="p" data-label="Phase">Attritional war; high-tempo long-range strike and UAS contest</td>
-          <td class="d" data-label="Latest development">Ukraine reportedly combined strikes against Russian logistics and energy supply with manoeuvre activity. Russian forces continued large drone attacks and targeted Ukrainian logistics, drone-related sites, communications, port infrastructure and vessels.</td>
-        </tr>
-        <tr id="theatre-02">
-          <td class="n">02</td>
-          <td class="t">Israel–Lebanon</td>
-          <td class="p" data-label="Phase">Fragile ceasefire under pressure</td>
-          <td class="d" data-label="Latest development">Israeli strikes in southern Lebanon continued despite the ceasefire, with Reuters reporting rising concern over renewed campaign activity after escalating strikes.</td>
-        </tr>
-        <tr id="theatre-03">
-          <td class="n">03</td>
-          <td class="t">Israel–Gaza</td>
-          <td class="p" data-label="Phase">Ceasefire framework unresolved; continuing strikes</td>
-          <td class="d" data-label="Latest development">Continued Israeli strikes caused casualties. Negotiations remain deadlocked over Hamas disarmament and Israeli withdrawal, while humanitarian conditions remain severe.</td>
-        </tr>
-        <tr id="theatre-04">
-          <td class="n">04</td>
-          <td class="t">US–Israel–Iran</td>
-          <td class="p" data-label="Phase">Active coercive and negotiation contest centred on Hormuz</td>
-          <td class="d" data-label="Latest development">US–Iran contacts explored a phased arrangement linking reopening Hormuz with reduced US pressure, while Iran stated it would not make nuclear concessions and could keep the strait restricted.</td>
-        </tr>
-        <tr id="theatre-05">
-          <td class="n">05</td>
-          <td class="t">Thailand–Cambodia</td>
-          <td class="p" data-label="Phase">Fragile ceasefire; unresolved border tensions</td>
-          <td class="d" data-label="Latest development">Maritime conciliation began, but land-border displacement and closed crossings continue months after the ceasefire; reporting indicates that military positions and disputed territorial claims remain unresolved.</td>
-        </tr>
-        <tr id="theatre-06">
-          <td class="n">06</td>
-          <td class="t">Other Middle East spillover</td>
-          <td class="p" data-label="Phase">Active regional spillover and diplomatic containment</td>
-          <td class="d" data-label="Latest development">Houthi control and Saudi-focused pressure keep the Red Sea/Yemen strand volatile, while Oman-mediated contacts and a Saudi truce proposal remain unresolved. Iraq approaches the 30 September coalition-withdrawal deadline without a matching militia-disarmament settlement.</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- ===== 03 Key learning topics ===== -->
+  <!-- ===== 02 Key learning topics ===== -->
   <section class="sec" id="learning">
     <div class="sec-head">
-      <span class="sec-num">03</span>
+      <span class="sec-num">02</span>
       <h2>Key Learning Topics</h2>
       <span class="sec-sub">Sense &amp; Strike · Manoeuvre · Sustainment</span>
     </div>
@@ -537,49 +626,34 @@
 <script>
 (function () {
   /* ================================================================
-     CONFLICTS MONITORED — update this list each edition.
+     CONFLICT MAP DATA — update each edition.
+     The text for each conflict lives in the HTML rows below the map (id="c-CODE").
      status : 'priority' | 'active' | 'watch' | 'archive'
               Statuses are set by the CSI editor. Change one only when instructed.
      tier   : 1 (large marker) to 3 (small marker)
+     key    : '01'–'06' if the conflict is a key theatre this edition (numbered on the map)
      at     : [longitude, latitude] of the marker
      off    : optional [x, y] screen-pixel nudge for crowded areas (draws a leader line)
      lab    : label side 'r' | 'l' | 't' | 'b'
      move   : optional 'up' | 'down' if the status moved this period
      zone   : optional maritime / zone watch circle { at: [lon, lat], r: radius in degrees }
      shade  : countries shaded in the conflict's status colour (world-atlas names)
-     brief  : id of this conflict's row in the Key Conflict Developments table, if covered
-     latest : one- or two-line latest development shown when the conflict is selected
-     src    : optional [[label, url], ...] sources for the latest line
      ================================================================ */
   var CONFLICTS = [
-    { code: 'RUS-UKR', name: 'Russia–Ukraine', status: 'priority', tier: 1, at: [37.5, 48.3], lab: 't', shade: ['Russia', 'Ukraine'], brief: 'theatre-01',
-      latest: "Russian forces have stepped up systematic drone and missile attacks targeting railway links and energy infrastructure, while making incremental territorial gains in eastern Ukraine." },
-    { code: 'ISR-PAL', name: 'Israel–Palestine', status: 'active', tier: 1, at: [34.45, 31.45], off: [-9, 9], lab: 'l', shade: ['Israel', 'Palestine'], brief: 'theatre-03',
-      latest: "The UN has warned that the two-state solution is nearing collapse amid accelerated West Bank settlement expansion and ongoing humanitarian crises in Gaza." },
-    { code: 'ISR-LBN', name: 'Israel–Lebanon', status: 'priority', tier: 1, at: [35.8, 33.4], off: [9, -9], lab: 'l', shade: ['Lebanon'], brief: 'theatre-02',
-      latest: "Lebanon’s Prime Minister is pressing for broader enforcement of ceasefire understandings following intense combat earlier in the year." },
-    { code: 'US-ISR-IRN', name: 'US–Israel–Iran', status: 'priority', tier: 1, at: [53.5, 32.5], lab: 't', zone: { at: [56.4, 26.5], r: 1.8 }, shade: ['Iran'], brief: 'theatre-04',
-      latest: "US and Iranian officials are engaging in indirect talks through international mediators to break the months-long military standoff and nuclear impasse." },
-    { code: 'THA-KHM', name: 'Thailand–Cambodia', status: 'active', tier: 1, at: [103.6, 14.3], lab: 'b', shade: ['Thailand', 'Cambodia'], brief: 'theatre-05',
-      latest: "Tensions persist at the UN General Assembly level as Cambodia defends its push for maritime conciliation under UNCLOS, while Thailand urges regional bilateral security cooperation." },
-    { code: 'US-VEN', name: 'US–Venezuela', status: 'watch', tier: 2, at: [-66.5, 7.5], lab: 'b', zone: { at: [-67, 14], r: 5 }, shade: ['Venezuela'],
-      latest: "Caracas remains under provisional leadership following the direct US intervention and removal of Nicolás Maduro, as exiled opposition figures push for internal transition." },
-    { code: 'SCS', name: 'South China Sea / territorial disputes', status: 'active', tier: 2, at: [114.5, 12.5], lab: 'b', zone: { at: [114.5, 12.5], r: 6.5 },
-      latest: "Frequent vessel blockades and ramming incidents continue between Chinese and Philippine coast guards near contested shoals." },
-    { code: 'TWN', name: 'Taiwan Strait tensions', status: 'active', tier: 2, at: [120.9, 23.7], lab: 'r', zone: { at: [119.6, 24.2], r: 2.2 }, shade: ['Taiwan'],
-      latest: "Beijing continues intensive grey-zone operations designed to push US military presence back from the first island chain." },
-    { code: 'CHN-JPN', name: 'China–Japan tensions', status: 'active', tier: 3, at: [124.5, 27.8], lab: 'r',
-      latest: "A severe diplomatic crisis persists, marked by Beijing’s export curbs on dual-use materials and rare earths alongside sharp drops in tourism." },
-    { code: 'KOR', name: 'Korean Peninsula tensions', status: 'watch', tier: 3, at: [127.2, 38.3], lab: 'r', shade: ['North Korea', 'South Korea'],
-      latest: "Pyongyang has updated ruling party structures to consolidate wartime nuclear command and control, aligning with Seoul’s hardening defence posture." },
-    { code: 'IND-PAK', name: 'India–Pakistan tensions', status: 'watch', tier: 3, at: [75.3, 33.8], lab: 't', shade: ['India', 'Pakistan'],
-      latest: "Diplomatic friction has deepened following an accidental naval ship collision in the Arabian Sea and ongoing disputes over the Indus Waters Treaty." },
-    { code: 'MMR', name: 'Myanmar civil war', status: 'watch', tier: 3, at: [96.0, 21.0], lab: 'l', shade: ['Myanmar'],
-      latest: "The junta has escalated aerial bombing campaigns, notably striking a crowded market in Rakhine State, causing massive civilian casualties." },
-    { code: 'SDN', name: 'Sudanese civil war', status: 'watch', tier: 2, at: [29.5, 14.5], lab: 'l', shade: ['Sudan'],
-      latest: "Catastrophic levels of displacement and food insecurity persist as fighting between the SAF and RSF ravages the Kordofan and Darfur regions." },
-    { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 1, at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'], brief: 'theatre-06',
-      latest: "Regional friction remains acute with Houthi forces continuing aggressive maritime enforcement and missile postures across Red Sea shipping lanes." }
+    { code: 'RUS-UKR', name: 'Russia–Ukraine', status: 'priority', tier: 1, key: '01', at: [37.5, 48.3], lab: 't', shade: ['Russia', 'Ukraine'] },
+    { code: 'ISR-PAL', name: 'Israel–Palestine', status: 'active', tier: 1, key: '03', at: [34.45, 31.45], off: [-9, 9], lab: 'l', shade: ['Israel', 'Palestine'] },
+    { code: 'ISR-LBN', name: 'Israel–Lebanon', status: 'priority', tier: 1, key: '02', at: [35.8, 33.4], off: [9, -9], lab: 'l', shade: ['Lebanon'] },
+    { code: 'US-ISR-IRN', name: 'US–Israel–Iran', status: 'priority', tier: 1, key: '04', at: [53.5, 32.5], lab: 't', zone: { at: [56.4, 26.5], r: 1.8 }, shade: ['Iran'] },
+    { code: 'THA-KHM', name: 'Thailand–Cambodia', status: 'active', tier: 1, key: '05', at: [103.6, 14.3], lab: 'b', shade: ['Thailand', 'Cambodia'] },
+    { code: 'US-VEN', name: 'US–Venezuela', status: 'watch', tier: 2, at: [-66.5, 7.5], lab: 'b', zone: { at: [-67, 14], r: 5 }, shade: ['Venezuela'] },
+    { code: 'SCS', name: 'South China Sea / territorial disputes', status: 'active', tier: 2, at: [114.5, 12.5], lab: 'b', zone: { at: [114.5, 12.5], r: 6.5 } },
+    { code: 'TWN', name: 'Taiwan Strait tensions', status: 'active', tier: 2, at: [120.9, 23.7], lab: 'r', zone: { at: [119.6, 24.2], r: 2.2 }, shade: ['Taiwan'] },
+    { code: 'CHN-JPN', name: 'China–Japan tensions', status: 'active', tier: 3, at: [124.5, 27.8], lab: 'r' },
+    { code: 'KOR', name: 'Korean Peninsula tensions', status: 'watch', tier: 3, at: [127.2, 38.3], lab: 'r', shade: ['North Korea', 'South Korea'] },
+    { code: 'IND-PAK', name: 'India–Pakistan tensions', status: 'watch', tier: 3, at: [75.3, 33.8], lab: 't', shade: ['India', 'Pakistan'] },
+    { code: 'MMR', name: 'Myanmar civil war', status: 'watch', tier: 3, at: [96, 21], lab: 'l', shade: ['Myanmar'] },
+    { code: 'SDN', name: 'Sudanese civil war', status: 'watch', tier: 2, at: [29.5, 14.5], lab: 'l', shade: ['Sudan'] },
+    { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 1, key: '06', at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'] }
   ];
 
   var STATUS = {
@@ -597,11 +671,11 @@
     indopacific: [[92, 0], [146, 45]],
     americas:    [[-125, -8], [-40, 40]]
   };
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  var section = document.getElementById('picture');
   var frame = document.getElementById('map');
-  var detail = document.getElementById('map-detail');
-  var list = document.getElementById('map-list');
-  var state = { focus: 'world', selected: null, hover: null };
+  var state = { focus: 'world', selected: null };
   var world, W, H, projection, svg, gMap, zones, markers, pattern, zoom;
   var transform = null;
 
@@ -614,6 +688,17 @@
   });
 
   function byCode(code) { return CONFLICTS.filter(function (c) { return c.code === code; })[0]; }
+  function rowFor(code) { return document.getElementById('c-' + code); }
+
+  // Status labels in the rows come from the map data, so each status is set in one place.
+  document.querySelectorAll('[data-status-for]').forEach(function (el) {
+    var c = byCode(el.getAttribute('data-status-for'));
+    if (!c) return;
+    var txt = '<span class="md-swatch s-' + c.status + '"></span>' + STATUS[c.status].label;
+    if (c.move) txt += c.move === 'up' ? ' <span style="color:var(--accent)">▲</span>' : ' ▼';
+    el.innerHTML = txt;
+  });
+  if (!CONFLICTS.some(function (c) { return c.move; })) document.getElementById('legend-move').hidden = true;
 
   function labelPos(pos, r) {
     var g = r + 4;
@@ -636,7 +721,7 @@
     svg = d3.select(frame).append('svg')
       .attr('viewBox', '0 0 ' + W + ' ' + H)
       .attr('role', 'img')
-      .attr('aria-label', 'World map of the 14 conflicts CSI monitors, marked by status. The list below the map gives the same information.');
+      .attr('aria-label', 'World map of the 14 conflicts CSI monitors, marked by status. Key theatres are numbered. The lists below the map give the same information.');
 
     pattern = svg.append('defs').append('pattern')
       .attr('id', 'm-hatch').attr('patternUnits', 'userSpaceOnUse').attr('width', 5).attr('height', 5);
@@ -665,7 +750,10 @@
 
     markers = gOver.append('g').selectAll('g').data(CONFLICTS).join('g').attr('class', 'm-mk');
     markers.each(function (c) {
-      var g = d3.select(this), r = TIER_R[c.tier] * ms, off = (c.off || [0, 0]).map(function (v) { return v * ms; });
+      var g = d3.select(this);
+      var r = c.key ? Math.max(9 * ms, 7.5) : TIER_R[c.tier] * ms;
+      var off = (c.off || [0, 0]).map(function (v) { return v * ms; });
+      g.append('title').text(c.name + ' · ' + STATUS[c.status].label);
       if (c.off) {
         g.append('line').attr('class', 'm-lead').attr('x2', off[0]).attr('y2', off[1]);
         g.append('circle').attr('class', 'm-true').attr('r', 1.6);
@@ -673,6 +761,11 @@
       var m = g.append('g').attr('transform', 'translate(' + off[0] + ',' + off[1] + ')');
       m.append('circle').attr('class', 'm-ring').attr('r', r + 4);
       m.append('circle').attr('class', 'm-dot s-' + c.status).attr('r', r);
+      if (c.key) {
+        m.append('text').attr('class', 'm-num' + (c.status === 'watch' ? ' on-light' : ''))
+          .attr('text-anchor', 'middle').attr('dominant-baseline', 'central')
+          .style('font-size', Math.max(7, 8.5 * ms) + 'px').text(c.key);
+      }
       if (c.move) {
         m.append('path').attr('class', 'm-move-' + c.move)
           .attr('d', c.move === 'up' ? 'M0,-3.5L3.5,2.5L-3.5,2.5Z' : 'M0,3.5L3.5,-2.5L-3.5,-2.5Z')
@@ -683,10 +776,7 @@
         .attr('text-anchor', lp[2]).attr('dominant-baseline', 'middle').text(c.code);
       m.append('circle').attr('class', 'm-hit').attr('r', Math.max(r + 6, 12));
     });
-    markers
-      .on('click', function (ev, c) { ev.stopPropagation(); select(c.code, false); })
-      .on('mouseenter', function (ev, c) { state.hover = c.code; renderDetail(); })
-      .on('mouseleave', function () { state.hover = null; renderDetail(); });
+    markers.on('click', function (ev, c) { ev.stopPropagation(); select(c.code, 'map'); });
 
     zoom = d3.zoom()
       .scaleExtent([1, 16])
@@ -701,6 +791,7 @@
 
     focus(state.focus, false);
     updateSelection();
+    section.classList.add('has-map');
   }
 
   function draw() {
@@ -723,90 +814,50 @@
   function focus(key, animate) {
     state.focus = key;
     setPressed(key);
-    var b = REGIONS[key], pts = [], i, xs, ys;
+    var b = REGIONS[key], pts = [], i;
     for (i = 0; i <= 10; i++) {
       var lon = b[0][0] + (b[1][0] - b[0][0]) * i / 10, lat = b[0][1] + (b[1][1] - b[0][1]) * i / 10;
       pts.push(projection([lon, b[0][1]]), projection([lon, b[1][1]]), projection([b[0][0], lat]), projection([b[1][0], lat]));
     }
-    xs = pts.map(function (p) { return p[0]; });
-    ys = pts.map(function (p) { return p[1]; });
+    var xs = pts.map(function (p) { return p[0]; }), ys = pts.map(function (p) { return p[1]; });
     var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs), y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
     var k = Math.max(1, Math.min(16, 0.96 / Math.max((x1 - x0) / W, (y1 - y0) / H)));
     var t = d3.zoomIdentity.translate(W / 2, H / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
-    (animate === false ? svg : svg.transition().duration(650)).call(zoom.transform, t);
+    (animate === false || reduceMotion ? svg : svg.transition().duration(650)).call(zoom.transform, t);
   }
 
   function flyTo(c) {
     var k = Math.max(transform ? transform.k : 1, 4.5);
     var t = d3.zoomIdentity.translate(W / 2, H / 2).scale(k).translate(-c.p[0], -c.p[1]);
     setPressed(null);
-    svg.transition().duration(650).call(zoom.transform, t);
+    (reduceMotion ? svg : svg.transition().duration(650)).call(zoom.transform, t);
   }
 
-  function select(code, fly) {
-    state.selected = (!fly && state.selected === code) ? null : code;
+  function select(code, from) {
+    state.selected = code;
     updateSelection();
-    renderDetail();
-    if (fly && svg && state.selected) flyTo(byCode(code));
+    var row = rowFor(code);
+    if (from === 'map' && row) {
+      row.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      row.classList.remove('flash'); void row.offsetWidth; row.classList.add('flash');
+    }
+    if (from === 'row' && svg) {
+      frame.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      flyTo(byCode(code));
+    }
   }
 
   function updateSelection() {
     if (markers) markers.classed('is-sel', function (c) { return c.code === state.selected; });
-    list.querySelectorAll('.ml-chip').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-code') === state.selected));
+    CONFLICTS.forEach(function (c) {
+      var row = rowFor(c.code);
+      if (row) row.classList.toggle('is-sel', c.code === state.selected);
     });
   }
 
-  function renderDetail() {
-    var c = byCode(state.hover || state.selected);
-    if (!c) {
-      detail.innerHTML = '<p class="md-empty">Select a conflict on the map or in the list below to see its status.</p>';
-      return;
-    }
-    var bits = [STATUS[c.status].label, 'Tier ' + c.tier];
-    if (c.move) bits.push(c.move === 'up' ? '<span class="up">▲</span> Status raised this period' : '▼ Status lowered this period');
-    if (c.zone) bits.push('Maritime / zone watch');
-    var body = '';
-    if (c.latest) {
-      body += '<p class="md-latest"><span class="label">Latest</span>' + c.latest + '</p>';
-    }
-    if (c.src && c.src.length) {
-      body += '<p class="md-src">Source: ' + c.src.map(function (x) {
-        return '<a href="' + x[1] + '" target="_blank" rel="noopener">' + x[0] + '</a>';
-      }).join(' · ') + '</p>';
-    }
-    var row = c.brief && document.getElementById(c.brief);
-    if (row) {
-      var phase = row.querySelector('.p').textContent.trim();
-      body += '<p class="md-phase"><span class="label">Phase</span>' + phase + '</p>' +
-              '<a class="md-link" href="#' + c.brief + '">Full entry in Key Conflict Developments ↓</a>';
-    } else if (!c.latest) {
-      body += '<p class="md-note">Monitored. Not covered in this edition’s development table.</p>';
-    }
-    detail.innerHTML = '<div class="md-head"><span class="md-swatch s-' + c.status + '"></span><code>' + c.code + '</code><h3>' + c.name + '</h3></div>' +
-                       '<p class="md-meta">' + bits.join(' · ') + '</p>' + body;
-  }
-
-  function buildList() {
-    list.innerHTML = ['priority', 'active', 'watch', 'archive']
-      .filter(function (s) { return CONFLICTS.some(function (c) { return c.status === s; }); })
-      .map(function (s) {
-        var chips = CONFLICTS.filter(function (c) { return c.status === s; })
-          .sort(function (a, b) { return a.tier - b.tier; })
-          .map(function (c) {
-            return '<button type="button" class="ml-chip" data-code="' + c.code + '" aria-pressed="false">' +
-                   '<span class="md-swatch s-' + c.status + '"></span><code>' + c.code + '</code>' + c.name +
-                   (c.move ? ' <span class="ml-move" aria-label="status ' + (c.move === 'up' ? 'raised' : 'lowered') + '">' + (c.move === 'up' ? '▲' : '▼') + '</span>' : '') +
-                   '</button>';
-          }).join('');
-        return '<div class="ml-group"><span class="label">' + STATUS[s].label + '</span><div class="ml-chips">' + chips + '</div></div>';
-      }).join('');
-    list.addEventListener('click', function (e) {
-      var b = e.target.closest('.ml-chip');
-      if (b) select(b.getAttribute('data-code'), true);
-    });
-  }
-
+  document.querySelectorAll('[data-map]').forEach(function (b) {
+    b.addEventListener('click', function () { select(b.getAttribute('data-map'), 'row'); });
+  });
   document.querySelectorAll('[data-focus]').forEach(function (b) {
     b.addEventListener('click', function () { if (svg) focus(b.getAttribute('data-focus')); });
   });
@@ -814,14 +865,10 @@
   document.querySelector('[data-zoom="out"]').addEventListener('click', function () { if (svg) svg.transition().duration(300).call(zoom.scaleBy, 1 / 1.6); });
   document.querySelector('[data-zoom="reset"]').addEventListener('click', function () { if (svg) focus('world'); });
 
-  buildList();
-  renderDetail();
-  if (!CONFLICTS.some(function (c) { return c.move; })) document.getElementById('legend-move').hidden = true;
-
-  if (typeof d3 === 'undefined' || typeof topojson === 'undefined') {
-    frame.innerHTML = '<p class="map-err">The map could not load. The list below shows every monitored conflict.</p>';
-    return;
+  function fail() {
+    frame.innerHTML = '<p class="map-err">The map could not load. Every monitored conflict is listed below.</p>';
   }
+  if (typeof d3 === 'undefined' || typeof topojson === 'undefined') { fail(); return; }
   fetch('assets/countries-110m.json')
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (w) {
@@ -837,10 +884,9 @@
         }).observe(frame);
       }
     })
-    .catch(function () {
-      frame.innerHTML = '<p class="map-err">The map could not load. The list below shows every monitored conflict.</p>';
-    });
+    .catch(fail);
 })();
 </script>
+
 </body>
 </html>
