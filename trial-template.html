@@ -119,6 +119,84 @@
   .sub-head h3 { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
   @media (max-width: 700px) { .bluf p { font-size: 1rem; line-height: 1.6; } }
 
+  /* ===== Comic strips ===== */
+  :root { --blue: #1f4e8c; }
+  .cx-intro { font-size: 0.85rem; color: var(--ink-2); margin: -0.5rem 0 2rem; line-height: 1.8; }
+  .cx-key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin: 0 0.35rem 0 0.15rem; vertical-align: -1px; }
+  .cx-key-blue { background: var(--blue); }
+  .cx-key-red { background: var(--accent); margin-left: 0.6rem; }
+  .cx-tag { font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.06em; color: var(--ink-3); margin: -0.4rem 0 1rem; }
+  .cx-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+  .cx-panel { margin: 0; border: 2px solid var(--ink); background: #ffffff; display: flex; flex-direction: column; }
+  .cx-panel svg { display: block; width: 100%; height: auto; border-bottom: 2px solid var(--ink); }
+  .cx-panel figcaption { padding: 0.6rem 0.7rem 0.75rem; font-size: 0.86rem; line-height: 1.45; color: var(--ink-2); }
+  .cx-panel figcaption strong { color: var(--ink); font-weight: 700; }
+  .cx-n { display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; margin-right: 0.4rem; background: var(--ink); color: #fff; font: 600 0.7rem/1 var(--mono); border-radius: 50%; vertical-align: 1px; }
+  .cx-swipe { display: none; }
+  .cx-take { border-left: 3px solid var(--accent); background: var(--panel); padding: 0.85rem 1rem; margin: 1rem 0 1rem; }
+  .cx-take p { font-size: 0.95rem; line-height: 1.55; }
+  .cx-take p + p { margin-top: 0.5rem; }
+  .cx-take .label { display: block; margin-bottom: 0.1rem; }
+  .cx-full { border-top: 1px solid var(--rule); }
+  .cx-full > summary { cursor: pointer; list-style: none; font: 500 0.75rem/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; padding: 0.9rem 0; color: var(--ink); }
+  .cx-full > summary::-webkit-details-marker { display: none; }
+  .cx-full > summary::before { content: '+'; display: inline-block; width: 1.1rem; font-weight: 700; }
+  .cx-full[open] > summary::before { content: '−'; }
+  .cx-full > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cx-full[open] { padding-bottom: 0.5rem; }
+  /* art */
+  .cx-blue { color: var(--blue); }
+  .cx-red { color: var(--accent); }
+  .cx-ground { stroke: #cfccc4; stroke-width: 2; }
+  .cx-bubble rect, .cx-bubble path { fill: #fff; stroke: var(--ink); stroke-width: 1.8; stroke-linejoin: round; }
+  .cx-bubble .cx-seam { stroke: #fff; stroke-width: 3; }
+  .cx-bubble text { font: 700 13px var(--sans); fill: var(--ink); }
+  .cx-badge rect { fill: var(--ink); }
+  .cx-badge.cx-badge-red rect { fill: var(--accent); }
+  .cx-badge text { font: 600 11px var(--mono); fill: #fff; }
+  .cx-label { font: 600 9.5px var(--mono); letter-spacing: 0.06em; fill: var(--ink-2); }
+  .cx-val { font-size: 13px; fill: var(--ink); }
+  .cx-red-t { fill: var(--accent); }
+  .cx-blue-t { fill: var(--blue); }
+  .cx-trail { fill: none; stroke-width: 1.8; stroke-dasharray: 4 4; }
+  .cx-blue-s { stroke: var(--blue); }
+  .cx-red-s { stroke: var(--accent); }
+  .cx-speed path { stroke-width: 2.2; stroke-linecap: round; }
+  .cx-q { font: 700 20px var(--sans); fill: var(--blue); }
+  .cx-axis { stroke: var(--ink); stroke-width: 1.5; }
+  .cx-bar { fill: #d8d5cd; }
+  .cx-bar-red { fill: var(--accent); }
+  .cx-arrow { fill: none; stroke: var(--accent); stroke-width: 2.2; }
+  .cx-arrowhead { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .cx-cone { stroke-width: 1.4; stroke-dasharray: 4 4; }
+  .cx-red-cone { fill: rgba(200, 16, 46, 0.07); stroke: var(--accent); }
+  .cx-blue-cone { fill: rgba(31, 78, 140, 0.08); stroke: var(--blue); }
+  .cx-reticle { fill: none; stroke: var(--accent); stroke-width: 2; }
+  .cx-window path { stroke: var(--blue); stroke-width: 1.6; stroke-dasharray: 6 5; }
+  .cx-faded { opacity: 0.3; }
+  .cx-pipe rect { fill: #fff; stroke: var(--accent); stroke-width: 2.2; }
+  .cx-pipe path { stroke: var(--accent); stroke-width: 2.2; }
+  .cx-drop path { fill: var(--accent); opacity: 0.8; }
+  .cx-road { fill: none; stroke: #e2dfd8; stroke-width: 24; stroke-linecap: round; }
+  .cx-road-line { fill: none; stroke: #ffffff; stroke-width: 2; stroke-dasharray: 8 8; }
+  .cx-clock circle { fill: #fff; stroke: var(--ink); stroke-width: 2.2; }
+  .cx-clock path { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; }
+  @media (max-width: 700px) {
+    .cx-strip {
+      display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 0.75rem;
+      margin: 0 -1rem; padding: 0 1rem 0.25rem; scroll-padding: 0 1rem;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .cx-strip::-webkit-scrollbar { display: none; }
+    .cx-panel { flex: 0 0 84%; scroll-snap-align: start; }
+    .cx-swipe { display: block; font: 500 0.7rem/1 var(--mono); letter-spacing: 0.08em; color: var(--ink-3); text-align: right; margin-top: 0.5rem; }
+  }
+  @media print {
+    .cx-strip { display: grid !important; grid-template-columns: repeat(3, 1fr); overflow: visible; margin: 0; padding: 0; }
+    .cx-swipe { display: none !important; }
+    .cx-full > summary { display: none; }
+  }
+
   /* ===== Learning topics ===== */
   .topic { padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--rule); }
   .topic:last-of-type { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
@@ -401,90 +479,236 @@
       <h2>Key Learning Topics</h2>
       <span class="sec-sub">Sense &amp; Strike · Manoeuvre · Sustainment</span>
     </div>
+    <p class="cx-intro"><span class="cx-key cx-key-blue"></span>Blue = the side the lesson is drawn from <span class="cx-key cx-key-red"></span>Red = opposing force. Based on Russia–Ukraine reporting. Open the full analysis under each strip for details and sources.</p>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="cx-soldier" viewBox="0 0 40 72">
+      <circle cx="20" cy="21" r="8" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M9.5 19 Q20 3 30.5 19 L33 20.5 L7 20.5 Z" fill="currentColor"/>
+      <path d="M12 31 L28 31 L30 52 L10 52 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M12 33 L5 46 M28 33 L35 45 M15 52 L13 69 M25 52 L27 69" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="cx-soldier-point" viewBox="0 0 40 72">
+      <circle cx="20" cy="21" r="8" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M9.5 19 Q20 3 30.5 19 L33 20.5 L7 20.5 Z" fill="currentColor"/>
+      <path d="M12 31 L28 31 L30 52 L10 52 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M12 33 L5 46 M28 33 L39 23 M15 52 L13 69 M25 52 L27 69" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="cx-quad" viewBox="0 0 44 24">
+      <path d="M15 13 L6 7 M29 13 L38 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <ellipse cx="6" cy="6" rx="6" ry="1.8" fill="currentColor"/>
+      <ellipse cx="38" cy="6" rx="6" ry="1.8" fill="currentColor"/>
+      <rect x="14" y="10" width="16" height="8" rx="3" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+    </symbol>
+    <symbol id="cx-prop" viewBox="0 0 50 30">
+      <path d="M4 15 L40 3 L34 15 L40 27 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M34 15 L44 15" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M45 6 L45 24" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="cx-jet" viewBox="0 0 62 30">
+      <path d="M44 12 L60 15 L44 18 Z" fill="currentColor" opacity="0.45"/>
+      <path d="M2 15 L42 5 L37 15 L42 25 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <rect x="32" y="12" width="12" height="6" rx="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="cx-apc" viewBox="0 0 72 38">
+      <path d="M42 10 L60 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M26 14 L28 8 L42 8 L44 14" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M4 24 L12 14 L52 14 L64 22 L68 24 L68 30 L4 30 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <g fill="#ffffff" stroke="currentColor" stroke-width="2"><circle cx="13" cy="31" r="4"/><circle cx="25" cy="31" r="4"/><circle cx="37" cy="31" r="4"/><circle cx="49" cy="31" r="4"/><circle cx="60" cy="31" r="4"/></g>
+    </symbol>
+    <symbol id="cx-tanker" viewBox="0 0 96 42">
+      <path d="M4 32 L90 32" stroke="currentColor" stroke-width="2.2"/>
+      <rect x="4" y="8" width="58" height="22" rx="10" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <text x="33" y="23" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="9" font-weight="600" fill="currentColor">FUEL</text>
+      <path d="M64 14 L82 14 L90 22 L90 32 L64 32 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M68 17 L80 17 L85 22 L68 22 Z" fill="currentColor" opacity="0.25"/>
+      <g fill="#ffffff" stroke="currentColor" stroke-width="2"><circle cx="16" cy="35" r="5"/><circle cx="30" cy="35" r="5"/><circle cx="72" cy="35" r="5"/><circle cx="84" cy="35" r="5"/></g>
+    </symbol>
+    <symbol id="cx-gen" viewBox="0 0 50 40">
+      <rect x="36" y="3" width="5" height="8" fill="currentColor"/>
+      <rect x="3" y="10" width="44" height="27" rx="3" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M8 16 L8 31 M12 16 L12 31" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M27 14 L20 25 L26 25 L22 34 L34 21 L27 21 L31 14 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="cx-gauge" viewBox="0 0 44 28">
+      <path d="M4 24 A18 18 0 0 1 40 24" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <text x="4" y="12" font-family="ui-monospace, Menlo, monospace" font-size="8" font-weight="700" fill="currentColor">E</text>
+      <text x="36" y="12" font-family="ui-monospace, Menlo, monospace" font-size="8" font-weight="700" fill="currentColor">F</text>
+      <path d="M22 24 L8 19" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="22" cy="24" r="2.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="cx-mast-off" viewBox="0 0 40 70">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3" opacity="0.4">
+        <path d="M11 13 A12 12 0 0 1 29 13"/><path d="M6 8 A18 18 0 0 1 34 8"/>
+      </g>
+      <path d="M20 22 L20 66 M10 66 L30 66 M20 50 L12 66 M20 50 L28 66" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <circle cx="20" cy="20" r="4" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M27 27 L37 37 M37 27 L27 37" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="cx-battery" viewBox="0 0 40 20">
+      <rect x="2" y="3" width="32" height="14" rx="2" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <rect x="34" y="7" width="4" height="6" fill="currentColor"/>
+      <rect x="5" y="6" width="5" height="8" fill="currentColor"/>
+    </symbol>
+    <symbol id="cx-burst" viewBox="0 0 40 40">
+      <polygon points="20,1 25,13 39,9 29,20 39,31 25,27 20,39 15,27 1,31 11,20 1,9 15,13" fill="#ffffff" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="20,10 23,17 30,16 25,21 29,27 22,24 20,30 18,24 11,27 15,21 10,16 17,17" fill="currentColor" opacity="0.8"/>
+    </symbol>
+  </defs>
+</svg>
 
     <!-- Sense & Strike -->
     <article class="topic">
       <div class="fn">Sense &amp; Strike</div>
       <h3>Counter-UAS measures outpaced by jet-powered attack drones</h3>
-      <dl class="meta">
-        <dt>Theatre</dt><dd>Russia–Ukraine</dd>
-        <dt>Reporting period</dt><dd>15–28 September 2026</dd>
-        <dt>Learning status</dt><dd>Preliminary observation · Medium confidence</dd>
-      </dl>
-      <table class="findings">
-        <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
-        <tbody>
-          <tr><td>Previously effective response</td><td>Ukraine developed relatively cheap interceptor drones against slower, propeller-driven attack drones. Its air force reported intercepting more than 90% of those earlier variants. <span class="cite">Source: <a href="https://www.reuters.com/business/aerospace-defense/jet-powered-russian-drones-strain-ukraines-air-defences-2026-09-22/" target="_blank" rel="noopener">Reuters, 22 Sep</a> · <a href="https://www.reuters.com/business/aerospace-defense/ukraine-races-counter-russias-jet-powered-drone-attacks-2026-09-15/" target="_blank" rel="noopener">Reuters, 15 Sep</a></span></td></tr>
-          <tr><td>Russia’s adaptation</td><td>Russia expanded use of jet-powered variants. Reuters reported that their speed and higher flight profiles reduced the effectiveness of existing interceptor drones and some mobile air-defence teams.</td></tr>
-          <tr><td>Observed performance gap</td><td>Ukraine’s air force reported about 60% interception of the newer variants. That does not mean all Ukrainian air defence is obsolete; it identifies a performance gap against a changed target set.</td></tr>
-          <tr><td>Response under development</td><td>Faster interceptors, other lower-cost weapons, and different engagement approaches. Reuters reported successful individual intercepts, alongside difficult trials and unresolved production and funding constraints. None is yet demonstrated here as a replacement at scale.</td></tr>
-        </tbody>
-      </table>
-      <div class="callout">
-        <div class="label">Preliminary observations</div>
-        <p>A countermeasure can remain effective against the threat it was built for while becoming inadequate against a modified variant. The attacker did not simply add more drones; it changed the target’s speed and flight profile enough to put a successful defensive method outside its useful engagement conditions. The critical issue is the time lag between detecting that performance drop and fielding an affordable replacement at scale.</p>
+      <p class="cx-tag">Russia–Ukraine · 15–28 Sep 2026 · Preliminary, medium confidence</p>
+      <div class="cx-strip">
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue soldier launches an interceptor drone that destroys a slow propeller-driven Red drone. About 9 in 10 were stopped."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier" x="22" y="100" width="44" height="80" class="cx-blue" /><path class="cx-trail cx-blue-s" d="M58 112 Q100 60 150 80"/><use href="#cx-prop" x="214" y="50" width="66" height="40" class="cx-red" /><use href="#cx-quad" x="150" y="66" width="48" height="26" class="cx-blue" /><use href="#cx-burst" x="190" y="50" width="36" height="36" class="cx-red" /><g class="cx-bubble"><rect x="64" y="34" width="78" height="28" rx="10"/><path d="M74 61 L90 61 L50 100 Z"/><path d="M75.5 61 L88.5 61" class="cx-seam"/><text x="103.0" y="54" text-anchor="middle">Got it!</text></g><g class="cx-badge "><rect x="186" y="148" width="122" height="22" rx="3"/><text x="247.0" y="163" text-anchor="middle">≈ 9 in 10 stopped</text></g></svg>
+          <figcaption><span class="cx-n">1</span><strong>It worked.</strong> Cheap Blue interceptor drones stopped about 9 in 10 slow, propeller-driven Red attack drones.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A fast Red jet drone flies high over a Blue interceptor drone that cannot keep up. About 6 in 10 were stopped."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier" x="22" y="100" width="44" height="80" class="cx-blue" /><use href="#cx-jet" x="178" y="26" width="90" height="44" class="cx-red" /><g class="cx-speed cx-red-s"><path d="M272 38 L306 38"/><path d="M276 48 L316 48"/><path d="M272 58 L302 58"/></g><use href="#cx-quad" x="128" y="112" width="48" height="26" class="cx-blue" /><path class="cx-trail cx-blue-s" d="M170 112 Q190 80 196 62"/><text class="cx-q" x="184" y="128">?</text><g class="cx-bubble"><rect x="56" y="34" width="92" height="28" rx="10"/><path d="M66 61 L82 61 L50 100 Z"/><path d="M67.5 61 L80.5 61" class="cx-seam"/><text x="102.0" y="54" text-anchor="middle">Too fast!</text></g><g class="cx-badge cx-badge-red"><rect x="186" y="148" width="122" height="22" rx="3"/><text x="247.0" y="163" text-anchor="middle">≈ 6 in 10 stopped</text></g></svg>
+          <figcaption><span class="cx-n">2</span><strong>Red changed the drone.</strong> Red switched to faster, higher-flying jet-powered drones. Interceptions fell to about 6 in 10.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue soldier points at a bar chart showing interception falling from 90 percent against the old drone to 60 percent against the jet drone."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier-point" x="30" y="100" width="44" height="80" class="cx-blue" /><path class="cx-axis" d="M150 160 L306 160"/><rect class="cx-bar" x="166" y="52" width="42" height="108"/><rect class="cx-bar cx-bar-red" x="244" y="88" width="42" height="72"/><text class="cx-label cx-val" x="187" y="46" text-anchor="middle">90%</text><text class="cx-label cx-val cx-red-t" x="265" y="82" text-anchor="middle">60%</text><text class="cx-label " x="187" y="174" text-anchor="middle">OLD DRONE</text><text class="cx-label " x="265" y="174" text-anchor="middle">JET DRONE</text><path class="cx-arrow" d="M212 56 Q236 50 246 76"/><path class="cx-arrowhead" d="M240 72 L247 80 L251 70"/><g class="cx-bubble"><rect x="8" y="16" width="140" height="44" rx="10"/><path d="M50 59 L66 59 L58 100 Z"/><path d="M51.5 59 L64.5 59" class="cx-seam"/><text x="78.0" y="36" text-anchor="middle">Still working vs.</text><text x="78.0" y="52" text-anchor="middle">what’s flying now?</text></g></svg>
+          <figcaption><span class="cx-n">3</span><strong>Spot the drop. Adapt fast.</strong> The old counter still works on the old drone. The danger is the lag between noticing the drop and fielding an affordable fix at scale.</figcaption>
+        </figure>
       </div>
-      <div class="callout callout--q">
-        <div class="label">Validation question</div>
-        <p>If a protection concept depends on a particular class of counter-UAS system, its useful test is not whether it defeats today’s reference drone. It is whether the concept can recognise and respond to a changed threat envelope while preserving coverage of other threats.</p>
+      <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
+      <div class="cx-take">
+        <p><span class="label">Lesson</span>A counter that beats today’s drone can fail against a modified one.</p>
+        <p><span class="label">Ask yourself</span>Can our counter-drone kit spot a changed threat and adapt, without losing cover against the others?</p>
       </div>
+      <details class="cx-full">
+        <summary>Read the full analysis</summary>
+        <dl class="meta">
+          <dt>Theatre</dt><dd>Russia–Ukraine</dd>
+          <dt>Reporting period</dt><dd>15–28 September 2026</dd>
+          <dt>Learning status</dt><dd>Preliminary observation · Medium confidence</dd>
+        </dl>
+        <table class="findings">
+          <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
+          <tbody>
+            <tr><td>Previously effective response</td><td>Ukraine developed relatively cheap interceptor drones against slower, propeller-driven attack drones. Its air force reported intercepting more than 90% of those earlier variants. <span class="cite">Source: <a href="https://www.reuters.com/business/aerospace-defense/jet-powered-russian-drones-strain-ukraines-air-defences-2026-09-22/" target="_blank" rel="noopener">Reuters, 22 Sep</a> · <a href="https://www.reuters.com/business/aerospace-defense/ukraine-races-counter-russias-jet-powered-drone-attacks-2026-09-15/" target="_blank" rel="noopener">Reuters, 15 Sep</a></span></td></tr>
+            <tr><td>Russia’s adaptation</td><td>Russia expanded use of jet-powered variants. Reuters reported that their speed and higher flight profiles reduced the effectiveness of existing interceptor drones and some mobile air-defence teams.</td></tr>
+            <tr><td>Observed performance gap</td><td>Ukraine’s air force reported about 60% interception of the newer variants. That does not mean all Ukrainian air defence is obsolete; it identifies a performance gap against a changed target set.</td></tr>
+            <tr><td>Response under development</td><td>Faster interceptors, other lower-cost weapons, and different engagement approaches. Reuters reported successful individual intercepts, alongside difficult trials and unresolved production and funding constraints. None is yet demonstrated here as a replacement at scale.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <div class="label">Preliminary observations</div>
+          <p>A countermeasure can remain effective against the threat it was built for while becoming inadequate against a modified variant. The attacker did not simply add more drones; it changed the target’s speed and flight profile enough to put a successful defensive method outside its useful engagement conditions. The critical issue is the time lag between detecting that performance drop and fielding an affordable replacement at scale.</p>
+        </div>
+        <div class="callout callout--q">
+          <div class="label">Validation question</div>
+          <p>If a protection concept depends on a particular class of counter-UAS system, its useful test is not whether it defeats today’s reference drone. It is whether the concept can recognise and respond to a changed threat envelope while preserving coverage of other threats.</p>
+        </div>
+      </details>
     </article>
 
     <!-- Manoeuvre -->
     <article class="topic">
       <div class="fn">Manoeuvre</div>
       <h3>Operation Vivaldi: restoring a window for manoeuvre</h3>
-      <dl class="meta">
-        <dt>Theatre</dt><dd>Russia–Ukraine, north of Lyman</dd>
-        <dt>Reporting period</dt><dd>15–28 September 2026</dd>
-        <dt>Learning status</dt><dd>Preliminary observation · Medium confidence</dd>
-      </dl>
-      <table class="findings">
-        <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
-        <tbody>
-          <tr><td>Operating problem</td><td>Persistent drone observation and strikes made it difficult to concentrate and move ground forces without detection.</td></tr>
-          <tr><td>What Ukraine did</td><td>Ukraine’s 3rd Army Corps reported disrupting Russian logistics and fuel supplies before and during its advance. It also described counter-drone measures and strict information security intended to reduce Russian awareness. ISW assessed that reduced fuel availability may have strained generator-powered Russian EW, improving Ukrainian drone freedom of action in support of limited mechanised advances. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-17-2026/" target="_blank" rel="noopener">ISW, 17 Sep</a></span></td></tr>
-          <tr><td>What changed on the ground</td><td>Ukraine’s corps reported clearing Russian infiltration groups and recapturing territory; Reuters could not independently verify its initial figures. ISW assessed that the operation demonstrated a limited return of tactical manoeuvre, not a general breakthrough. <span class="cite">Source: <a href="https://www.reuters.com/world/europe/ukraine-launches-offensive-push-north-donetsk-region-senior-commander-says-2026-09-15/" target="_blank" rel="noopener">Reuters, 15 Sep</a> · <a href="https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-september-20-2026" target="_blank" rel="noopener">Critical Threats, 20 Sep</a></span></td></tr>
-          <tr><td>Learning point</td><td>Striking logistics may have affected more than resupply: it may also have reduced the power available to Russian EW. That suggests a possible chain — fuel disruption → weaker EW → greater Ukrainian drone freedom → a temporary opportunity for ground movement. It is an assessed mechanism, not a proven causal account of the operation. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-17-2026/" target="_blank" rel="noopener">ISW, 17 Sep</a></span></td></tr>
-        </tbody>
-      </table>
-      <div class="callout">
-        <div class="label">Preliminary observations</div>
-        <p>The weak point in an opponent’s reconnaissance–strike system may sit in its support dependencies, not only in its sensors or drones. Disrupting those dependencies could briefly make manoeuvre possible. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-17-2026/" target="_blank" rel="noopener">ISW, 17 Sep</a></span></p>
+      <p class="cx-tag">Russia–Ukraine, north of Lyman · 15–28 Sep 2026 · Preliminary, medium confidence</p>
+      <div class="cx-strip">
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Red surveillance drone watches a Blue armoured vehicle inside its view cone, with a target reticle on the vehicle."><path class="cx-ground" d="M0 180 L320 180"/><polygon class="cx-cone cx-red-cone" points="176,40 104,180 250,180"/><use href="#cx-quad" x="150" y="16" width="52" height="28" class="cx-red" /><use href="#cx-apc" x="136" y="138" width="80" height="42" class="cx-blue" /><g class="cx-reticle"><circle cx="176" cy="156" r="26"/><path d="M176 124 L176 134 M176 178 L176 188 M144 156 L154 156 M198 156 L208 156"/></g><use href="#cx-soldier" x="18" y="100" width="44" height="80" class="cx-blue" /><g class="cx-bubble"><rect x="8" y="22" width="100" height="44" rx="10"/><path d="M34 65 L50 65 L42 100 Z"/><path d="M35.5 65 L48.5 65" class="cx-seam"/><text x="58.0" y="42" text-anchor="middle">They see</text><text x="58.0" y="58" text-anchor="middle">every move.</text></g></svg>
+          <figcaption><span class="cx-n">1</span><strong>Seen means hit.</strong> Red drones watched the ground non-stop. Blue could not mass or move without being spotted and struck.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue drone strikes a Red fuel tanker. Nearby, a Red generator’s fuel gauge reads empty and a Red jamming mast is switched off."><path class="cx-ground" d="M0 180 L320 180"/><path class="cx-trail cx-blue-s" d="M74 64 L74 118"/><use href="#cx-quad" x="50" y="40" width="48" height="26" class="cx-blue" /><use href="#cx-tanker" x="16" y="134" width="108" height="47" class="cx-red" /><use href="#cx-burst" x="50" y="114" width="44" height="44" class="cx-red" /><use href="#cx-gauge" x="180" y="96" width="50" height="32" class="cx-red" /><use href="#cx-gen" x="176" y="136" width="58" height="46" class="cx-red" /><use href="#cx-mast-off" x="252" y="96" width="48" height="84" class="cx-red" /><text class="cx-label cx-red-t" x="70" y="196" text-anchor="middle">FUEL ▼</text><text class="cx-label cx-red-t" x="205" y="196" text-anchor="middle">POWER ▼</text><text class="cx-label cx-red-t" x="276" y="196" text-anchor="middle">JAMMING ▼</text></svg>
+          <figcaption><span class="cx-n">2</span><strong>Hit the fuel.</strong> Blue struck Red’s logistics and fuel. Less fuel may have meant less power for Red’s generator-run jammers.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="Blue armoured vehicles move through a gap marked Window while Blue drones fly overhead and the Red surveillance drone is faded out."><path class="cx-ground" d="M0 180 L320 180"/><g class="cx-window"><path d="M150 36 L150 180"/><path d="M234 36 L234 180"/></g><text class="cx-label cx-blue-t" x="192" y="30" text-anchor="middle">WINDOW</text><g class="cx-faded"><use href="#cx-quad" x="30" y="16" width="52" height="28" class="cx-red" /></g><use href="#cx-quad" x="170" y="52" width="44" height="24" class="cx-blue" /><use href="#cx-quad" x="250" y="72" width="44" height="24" class="cx-blue" /><g class="cx-speed cx-blue-s"><path d="M8 150 L34 150"/><path d="M4 162 L30 162"/><path d="M126 150 L148 150"/><path d="M122 162 L144 162"/></g><use href="#cx-apc" x="36" y="138" width="80" height="42" class="cx-blue" /><use href="#cx-apc" x="158" y="138" width="80" height="42" class="cx-blue" /><g class="cx-bubble"><rect x="86" y="62" width="86" height="28" rx="10"/><path d="M100 89 L116 89 L108 138 Z"/><path d="M101.5 89 L114.5 89" class="cx-seam"/><text x="129.0" y="82" text-anchor="middle">Move now!</text></g></svg>
+          <figcaption><span class="cx-n">3</span><strong>A window opens.</strong> With Red’s jamming weaker, Blue drones flew more freely and a short window for movement opened. A limited gain, not a breakthrough.</figcaption>
+        </figure>
       </div>
-      <div class="callout callout--q">
-        <div class="label">Validation question</div>
-        <p>In a dense, connected environment, which dependencies keep an opposing surveillance-and-strike system functioning, and what evidence would indicate that its effectiveness has actually fallen?</p>
+      <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
+      <div class="cx-take">
+        <p><span class="label">Lesson</span>An enemy’s watch-and-strike system may break at its support links, like fuel and power, not just at its sensors. This link is assessed, not proven.</p>
+        <p><span class="label">Ask yourself</span>What keeps the enemy’s sensors and strike systems running, and what would show they have actually weakened?</p>
       </div>
+      <details class="cx-full">
+        <summary>Read the full analysis</summary>
+        <dl class="meta">
+          <dt>Theatre</dt><dd>Russia–Ukraine, north of Lyman</dd>
+          <dt>Reporting period</dt><dd>15–28 September 2026</dd>
+          <dt>Learning status</dt><dd>Preliminary observation · Medium confidence</dd>
+        </dl>
+        <table class="findings">
+          <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
+          <tbody>
+            <tr><td>Operating problem</td><td>Persistent drone observation and strikes made it difficult to concentrate and move ground forces without detection.</td></tr>
+            <tr><td>What Ukraine did</td><td>Ukraine’s 3rd Army Corps reported disrupting Russian logistics and fuel supplies before and during its advance. It also described counter-drone measures and strict information security intended to reduce Russian awareness. ISW assessed that reduced fuel availability may have strained generator-powered Russian EW, improving Ukrainian drone freedom of action in support of limited mechanised advances. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-17-2026/" target="_blank" rel="noopener">ISW, 17 Sep</a></span></td></tr>
+            <tr><td>What changed on the ground</td><td>Ukraine’s corps reported clearing Russian infiltration groups and recapturing territory; Reuters could not independently verify its initial figures. ISW assessed that the operation demonstrated a limited return of tactical manoeuvre, not a general breakthrough. <span class="cite">Source: <a href="https://www.reuters.com/world/europe/ukraine-launches-offensive-push-north-donetsk-region-senior-commander-says-2026-09-15/" target="_blank" rel="noopener">Reuters, 15 Sep</a> · <a href="https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-september-20-2026" target="_blank" rel="noopener">Critical Threats, 20 Sep</a></span></td></tr>
+            <tr><td>Learning point</td><td>Striking logistics may have affected more than resupply: it may also have reduced the power available to Russian EW. That suggests a possible chain — fuel disruption → weaker EW → greater Ukrainian drone freedom → a temporary opportunity for ground movement. It is an assessed mechanism, not a proven causal account of the operation. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-17-2026/" target="_blank" rel="noopener">ISW, 17 Sep</a></span></td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <div class="label">Preliminary observations</div>
+          <p>The weak point in an opponent’s reconnaissance–strike system may sit in its support dependencies, not only in its sensors or drones. Disrupting those dependencies could briefly make manoeuvre possible. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-17-2026/" target="_blank" rel="noopener">ISW, 17 Sep</a></span></p>
+        </div>
+        <div class="callout callout--q">
+          <div class="label">Validation question</div>
+          <p>In a dense, connected environment, which dependencies keep an opposing surveillance-and-strike system functioning, and what evidence would indicate that its effectiveness has actually fallen?</p>
+        </div>
+      </details>
     </article>
 
     <!-- Sustainment -->
     <article class="topic">
       <div class="fn">Sustainment</div>
       <h3>When fuel disruption affects more than mobility</h3>
-      <dl class="meta">
-        <dt>Theatre</dt><dd>Russia–Ukraine</dd>
-        <dt>Reporting period</dt><dd>15–28 September 2026</dd>
-        <dt>Function</dt><dd>Sustainment, with links to sensing, EW and manoeuvre</dd>
-        <dt>Learning status</dt><dd>Preliminary observation · Medium confidence in the reported disruption; lower confidence in its precise battlefield effects</dd>
-      </dl>
-      <table class="findings">
-        <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
-        <tbody>
-          <tr><td>What changed?</td><td>Ukraine’s 3rd Army Corps reported that strikes shut a pipeline supplying a substantial share of Russian diesel in occupied Luhansk. It said Russian forces had to move fuel by a longer tanker route. These quantities and route effects come from Ukrainian military reporting. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-22-2026/" target="_blank" rel="noopener">ISW, 22 Sep</a></span></td></tr>
-          <tr><td>Why is this different?</td><td>Ukraine’s corps said reduced fuel availability would make it harder to run generators, charge drone batteries and operate EW equipment. ISW assessed that the interdiction supported Ukrainian counteroffensive operations north of Lyman. That is a plausible fuel → electrical power → drone/EW availability → battlefield freedom of action chain, but its individual links have not all been independently measured. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-22-2026/" target="_blank" rel="noopener">ISW, 22 Sep</a></span></td></tr>
-          <tr><td>What was the countermeasure?</td><td>Russian forces reportedly shifted to road-tanker delivery. The open question is whether that substitution restores fuel reliably or creates a slower, more exposed supply chain. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-22-2026/" target="_blank" rel="noopener">ISW, 22 Sep</a></span></td></tr>
-          <tr><td>What is not proven?</td><td>We cannot conclude that fuel disruption alone caused Ukrainian advances, quantify how much Russian drone/EW activity fell, or judge how quickly Russian forces adapted.</td></tr>
-        </tbody>
-      </table>
-      <div class="callout">
-        <div class="label">Preliminary observations</div>
-        <p>Preliminary CSI observation — Explore: a fuel supply system can be a hidden dependency of the sense-and-strike system, not only of vehicles. Its disruption may reduce battlefield awareness or protection before it visibly stops manoeuvre. Conversely, shifting to tankers may preserve supply but change its cost, predictability and vulnerability.</p>
+      <p class="cx-tag">Russia–Ukraine · 15–28 Sep 2026 · Preliminary, medium confidence</p>
+      <div class="cx-strip">
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue drone strike bursts a Red diesel pipeline, with fuel spilling out."><path class="cx-ground" d="M0 180 L320 180"/><text class="cx-label cx-red-t" x="14" y="112" text-anchor="start">DIESEL PIPELINE</text><g class="cx-pipe"><rect x="-4" y="120" width="328" height="18"/><path d="M40 118 L40 140 M100 118 L100 140 M220 118 L220 140 M280 118 L280 140"/></g><path class="cx-trail cx-blue-s" d="M226 56 Q200 80 176 112"/><use href="#cx-quad" x="210" y="30" width="48" height="26" class="cx-blue" /><use href="#cx-burst" x="128" y="96" width="64" height="64" class="cx-red" /><g class="cx-drop"><path d="M150 164 q-5 8 0 11 q5 -3 0 -11 Z"/><path d="M172 170 q-5 8 0 11 q5 -3 0 -11 Z"/><path d="M160 152 q-4 6 0 9 q4 -3 0 -9 Z"/></g></svg>
+          <figcaption><span class="cx-n">1</span><strong>Pipeline cut.</strong> Blue says its strikes shut a pipeline carrying much of Red’s diesel in the area.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Red generator with its fuel gauge on empty, a nearly flat drone battery, and a Red jamming mast switched off."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-gauge" x="36" y="74" width="56" height="36" class="cx-red" /><use href="#cx-gen" x="28" y="118" width="74" height="60" class="cx-red" /><use href="#cx-battery" x="128" y="138" width="66" height="33" class="cx-red" /><use href="#cx-mast-off" x="240" y="92" width="50" height="88" class="cx-red" /><text class="cx-label cx-red-t" x="65" y="196" text-anchor="middle">GENERATOR</text><text class="cx-label cx-red-t" x="160" y="196" text-anchor="middle">DRONE BATTERY</text><text class="cx-label cx-red-t" x="265" y="196" text-anchor="middle">JAMMER</text></svg>
+          <figcaption><span class="cx-n">2</span><strong>No fuel, no power.</strong> Less diesel means fewer running generators: drone batteries go uncharged and jammers go quiet.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Red fuel tanker drives along a long winding road while a Blue drone watches it from above. A clock shows the delay."><path class="cx-road" d="M-6 176 C 60 176, 90 130, 160 140 S 270 120, 330 104"/><path class="cx-road-line" d="M-6 176 C 60 176, 90 130, 160 140 S 270 120, 330 104"/><polygon class="cx-cone cx-blue-cone" points="262,40 176,146 250,120"/><use href="#cx-quad" x="240" y="16" width="48" height="26" class="cx-blue" /><use href="#cx-tanker" x="150" y="100" width="96" height="42" class="cx-red" /><g class="cx-clock"><circle cx="72" cy="70" r="20"/><path d="M72 58 L72 70 L82 76"/></g><text class="cx-label " x="72" y="110" text-anchor="middle">LONGER ROUTE</text></svg>
+          <figcaption><span class="cx-n">3</span><strong>The workaround.</strong> Red switched to road tankers. Fuel still arrives, but on a longer, slower and more exposed route.</figcaption>
+        </figure>
       </div>
-      <div class="callout callout--q">
-        <div class="label">Validation question</div>
-        <p>Which critical sensing, EW, communications and support functions depend on fuel-powered electricity, and how long could they operate through a disruption?</p>
+      <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
+      <div class="cx-take">
+        <p><span class="label">Lesson</span>Fuel powers sensors, jammers and comms, not just vehicles. Cutting it can blind a force before it stops it moving.</p>
+        <p><span class="label">Ask yourself</span>Which of our sensing, EW and comms kit runs on fuel-powered electricity, and how long could it last through a disruption?</p>
       </div>
+      <details class="cx-full">
+        <summary>Read the full analysis</summary>
+        <dl class="meta">
+          <dt>Theatre</dt><dd>Russia–Ukraine</dd>
+          <dt>Reporting period</dt><dd>15–28 September 2026</dd>
+          <dt>Function</dt><dd>Sustainment, with links to sensing, EW and manoeuvre</dd>
+          <dt>Learning status</dt><dd>Preliminary observation · Medium confidence in the reported disruption; lower confidence in its precise battlefield effects</dd>
+        </dl>
+        <table class="findings">
+          <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
+          <tbody>
+            <tr><td>What changed?</td><td>Ukraine’s 3rd Army Corps reported that strikes shut a pipeline supplying a substantial share of Russian diesel in occupied Luhansk. It said Russian forces had to move fuel by a longer tanker route. These quantities and route effects come from Ukrainian military reporting. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-22-2026/" target="_blank" rel="noopener">ISW, 22 Sep</a></span></td></tr>
+            <tr><td>Why is this different?</td><td>Ukraine’s corps said reduced fuel availability would make it harder to run generators, charge drone batteries and operate EW equipment. ISW assessed that the interdiction supported Ukrainian counteroffensive operations north of Lyman. That is a plausible fuel → electrical power → drone/EW availability → battlefield freedom of action chain, but its individual links have not all been independently measured. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-22-2026/" target="_blank" rel="noopener">ISW, 22 Sep</a></span></td></tr>
+            <tr><td>What was the countermeasure?</td><td>Russian forces reportedly shifted to road-tanker delivery. The open question is whether that substitution restores fuel reliably or creates a slower, more exposed supply chain. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-22-2026/" target="_blank" rel="noopener">ISW, 22 Sep</a></span></td></tr>
+            <tr><td>What is not proven?</td><td>We cannot conclude that fuel disruption alone caused Ukrainian advances, quantify how much Russian drone/EW activity fell, or judge how quickly Russian forces adapted.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <div class="label">Preliminary observations</div>
+          <p>Preliminary CSI observation — Explore: a fuel supply system can be a hidden dependency of the sense-and-strike system, not only of vehicles. Its disruption may reduce battlefield awareness or protection before it visibly stops manoeuvre. Conversely, shifting to tankers may preserve supply but change its cost, predictability and vulnerability.</p>
+        </div>
+        <div class="callout callout--q">
+          <div class="label">Validation question</div>
+          <p>Which critical sensing, EW, communications and support functions depend on fuel-powered electricity, and how long could they operate through a disruption?</p>
+        </div>
+      </details>
     </article>
   </section>
 
@@ -813,6 +1037,11 @@
       list.hidden = false;
     });
 })();
+</script>
+<script>
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('details.cx-full').forEach(function (d) { d.open = true; });
+  });
 </script>
 </body>
 </html>
