@@ -125,7 +125,17 @@
   .cx-key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin: 0 0.35rem 0 0.15rem; vertical-align: -1px; }
   .cx-key-blue { background: var(--blue); }
   .cx-key-red { background: var(--accent); margin-left: 0.6rem; }
-  .cx-tag { font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.06em; color: var(--ink-3); margin: -0.4rem 0 1rem; }
+  .cx-tag { font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.06em; color: var(--ink-3); margin: -0.4rem 0 0.5rem; }
+  .cx-conf { font-size: 0.84rem; line-height: 1.5; color: var(--ink-2); margin-bottom: 1rem; }
+  .cx-chip { display: inline-block; margin-right: 0.35rem; padding: 0.15rem 0.5rem; border: 1px solid var(--ink); border-radius: 999px; font: 600 0.72rem/1.3 var(--sans); color: var(--ink); text-decoration: none; }
+  .cx-chip:hover { background: var(--panel); }
+  .cx-chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cx-scale { border: 1px solid var(--rule); background: #ffffff; padding: 0.85rem 1rem; margin: -1rem 0 2.25rem; scroll-margin-top: 1rem; }
+  .cx-scale .label { margin-bottom: 0.5rem; }
+  .cx-scale dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.35rem 1rem; font-size: 0.84rem; line-height: 1.45; }
+  .cx-scale dt { font-weight: 700; }
+  .cx-scale dd { margin: 0; color: var(--ink-2); }
+  @media (max-width: 480px) { .cx-scale dl { grid-template-columns: 1fr; gap: 0; } .cx-scale dd { margin-bottom: 0.45rem; } }
   .cx-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
   .cx-panel { margin: 0; border: 2px solid var(--ink); background: #ffffff; display: flex; flex-direction: column; }
   .cx-panel svg { display: block; width: 100%; height: auto; border-bottom: 2px solid var(--ink); }
@@ -393,7 +403,7 @@
     <div class="sec-head">
       <span class="sec-num">01</span>
       <h2>Conflicts Monitored</h2>
-      <span class="sec-sub">14 conflicts · status as of 28 September 2026</span>
+      <span class="sec-sub">15 conflicts · status as of 28 September 2026</span>
     </div>
 
     <div class="map-bar">
@@ -477,9 +487,18 @@
     <div class="sec-head">
       <span class="sec-num">02</span>
       <h2>Key Learning Topics</h2>
-      <span class="sec-sub">Sense &amp; Strike · Manoeuvre · Sustainment</span>
+      <span class="sec-sub">Manoeuvre · Sense &amp; Strike · Sustainment</span>
     </div>
     <p class="cx-intro"><span class="cx-key cx-key-blue"></span>Blue = the side the lesson is drawn from <span class="cx-key cx-key-red"></span>Red = opposing force. Based on Russia–Ukraine reporting. Open the full analysis under each strip for details and sources.</p>
+    <div class="cx-scale" id="confidence">
+      <p class="label">How to read the ratings</p>
+      <dl>
+        <dt>Preliminary</dt><dd>An early observation from this fortnight. It may change as more reporting comes in.</dd>
+        <dt>High confidence</dt><dd>Several independent, reliable sources agree.</dd>
+        <dt>Medium confidence</dt><dd>Credible reporting, but key facts come from one side or have not been independently verified.</dd>
+        <dt>Low confidence</dt><dd>Thin or single-source reporting. Treat it as a possibility, not a finding.</dd>
+      </dl>
+    </div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="cx-soldier" viewBox="0 0 40 72">
@@ -557,62 +576,12 @@
   </defs>
 </svg>
 
-    <!-- Sense & Strike -->
-    <article class="topic">
-      <div class="fn">Sense &amp; Strike</div>
-      <h3>Counter-UAS measures outpaced by jet-powered attack drones</h3>
-      <p class="cx-tag">Russia–Ukraine · 15–28 Sep 2026 · Preliminary, medium confidence</p>
-      <div class="cx-strip">
-        <figure class="cx-panel">
-          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue soldier launches an interceptor drone that destroys a slow propeller-driven Red drone. About 9 in 10 were stopped."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier" x="22" y="100" width="44" height="80" class="cx-blue" /><path class="cx-trail cx-blue-s" d="M58 112 Q100 60 150 80"/><use href="#cx-prop" x="214" y="50" width="66" height="40" class="cx-red" /><use href="#cx-quad" x="150" y="66" width="48" height="26" class="cx-blue" /><use href="#cx-burst" x="190" y="50" width="36" height="36" class="cx-red" /><g class="cx-bubble"><rect x="64" y="34" width="78" height="28" rx="10"/><path d="M74 61 L90 61 L50 100 Z"/><path d="M75.5 61 L88.5 61" class="cx-seam"/><text x="103.0" y="54" text-anchor="middle">Got it!</text></g><g class="cx-badge "><rect x="186" y="148" width="122" height="22" rx="3"/><text x="247.0" y="163" text-anchor="middle">≈ 9 in 10 stopped</text></g></svg>
-          <figcaption><span class="cx-n">1</span><strong>It worked.</strong> Cheap Blue interceptor drones stopped about 9 in 10 slow, propeller-driven Red attack drones.</figcaption>
-        </figure>
-        <figure class="cx-panel">
-          <svg viewBox="0 0 320 200" role="img" aria-label="A fast Red jet drone flies high over a Blue interceptor drone that cannot keep up. About 6 in 10 were stopped."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier" x="22" y="100" width="44" height="80" class="cx-blue" /><use href="#cx-jet" x="178" y="26" width="90" height="44" class="cx-red" /><g class="cx-speed cx-red-s"><path d="M272 38 L306 38"/><path d="M276 48 L316 48"/><path d="M272 58 L302 58"/></g><use href="#cx-quad" x="128" y="112" width="48" height="26" class="cx-blue" /><path class="cx-trail cx-blue-s" d="M170 112 Q190 80 196 62"/><text class="cx-q" x="184" y="128">?</text><g class="cx-bubble"><rect x="56" y="34" width="92" height="28" rx="10"/><path d="M66 61 L82 61 L50 100 Z"/><path d="M67.5 61 L80.5 61" class="cx-seam"/><text x="102.0" y="54" text-anchor="middle">Too fast!</text></g><g class="cx-badge cx-badge-red"><rect x="186" y="148" width="122" height="22" rx="3"/><text x="247.0" y="163" text-anchor="middle">≈ 6 in 10 stopped</text></g></svg>
-          <figcaption><span class="cx-n">2</span><strong>Red changed the drone.</strong> Red switched to faster, higher-flying jet-powered drones. Interceptions fell to about 6 in 10.</figcaption>
-        </figure>
-        <figure class="cx-panel">
-          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue soldier points at a bar chart showing interception falling from 90 percent against the old drone to 60 percent against the jet drone."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier-point" x="30" y="100" width="44" height="80" class="cx-blue" /><path class="cx-axis" d="M150 160 L306 160"/><rect class="cx-bar" x="166" y="52" width="42" height="108"/><rect class="cx-bar cx-bar-red" x="244" y="88" width="42" height="72"/><text class="cx-label cx-val" x="187" y="46" text-anchor="middle">90%</text><text class="cx-label cx-val cx-red-t" x="265" y="82" text-anchor="middle">60%</text><text class="cx-label " x="187" y="174" text-anchor="middle">OLD DRONE</text><text class="cx-label " x="265" y="174" text-anchor="middle">JET DRONE</text><path class="cx-arrow" d="M212 56 Q236 50 246 76"/><path class="cx-arrowhead" d="M240 72 L247 80 L251 70"/><g class="cx-bubble"><rect x="8" y="16" width="140" height="44" rx="10"/><path d="M50 59 L66 59 L58 100 Z"/><path d="M51.5 59 L64.5 59" class="cx-seam"/><text x="78.0" y="36" text-anchor="middle">Still working vs.</text><text x="78.0" y="52" text-anchor="middle">what’s flying now?</text></g></svg>
-          <figcaption><span class="cx-n">3</span><strong>Spot the drop. Adapt fast.</strong> The old counter still works on the old drone. The danger is the lag between noticing the drop and fielding an affordable fix at scale.</figcaption>
-        </figure>
-      </div>
-      <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
-      <div class="cx-take">
-        <p><span class="label">Lesson</span>A counter that beats today’s drone can fail against a modified one.</p>
-        <p><span class="label">Ask yourself</span>Can our counter-drone kit spot a changed threat and adapt, without losing cover against the others?</p>
-      </div>
-      <details class="cx-full">
-        <summary>Read the full analysis</summary>
-        <dl class="meta">
-          <dt>Theatre</dt><dd>Russia–Ukraine</dd>
-          <dt>Reporting period</dt><dd>15–28 September 2026</dd>
-          <dt>Learning status</dt><dd>Preliminary observation · Medium confidence</dd>
-        </dl>
-        <table class="findings">
-          <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
-          <tbody>
-            <tr><td>Previously effective response</td><td>Ukraine developed relatively cheap interceptor drones against slower, propeller-driven attack drones. Its air force reported intercepting more than 90% of those earlier variants. <span class="cite">Source: <a href="https://www.reuters.com/business/aerospace-defense/jet-powered-russian-drones-strain-ukraines-air-defences-2026-09-22/" target="_blank" rel="noopener">Reuters, 22 Sep</a> · <a href="https://www.reuters.com/business/aerospace-defense/ukraine-races-counter-russias-jet-powered-drone-attacks-2026-09-15/" target="_blank" rel="noopener">Reuters, 15 Sep</a></span></td></tr>
-            <tr><td>Russia’s adaptation</td><td>Russia expanded use of jet-powered variants. Reuters reported that their speed and higher flight profiles reduced the effectiveness of existing interceptor drones and some mobile air-defence teams.</td></tr>
-            <tr><td>Observed performance gap</td><td>Ukraine’s air force reported about 60% interception of the newer variants. That does not mean all Ukrainian air defence is obsolete; it identifies a performance gap against a changed target set.</td></tr>
-            <tr><td>Response under development</td><td>Faster interceptors, other lower-cost weapons, and different engagement approaches. Reuters reported successful individual intercepts, alongside difficult trials and unresolved production and funding constraints. None is yet demonstrated here as a replacement at scale.</td></tr>
-          </tbody>
-        </table>
-        <div class="callout">
-          <div class="label">Preliminary observations</div>
-          <p>A countermeasure can remain effective against the threat it was built for while becoming inadequate against a modified variant. The attacker did not simply add more drones; it changed the target’s speed and flight profile enough to put a successful defensive method outside its useful engagement conditions. The critical issue is the time lag between detecting that performance drop and fielding an affordable replacement at scale.</p>
-        </div>
-        <div class="callout callout--q">
-          <div class="label">Validation question</div>
-          <p>If a protection concept depends on a particular class of counter-UAS system, its useful test is not whether it defeats today’s reference drone. It is whether the concept can recognise and respond to a changed threat envelope while preserving coverage of other threats.</p>
-        </div>
-      </details>
-    </article>
-
     <!-- Manoeuvre -->
     <article class="topic">
       <div class="fn">Manoeuvre</div>
       <h3>Operation Vivaldi: restoring a window for manoeuvre</h3>
-      <p class="cx-tag">Russia–Ukraine, north of Lyman · 15–28 Sep 2026 · Preliminary, medium confidence</p>
+      <p class="cx-tag">Russia–Ukraine, north of Lyman · 15–28 Sep 2026</p>
+      <p class="cx-conf"><a class="cx-chip" href="#confidence">Preliminary · Medium confidence</a> Ukraine’s 3rd Army Corps reported the gains, but Reuters could not verify them, and the fuel-to-jamming link is ISW’s assessment.</p>
       <div class="cx-strip">
         <figure class="cx-panel">
           <svg viewBox="0 0 320 200" role="img" aria-label="A Red surveillance drone watches a Blue armoured vehicle inside its view cone, with a target reticle on the vehicle."><path class="cx-ground" d="M0 180 L320 180"/><polygon class="cx-cone cx-red-cone" points="176,40 104,180 250,180"/><use href="#cx-quad" x="150" y="16" width="52" height="28" class="cx-red" /><use href="#cx-apc" x="136" y="138" width="80" height="42" class="cx-blue" /><g class="cx-reticle"><circle cx="176" cy="156" r="26"/><path d="M176 124 L176 134 M176 178 L176 188 M144 156 L154 156 M198 156 L208 156"/></g><use href="#cx-soldier" x="18" y="100" width="44" height="80" class="cx-blue" /><g class="cx-bubble"><rect x="8" y="22" width="100" height="44" rx="10"/><path d="M34 65 L50 65 L42 100 Z"/><path d="M35.5 65 L48.5 65" class="cx-seam"/><text x="58.0" y="42" text-anchor="middle">They see</text><text x="58.0" y="58" text-anchor="middle">every move.</text></g></svg>
@@ -630,7 +599,7 @@
       <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
       <div class="cx-take">
         <p><span class="label">Lesson</span>An enemy’s watch-and-strike system may break at its support links, like fuel and power, not just at its sensors. This link is assessed, not proven.</p>
-        <p><span class="label">Ask yourself</span>What keeps the enemy’s sensors and strike systems running, and what would show they have actually weakened?</p>
+        <p><span class="label">Questions to ask</span>What keeps the enemy’s sensors and strike systems running, and what would show they have actually weakened?</p>
       </div>
       <details class="cx-full">
         <summary>Read the full analysis</summary>
@@ -659,11 +628,64 @@
       </details>
     </article>
 
+    <!-- Sense & Strike -->
+    <article class="topic">
+      <div class="fn">Sense &amp; Strike</div>
+      <h3>Counter-UAS measures outpaced by jet-powered attack drones</h3>
+      <p class="cx-tag">Russia–Ukraine · 15–28 Sep 2026</p>
+      <p class="cx-conf"><a class="cx-chip" href="#confidence">Preliminary · Medium confidence</a> The interception rates come from Ukraine’s air force, reported by Reuters, and have not been independently verified.</p>
+      <div class="cx-strip">
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue soldier launches an interceptor drone that destroys a slow propeller-driven Red drone. About 9 in 10 were stopped."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier" x="22" y="100" width="44" height="80" class="cx-blue" /><path class="cx-trail cx-blue-s" d="M58 112 Q100 60 150 80"/><use href="#cx-prop" x="214" y="50" width="66" height="40" class="cx-red" /><use href="#cx-quad" x="150" y="66" width="48" height="26" class="cx-blue" /><use href="#cx-burst" x="190" y="50" width="36" height="36" class="cx-red" /><g class="cx-bubble"><rect x="64" y="34" width="78" height="28" rx="10"/><path d="M74 61 L90 61 L50 100 Z"/><path d="M75.5 61 L88.5 61" class="cx-seam"/><text x="103.0" y="54" text-anchor="middle">Got it!</text></g><g class="cx-badge "><rect x="186" y="148" width="122" height="22" rx="3"/><text x="247.0" y="163" text-anchor="middle">≈ 9 in 10 stopped</text></g></svg>
+          <figcaption><span class="cx-n">1</span><strong>It worked.</strong> Cheap Blue interceptor drones stopped about 9 in 10 slow, propeller-driven Red attack drones.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A fast Red jet drone flies high over a Blue interceptor drone that cannot keep up. About 6 in 10 were stopped."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier" x="22" y="100" width="44" height="80" class="cx-blue" /><use href="#cx-jet" x="178" y="26" width="90" height="44" class="cx-red" /><g class="cx-speed cx-red-s"><path d="M272 38 L306 38"/><path d="M276 48 L316 48"/><path d="M272 58 L302 58"/></g><use href="#cx-quad" x="128" y="112" width="48" height="26" class="cx-blue" /><path class="cx-trail cx-blue-s" d="M170 112 Q190 80 196 62"/><text class="cx-q" x="184" y="128">?</text><g class="cx-bubble"><rect x="56" y="34" width="92" height="28" rx="10"/><path d="M66 61 L82 61 L50 100 Z"/><path d="M67.5 61 L80.5 61" class="cx-seam"/><text x="102.0" y="54" text-anchor="middle">Too fast!</text></g><g class="cx-badge cx-badge-red"><rect x="186" y="148" width="122" height="22" rx="3"/><text x="247.0" y="163" text-anchor="middle">≈ 6 in 10 stopped</text></g></svg>
+          <figcaption><span class="cx-n">2</span><strong>Red changed the drone.</strong> Red switched to faster, higher-flying jet-powered drones. Interceptions fell to about 6 in 10.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue soldier points at a bar chart showing interception falling from 90 percent against the old drone to 60 percent against the jet drone."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier-point" x="30" y="100" width="44" height="80" class="cx-blue" /><path class="cx-axis" d="M150 160 L306 160"/><rect class="cx-bar" x="166" y="52" width="42" height="108"/><rect class="cx-bar cx-bar-red" x="244" y="88" width="42" height="72"/><text class="cx-label cx-val" x="187" y="46" text-anchor="middle">90%</text><text class="cx-label cx-val cx-red-t" x="265" y="82" text-anchor="middle">60%</text><text class="cx-label " x="187" y="174" text-anchor="middle">OLD DRONE</text><text class="cx-label " x="265" y="174" text-anchor="middle">JET DRONE</text><path class="cx-arrow" d="M212 56 Q236 50 246 76"/><path class="cx-arrowhead" d="M240 72 L247 80 L251 70"/><g class="cx-bubble"><rect x="8" y="16" width="140" height="44" rx="10"/><path d="M50 59 L66 59 L58 100 Z"/><path d="M51.5 59 L64.5 59" class="cx-seam"/><text x="78.0" y="36" text-anchor="middle">Still working vs.</text><text x="78.0" y="52" text-anchor="middle">what’s flying now?</text></g></svg>
+          <figcaption><span class="cx-n">3</span><strong>Spot the drop. Adapt fast.</strong> The old counter still works on the old drone. The danger is the lag between noticing the drop and fielding an affordable fix at scale.</figcaption>
+        </figure>
+      </div>
+      <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
+      <div class="cx-take">
+        <p><span class="label">Lesson</span>A counter that beats today’s drone can fail against a modified one.</p>
+        <p><span class="label">Questions to ask</span>Can our counter-drone kit spot a changed threat and adapt, without losing cover against the others?</p>
+      </div>
+      <details class="cx-full">
+        <summary>Read the full analysis</summary>
+        <dl class="meta">
+          <dt>Theatre</dt><dd>Russia–Ukraine</dd>
+          <dt>Reporting period</dt><dd>15–28 September 2026</dd>
+          <dt>Learning status</dt><dd>Preliminary observation · Medium confidence</dd>
+        </dl>
+        <table class="findings">
+          <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
+          <tbody>
+            <tr><td>Previously effective response</td><td>Ukraine developed relatively cheap interceptor drones against slower, propeller-driven attack drones. Its air force reported intercepting more than 90% of those earlier variants. <span class="cite">Source: <a href="https://www.reuters.com/business/aerospace-defense/jet-powered-russian-drones-strain-ukraines-air-defences-2026-09-22/" target="_blank" rel="noopener">Reuters, 22 Sep</a> · <a href="https://www.reuters.com/business/aerospace-defense/ukraine-races-counter-russias-jet-powered-drone-attacks-2026-09-15/" target="_blank" rel="noopener">Reuters, 15 Sep</a></span></td></tr>
+            <tr><td>Russia’s adaptation</td><td>Russia expanded use of jet-powered variants. Reuters reported that their speed and higher flight profiles reduced the effectiveness of existing interceptor drones and some mobile air-defence teams.</td></tr>
+            <tr><td>Observed performance gap</td><td>Ukraine’s air force reported about 60% interception of the newer variants. That does not mean all Ukrainian air defence is obsolete; it identifies a performance gap against a changed target set.</td></tr>
+            <tr><td>Response under development</td><td>Faster interceptors, other lower-cost weapons, and different engagement approaches. Reuters reported successful individual intercepts, alongside difficult trials and unresolved production and funding constraints. None is yet demonstrated here as a replacement at scale.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <div class="label">Preliminary observations</div>
+          <p>A countermeasure can remain effective against the threat it was built for while becoming inadequate against a modified variant. The attacker did not simply add more drones; it changed the target’s speed and flight profile enough to put a successful defensive method outside its useful engagement conditions. The critical issue is the time lag between detecting that performance drop and fielding an affordable replacement at scale.</p>
+        </div>
+        <div class="callout callout--q">
+          <div class="label">Validation question</div>
+          <p>If a protection concept depends on a particular class of counter-UAS system, its useful test is not whether it defeats today’s reference drone. It is whether the concept can recognise and respond to a changed threat envelope while preserving coverage of other threats.</p>
+        </div>
+      </details>
+    </article>
+
     <!-- Sustainment -->
     <article class="topic">
       <div class="fn">Sustainment</div>
       <h3>When fuel disruption affects more than mobility</h3>
-      <p class="cx-tag">Russia–Ukraine · 15–28 Sep 2026 · Preliminary, medium confidence</p>
+      <p class="cx-tag">Russia–Ukraine · 15–28 Sep 2026</p>
+      <p class="cx-conf"><a class="cx-chip" href="#confidence">Preliminary · Medium confidence</a> Medium for the pipeline shutdown, which Ukraine’s 3rd Army Corps reported. Lower for its effect on Russian drones and jamming, which has not been measured.</p>
       <div class="cx-strip">
         <figure class="cx-panel">
           <svg viewBox="0 0 320 200" role="img" aria-label="A Blue drone strike bursts a Red diesel pipeline, with fuel spilling out."><path class="cx-ground" d="M0 180 L320 180"/><text class="cx-label cx-red-t" x="14" y="112" text-anchor="start">DIESEL PIPELINE</text><g class="cx-pipe"><rect x="-4" y="120" width="328" height="18"/><path d="M40 118 L40 140 M100 118 L100 140 M220 118 L220 140 M280 118 L280 140"/></g><path class="cx-trail cx-blue-s" d="M226 56 Q200 80 176 112"/><use href="#cx-quad" x="210" y="30" width="48" height="26" class="cx-blue" /><use href="#cx-burst" x="128" y="96" width="64" height="64" class="cx-red" /><g class="cx-drop"><path d="M150 164 q-5 8 0 11 q5 -3 0 -11 Z"/><path d="M172 170 q-5 8 0 11 q5 -3 0 -11 Z"/><path d="M160 152 q-4 6 0 9 q4 -3 0 -9 Z"/></g></svg>
@@ -681,7 +703,7 @@
       <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
       <div class="cx-take">
         <p><span class="label">Lesson</span>Fuel powers sensors, jammers and comms, not just vehicles. Cutting it can blind a force before it stops it moving.</p>
-        <p><span class="label">Ask yourself</span>Which of our sensing, EW and comms kit runs on fuel-powered electricity, and how long could it last through a disruption?</p>
+        <p><span class="label">Questions to ask</span>Which of our sensing, EW and comms kit runs on fuel-powered electricity, and how long could it last through a disruption?</p>
       </div>
       <details class="cx-full">
         <summary>Read the full analysis</summary>
@@ -769,6 +791,9 @@
       latest: "The junta has escalated aerial bombing campaigns, notably striking a crowded market in Rakhine State, causing massive civilian casualties." },
     { code: 'SDN', name: 'Sudanese civil war', status: 'watch', tier: 2, at: [29.5, 14.5], lab: 'l', shade: ['Sudan'],
       latest: "Catastrophic levels of displacement and food insecurity persist as fighting between the SAF and RSF ravages the Kordofan and Darfur regions." },
+    { code: 'RUS-EUR', name: 'Russian grey-zone activity against Europe', status: 'watch', tier: 2, at: [19.5, 57.0], lab: 't', zone: { at: [19.5, 57.0], r: 6 },
+      latest: "Estonia said on 29 September that Russian special services ordered an August arson attack on defence firm Milrem Robotics. It follows Germany’s 1 September attribution of an explosive drone attack at Leipzig/Halle Airport to Russia, as drone incursions, sabotage and threats to undersea infrastructure continue across Europe.",
+      src: [["Euronews, 29 Sep", "https://www.euronews.com/2026/09/29/estonia-slams-russian-sabotage-after-arson-attack-on-defence-company-milrem-robotics"], ["Wikipedia (Leipzig incidents)", "https://en.wikipedia.org/wiki/2026_Leipzig_Airport_drone_incidents"]] },
     { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 1, at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'],
       phase: "Active regional spillover and diplomatic containment",
       latest: "Houthi control and Saudi-focused pressure keep the Red Sea/Yemen strand volatile, while Oman-mediated contacts and a Saudi truce proposal remain unresolved. Iraq approaches the 30 September coalition-withdrawal deadline without a matching militia-disarmament settlement." }
@@ -830,7 +855,7 @@
     svg = d3.select(frame).append('svg')
       .attr('viewBox', '0 0 ' + W + ' ' + H)
       .attr('role', 'img')
-      .attr('aria-label', 'World map of the 14 conflicts CSI monitors, marked by status. The list below the map gives the same information.');
+      .attr('aria-label', 'World map of the 15 conflicts CSI monitors, marked by status. The list below the map gives the same information.');
 
     pattern = svg.append('defs').append('pattern')
       .attr('id', 'm-hatch').attr('patternUnits', 'userSpaceOnUse').attr('width', 5).attr('height', 5);
