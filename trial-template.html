@@ -340,6 +340,8 @@
   .md-latest { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.3rem; }
   .md-latest .label, .md-phase .label { display: block; margin-bottom: 0.15rem; }
   .md-latest .label, .md-phase .label { margin-right: 0.4rem; }
+  .md-sub { margin-top: 0.85rem; padding-top: 0.75rem; border-top: 1px dashed var(--rule); }
+  .md-sub h4 { margin: 0 0 0.25rem; font-size: 0.92rem; font-weight: 700; }
   .md-src { font-size: 0.78rem; color: var(--ink-3); margin-bottom: 0.4rem; }
   .md-src a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
   .md-phase { font-size: 0.88rem; color: var(--ink-2); margin-bottom: 0.6rem; }
@@ -757,6 +759,8 @@
      shade  : countries shaded in the conflict's status colour (world-atlas names)
      phase  : optional phase of the conflict, shown when the conflict is selected
      latest : latest development shown when the conflict is selected (any length)
+     src    : optional [[label, url], ...] sources for the latest development
+     sub    : optional sub-section { title, text, src } shown under the latest development
      src    : optional [[label, url], ...] sources for the latest line
      ================================================================ */
   var CONFLICTS = [
@@ -791,9 +795,11 @@
       latest: "The junta has escalated aerial bombing campaigns, notably striking a crowded market in Rakhine State, causing massive civilian casualties." },
     { code: 'SDN', name: 'Sudanese civil war', status: 'watch', tier: 2, at: [29.5, 14.5], lab: 'l', shade: ['Sudan'],
       latest: "Catastrophic levels of displacement and food insecurity persist as fighting between the SAF and RSF ravages the Kordofan and Darfur regions." },
-    { code: 'RUS-EUR', name: 'Russian grey-zone activity against Europe', status: 'watch', tier: 2, at: [19.5, 57.0], lab: 't', zone: { at: [19.5, 57.0], r: 6 },
-      latest: "Estonia said on 29 September that Russian special services ordered an August arson attack on defence firm Milrem Robotics. It follows Germany’s 1 September attribution of an explosive drone attack at Leipzig/Halle Airport to Russia, as drone incursions, sabotage and threats to undersea infrastructure continue across Europe.",
-      src: [["Euronews, 29 Sep", "https://www.euronews.com/2026/09/29/estonia-slams-russian-sabotage-after-arson-attack-on-defence-company-milrem-robotics"], ["Wikipedia (Leipzig incidents)", "https://en.wikipedia.org/wiki/2026_Leipzig_Airport_drone_incidents"]] },
+    { code: 'RUS-EUR', name: 'Russia–Europe tensions', status: 'watch', tier: 2, at: [19.5, 57.0], lab: 't', zone: { at: [19.5, 57.0], r: 6 },
+      latest: "Russia sent NATO a letter threatening to use its entire arsenal, including nuclear weapons, if the alliance tried to cut off Kaliningrad. On 30 September NATO Secretary General Mark Rutte said there is no immediate threat to NATO territory and called the warning a distraction from Russia’s struggles in Ukraine.",
+      src: [["Euronews, 30 Sep", "https://www.euronews.com/2026/09/30/there-is-no-immediate-threat-to-nato-territory-natos-rutte-tells-euronews"]],
+      sub: { title: 'Grey-zone activity', text: "Estonia said on 29 September that Russian special services ordered an August arson attack on defence firm Milrem Robotics. It follows Germany’s 1 September attribution of an explosive drone attack at Leipzig/Halle Airport to Russia, as drone incursions, sabotage and threats to undersea infrastructure continue across Europe.",
+             src: [["Euronews, 29 Sep", "https://www.euronews.com/2026/09/29/estonia-slams-russian-sabotage-after-arson-attack-on-defence-company-milrem-robotics"], ["Wikipedia (Leipzig incidents)", "https://en.wikipedia.org/wiki/2026_Leipzig_Airport_drone_incidents"]] } },
     { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 1, at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'],
       phase: "Active regional spillover and diplomatic containment",
       latest: "Houthi control and Saudi-focused pressure keep the Red Sea/Yemen strand volatile, while Oman-mediated contacts and a Saudi truce proposal remain unresolved. Iraq approaches the 30 September coalition-withdrawal deadline without a matching militia-disarmament settlement." }
@@ -981,6 +987,13 @@
     });
   }
 
+  function sources(list) {
+    if (!list || !list.length) return '';
+    return '<p class="md-src">Source: ' + list.map(function (x) {
+      return '<a href="' + x[1] + '" target="_blank" rel="noopener">' + x[0] + '</a>';
+    }).join(' · ') + '</p>';
+  }
+
   function renderDetail() {
     var c = byCode(state.hover || state.selected);
     if (!c) {
@@ -997,10 +1010,9 @@
     if (c.latest) {
       body += '<p class="md-latest"><span class="label">Latest development</span>' + c.latest + '</p>';
     }
-    if (c.src && c.src.length) {
-      body += '<p class="md-src">Source: ' + c.src.map(function (x) {
-        return '<a href="' + x[1] + '" target="_blank" rel="noopener">' + x[0] + '</a>';
-      }).join(' · ') + '</p>';
+    body += sources(c.src);
+    if (c.sub) {
+      body += '<div class="md-sub"><h4>' + c.sub.title + '</h4><p class="md-latest">' + c.sub.text + '</p>' + sources(c.sub.src) + '</div>';
     }
     detail.innerHTML = '<div class="md-head"><span class="md-swatch s-' + c.status + '"></span><code>' + c.code + '</code><h3>' + c.name + '</h3></div>' +
                        '<p class="md-meta">' + bits.join(' · ') + '</p>' + body;
