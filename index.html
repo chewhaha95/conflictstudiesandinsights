@@ -380,6 +380,9 @@
   .ft-block .label { margin-bottom: 0.5rem; }
   .ft-block p { font-family: var(--sans); font-size: 0.8rem; line-height: 1.6; color: var(--ink-2); max-width: 40rem; margin-bottom: 0.5rem; }
   footer details { margin-bottom: 0.35rem; }
+  footer .ft-archive > summary { font-weight: 500; color: var(--ink-3); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.7rem; }
+  footer .ft-archive[open] > summary { margin-bottom: 0.4rem; }
+  footer .ft-archive details { margin-left: 0.25rem; }
   footer summary { cursor: pointer; font-weight: 600; color: var(--ink-2); padding: 0.2rem 0; list-style: none; }
   footer summary::-webkit-details-marker { display: none; }
   footer summary::before { content: '▸'; display: inline-block; width: 1rem; }
@@ -758,59 +761,61 @@
       <span>Published 8 October 2026</span>
     </div>
     <div class="ft-block">
-      <div class="label">Previous editions · Weekly Brief archive</div>
-      <details open>
-        <summary>September 2026</summary>
-        <ul>
-          <li><a href="/21-28-sep-2026.html">21 September – 28 September 2026</a> · Week 23</li>
-          <li><a href="/14-21-sep-2026.html">14 September – 21 September 2026</a> · Week 22</li>
-          <li><a href="/7-14-sep-2026.html">7 September – 14 September 2026</a> · Week 21</li>
-        </ul>
-      </details>
-      <details>
-        <summary>August 2026</summary>
-        <ul>
-          <li><a href="/31-aug-7-sep-2026.html">31 August – 7 September 2026</a> · Week 20</li>
-          <li><a href="/24-31-aug-2026.html">24 August – 31 August 2026</a> · Week 19</li>
-          <li><a href="/17-24-aug-2026.html">17 August – 24 August 2026</a> · Week 18</li>
-          <li><a href="/10-17-aug-2026.html">10 August – 17 August 2026</a> · Week 17</li>
-          <li><a href="/3-10-aug-2026.html">3 August – 10 August 2026</a> · Week 16</li>
-        </ul>
-      </details>
-      <details>
-        <summary>July 2026</summary>
-        <ul>
-          <li><a href="/27-jul-3-aug-2026.html">27 July – 3 August 2026</a> · Week 15</li>
-          <li><a href="/20-27-jul-2026.html">20 July – 27 July 2026</a> · Week 14</li>
-          <li><a href="/13-20-jul-2026.html">13 July – 20 July 2026</a> · Week 13</li>
-          <li><a href="/6-13-jul-2026.html">6 July – 13 July 2026</a> · Week 12</li>
-          <li><a href="/29-jun-6-jul-2026.html">29 June – 6 July 2026</a> · Week 11</li>
-        </ul>
-      </details>
-      <details>
-        <summary>June 2026</summary>
-        <ul>
-          <li><a href="/22-29-jun-2026.html">22 June – 29 June 2026</a> · Week 10</li>
-          <li><a href="/15-22-jun-2026.html">15 June – 22 June 2026</a> · Week 9</li>
-          <li><a href="/8-15-jun-2026.html">8 June – 15 June 2026</a> · Week 8</li>
-          <li><a href="/1-8-jun-2026.html">1 June – 8 June 2026</a> · Week 7</li>
-          <li><a href="/25-may-1-jun-2026.html">25 May – 1 June 2026</a> · Week 6</li>
-        </ul>
-      </details>
-      <details>
-        <summary>May 2026</summary>
-        <ul>
-          <li><a href="/18-25-may-2026.html">18 May – 25 May 2026</a> · Week 5</li>
-          <li><a href="/11-18-may-2026.html">11 May – 18 May 2026</a> · Week 4</li>
-          <li><a href="/4-11-may-2026.html">4 May – 11 May 2026</a> · Week 3</li>
-          <li><a href="/27-apr-4-may-2026.html">27 April – 4 May 2026</a> · Week 2</li>
-        </ul>
-      </details>
-      <details>
-        <summary>April 2026</summary>
-        <ul>
-          <li><a href="/20-27-apr-2026.html">20 April – 27 April 2026</a> · Inaugural Edition</li>
-        </ul>
+      <details class="ft-archive">
+        <summary>Previous editions · Weekly Brief archive</summary>
+        <details>
+          <summary>September 2026</summary>
+          <ul>
+            <li><a href="/21-28-sep-2026.html">21 September – 28 September 2026</a> · Week 23</li>
+            <li><a href="/14-21-sep-2026.html">14 September – 21 September 2026</a> · Week 22</li>
+            <li><a href="/7-14-sep-2026.html">7 September – 14 September 2026</a> · Week 21</li>
+          </ul>
+        </details>
+        <details>
+          <summary>August 2026</summary>
+          <ul>
+            <li><a href="/31-aug-7-sep-2026.html">31 August – 7 September 2026</a> · Week 20</li>
+            <li><a href="/24-31-aug-2026.html">24 August – 31 August 2026</a> · Week 19</li>
+            <li><a href="/17-24-aug-2026.html">17 August – 24 August 2026</a> · Week 18</li>
+            <li><a href="/10-17-aug-2026.html">10 August – 17 August 2026</a> · Week 17</li>
+            <li><a href="/3-10-aug-2026.html">3 August – 10 August 2026</a> · Week 16</li>
+          </ul>
+        </details>
+        <details>
+          <summary>July 2026</summary>
+          <ul>
+            <li><a href="/27-jul-3-aug-2026.html">27 July – 3 August 2026</a> · Week 15</li>
+            <li><a href="/20-27-jul-2026.html">20 July – 27 July 2026</a> · Week 14</li>
+            <li><a href="/13-20-jul-2026.html">13 July – 20 July 2026</a> · Week 13</li>
+            <li><a href="/6-13-jul-2026.html">6 July – 13 July 2026</a> · Week 12</li>
+            <li><a href="/29-jun-6-jul-2026.html">29 June – 6 July 2026</a> · Week 11</li>
+          </ul>
+        </details>
+        <details>
+          <summary>June 2026</summary>
+          <ul>
+            <li><a href="/22-29-jun-2026.html">22 June – 29 June 2026</a> · Week 10</li>
+            <li><a href="/15-22-jun-2026.html">15 June – 22 June 2026</a> · Week 9</li>
+            <li><a href="/8-15-jun-2026.html">8 June – 15 June 2026</a> · Week 8</li>
+            <li><a href="/1-8-jun-2026.html">1 June – 8 June 2026</a> · Week 7</li>
+            <li><a href="/25-may-1-jun-2026.html">25 May – 1 June 2026</a> · Week 6</li>
+          </ul>
+        </details>
+        <details>
+          <summary>May 2026</summary>
+          <ul>
+            <li><a href="/18-25-may-2026.html">18 May – 25 May 2026</a> · Week 5</li>
+            <li><a href="/11-18-may-2026.html">11 May – 18 May 2026</a> · Week 4</li>
+            <li><a href="/4-11-may-2026.html">4 May – 11 May 2026</a> · Week 3</li>
+            <li><a href="/27-apr-4-may-2026.html">27 April – 4 May 2026</a> · Week 2</li>
+          </ul>
+        </details>
+        <details>
+          <summary>April 2026</summary>
+          <ul>
+            <li><a href="/20-27-apr-2026.html">20 April – 27 April 2026</a> · Inaugural Edition</li>
+          </ul>
+        </details>
       </details>
     </div>
     <div class="ft-block">
