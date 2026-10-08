@@ -113,6 +113,12 @@
   .kcd-scope { font-size: 0.9rem; color: var(--ink-2); margin: -0.75rem 0 1.25rem; }
   .kcd-scope .label { margin-right: 0.5rem; }
   .kcd-scope .nw { white-space: nowrap; }
+  .kcd-more > summary { cursor: pointer; list-style: none; font: 500 0.75rem/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; padding: 0.9rem 0; color: var(--ink); border-bottom: 1px solid var(--rule); }
+  .kcd-more > summary::-webkit-details-marker { display: none; }
+  .kcd-more > summary::before { content: '+'; display: inline-block; width: 1.1rem; font-weight: 700; }
+  .kcd-more[open] > summary::before { content: '−'; }
+  .kcd-more > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media print { .kcd-more > summary { display: none; } }
   .sub-head h3 { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
   @media (max-width: 700px) { .bluf p { font-size: 1rem; line-height: 1.6; } }
 
@@ -451,7 +457,7 @@
     <div class="map-list" id="map-list" hidden></div>
 
     <div class="sub-head" id="developments"><h3>Key Conflict Developments</h3></div>
-    <p class="kcd-scope"><span class="label">Covering</span><span class="nw">Russia–Ukraine</span> · <span class="nw">Israel–Lebanon</span> · <span class="nw">Israel–Gaza</span> · <span class="nw">US–Israel–Iran</span> · <span class="nw">Thailand–Cambodia</span></p>
+    <p class="kcd-scope"><span class="label">Covering</span><span class="nw">Russia–Ukraine</span> · <span class="nw">US–Israel–Iran</span> · <span class="nw">Israel–Lebanon</span> · <span class="nw">Israel–Gaza</span> · <span class="nw">Thailand–Cambodia</span></p>
     <div class="kcd-list">
     <article class="kcd">
       <div class="kcd-n">01</div>
@@ -463,22 +469,24 @@
     <article class="kcd">
       <div class="kcd-n">02</div>
       <div>
+        <h4 class="kcd-name">US–Israel–Iran</h4>
+        <p class="kcd-text">Tehran and its proxies expanded a multi-theatre A2/AD envelope—combining Strait of Hormuz harassment, subterranean expansion at Natanz, and Houthi consolidation over the Bab al-Mandeb choke point—prompting US air-route supply interdictions and explicit Israeli preparation for deep-penetration counter-facility strikes. <span class="cite">Source: <a href="https://www.timesofisrael.com/report-israeli-official-claims-renewed-strikes-on-iran-only-a-matter-of-time/" target="_blank" rel="noopener">Times of Israel</a> · <a href="https://m.koreaherald.com/article/10886187" target="_blank" rel="noopener">The Korea Herald</a></span></p>
+      </div>
+    </article>
+    <details class="kcd-more">
+      <summary>Other conflicts · Israel–Lebanon, Israel–Gaza, Thailand–Cambodia</summary>
+    <article class="kcd">
+      <div class="kcd-n">03</div>
+      <div>
         <h4 class="kcd-name">Israel–Lebanon</h4>
         <p class="kcd-text">Israel reorganised its footprint into a permanent Yellow Zone posture using hardened C2 nodes, concealed vehicle parks, and overhead protection, utilising sensor-to-shooter links with indirect fires to counter Hezbollah’s dispersed UAS and ATGM threats. <span class="cite">Source: <a href="https://www.aa.com.tr/en/middle-east/israeli-army-prepares-for-new-phase-of-fighting-in-southern-lebanon-report/4068944" target="_blank" rel="noopener">Anadolu Agency</a></span></p>
       </div>
     </article>
     <article class="kcd">
-      <div class="kcd-n">03</div>
+      <div class="kcd-n">04</div>
       <div>
         <h4 class="kcd-name">Israel–Gaza</h4>
         <p class="kcd-text">Israel transitioned to a persistent counter-reconstitution campaign along the Yellow Line, fusing FININT and real-time ISR to dismantle a 2 km subterranean tunnel network and execute precision strikes against Hamas’s leadership and financial infrastructure. <span class="cite">Source: <a href="https://caliber.az/en/post/israeli-army-says-troops-dismantled-two-kilometre-tunnel-in-southern-gaza" target="_blank" rel="noopener">Caliber.az</a></span></p>
-      </div>
-    </article>
-    <article class="kcd">
-      <div class="kcd-n">04</div>
-      <div>
-        <h4 class="kcd-name">US–Israel–Iran</h4>
-        <p class="kcd-text">Tehran and its proxies expanded a multi-theatre A2/AD envelope—combining Strait of Hormuz harassment, subterranean expansion at Natanz, and Houthi consolidation over the Bab al-Mandeb choke point—prompting US air-route supply interdictions and explicit Israeli preparation for deep-penetration counter-facility strikes. <span class="cite">Source: <a href="https://www.timesofisrael.com/report-israeli-official-claims-renewed-strikes-on-iran-only-a-matter-of-time/" target="_blank" rel="noopener">Times of Israel</a> · <a href="https://m.koreaherald.com/article/10886187" target="_blank" rel="noopener">The Korea Herald</a></span></p>
       </div>
     </article>
     <article class="kcd">
@@ -488,6 +496,7 @@
         <p class="kcd-text">The Thai Army placed forward troops along sensitive border sectors—including Mounts 225/350 and the Ta Kwai temple area—on high combat readiness, establishing a dispersed, hardened defensive posture to deter localised indirect fires, mine hazards, and UAS escalation. <span class="cite">Source: <a href="https://www.thaipbsworld.com/thailand-cambodia-standoff/army-chief-orders-troops-on-alert-along-thai-cambodian-border" target="_blank" rel="noopener">Thai PBS World</a></span></p>
       </div>
     </article>
+    </details>
     </div>
   </section>
 
@@ -1168,7 +1177,7 @@
 </script>
 <script>
   window.addEventListener('beforeprint', function () {
-    document.querySelectorAll('details.cx-full').forEach(function (d) { d.open = true; });
+    document.querySelectorAll('details.cx-full, details.kcd-more').forEach(function (d) { d.open = true; });
   });
 </script>
 </body>
