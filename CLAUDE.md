@@ -25,3 +25,4 @@ For every learning topic in every edition:
 - Check every source link opens. Reuters, ISW (understandingwar.org) and Caliber.az block automated checks, so list those for the editor to click.
 - Add the previous edition to "Previous editions → Biweekly Conflict Insights" in the footer (newest first), above the Weekly Brief archive.
 - Remove any draft banner and `noindex` tag before publishing.
+- Keep the "Embedded in the CSI Monthly Insights app" CSS and script in every edition. csi-monthly-insights.pages.dev shows the latest brief inside its "Biweekly Brief" tab and sizes the frame from the `csi-brief-height` message.

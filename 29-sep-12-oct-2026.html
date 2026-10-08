@@ -49,6 +49,11 @@
 
   .draft-bar { border-bottom: 1px solid var(--ink); background: #ffffff; font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.06em; text-align: center; padding: 0.55rem 1rem; }
   .draft-bar b { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; }
+  /* ===== Embedded in the CSI Monthly Insights app ===== */
+  .embedded body { background: var(--paper); }
+  .embedded .masthead { display: none; }
+  .embedded .wrap { padding-top: 1.25rem; }
+  .embedded footer .ft-block { display: none; }
   /* ===== Masthead ===== */
   .masthead { border-bottom: 3px solid var(--rule-strong); padding-bottom: 1.25rem; margin-bottom: 2.75rem; }
   .kicker {
@@ -815,6 +820,30 @@
   </footer>
 
 </div>
+<script>
+/* When this brief is shown inside the CSI Monthly Insights app (an iframe), hide
+   the masthead and archive the app already shows, report the page height so the
+   app can size the frame, and pass in-page anchor jumps up to the app. */
+(function () {
+  if (window.self === window.top) return;
+  document.documentElement.classList.add('embedded');
+  function post(msg) { try { window.parent.postMessage(msg, '*'); } catch (e) {} }
+  var wrap = document.querySelector('.wrap');
+  function height() { post({ type: 'csi-brief-height', height: Math.ceil((wrap || document.body).getBoundingClientRect().height) + 8 }); }
+  window.addEventListener('load', height);
+  if ('ResizeObserver' in window && wrap) new ResizeObserver(height).observe(wrap);
+  document.addEventListener('toggle', height, true);
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var t = document.querySelector(a.getAttribute('href'));
+    if (!t) return;
+    e.preventDefault();
+    post({ type: 'csi-brief-scroll', top: Math.round(t.getBoundingClientRect().top + window.scrollY) });
+  });
+  height();
+})();
+</script>
 <script src="assets/d3.v7.min.js"></script>
 <script src="assets/topojson-client.min.js"></script>
 <script>
