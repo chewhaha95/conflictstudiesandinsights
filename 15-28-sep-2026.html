@@ -365,15 +365,7 @@
   @media print { .map-bar, .map-detail { display: none; } }
 
   /* ===== Footer ===== */
-  .feedback {
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem;
-    border: 1px solid var(--ink); background: #ffffff; padding: 1rem 1.1rem; margin-bottom: 2.5rem;
-  }
-  .feedback .label { color: var(--ink); margin-bottom: 0.2rem; }
-  .feedback p { font-size: 0.88rem; color: var(--ink-2); }
-  .fb-btn { display: inline-block; background: var(--ink); color: #ffffff; font: 600 0.82rem/1 var(--sans); padding: 0.7rem 1rem; text-decoration: none; }
-  .fb-btn:hover { background: var(--accent); }
-  .fb-btn:focus-visible, .ft-link:focus-visible, footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .ft-link:focus-visible, footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   footer { border-top: 3px solid var(--rule-strong); padding-top: 1rem; font: 400 0.75rem/1.6 var(--mono); color: var(--ink-3); }
   .ft-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; }
   .ft-block { border-top: 1px solid var(--rule); margin-top: 1rem; padding-top: 1rem; }
@@ -391,7 +383,6 @@
   footer li { margin-bottom: 0.2rem; }
   footer li a, .ft-link { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
   footer li a:hover, .ft-link:hover { color: var(--accent); }
-  @media print { .feedback { display: none; } }
 
   @media print {
     .note { display: none; }
@@ -745,14 +736,6 @@
         </div>
       </details>
     </article>
-  </section>
-
-  <section class="feedback">
-    <div>
-      <div class="label">Feedback &amp; Reflections</div>
-      <p>Share your feedback and reflections on this edition.</p>
-    </div>
-    <a class="fb-btn" href="https://form.gov.sg/69f02112e786500cb50b40a6" target="_blank" rel="noopener">Share your thoughts →</a>
   </section>
 
   <footer>
