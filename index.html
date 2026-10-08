@@ -1,590 +1,1163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0a0e17">
-<title>Weekly Brief — 21 September – 28 September 2026</title>
-<meta property="og:title" content="Weekly Brief — 21 September – 28 September 2026" />
-<meta property="og:description" content="Conflict Studies and Insights delivers a weekly brief on global conflict theatres — tracking key developments, tactical implications, and what they mean for us." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f7f6f2">
+<title>CSI Biweekly Conflict Insights — 15–28 September 2026</title>
+<meta property="og:title" content="CSI Biweekly Conflict Insights — 15–28 September 2026" />
+<meta property="og:description" content="Conflict Studies and Insights: key conflict developments across five theatres and key learning topics for the fortnight." />
+<meta property="og:type" content="article" />
 <meta property="og:image" content="https://conflictstudiesandinsights.pages.dev/preview.png" />
 <meta property="og:url" content="https://conflictstudiesandinsights.pages.dev" />
-<meta property="og:type" content="article" />
 <meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  /* ========== RESET / BASE ========== */
-  * { box-sizing: border-box; -webkit-text-size-adjust: 100%; }
-  html {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
+  :root {
+    --paper: #f7f6f2;
+    --ink: #111111;
+    --ink-2: #3a3a3a;
+    --ink-3: #6b6b6b;
+    --rule: #d6d4ce;
+    --rule-strong: #111111;
+    --panel: #efede7;
+    --accent: #c8102e;
+    --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background: #0a0e17;
-    color: #e2e8f0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    text-rendering: optimizeLegibility;
     margin: 0;
-    padding: 0;
-    min-height: 100vh;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, h4, h5, h6, p, ul, figure { margin: 0; }
-  ul { padding: 0; list-style: none; }
-  a { text-decoration: none; color: inherit; }
+  h1, h2, h3, p, table, dl { margin: 0; }
 
-  /* ========== LAYOUT ========== */
-  .wrap {
-    max-width: 64rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem 1rem;
-  }
-  @media (min-width: 640px) { .wrap { padding-left: 1.5rem; padding-right: 1.5rem; } }
-  @media (min-width: 1024px) { .wrap { padding-left: 2rem; padding-right: 2rem; } }
 
-  /* ========== FONT ========== */
-  .font-mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  }
+  .wrap { max-width: 52rem; margin: 0 auto; padding: 2.5rem 1rem 3rem; }
+  @media (min-width: 640px) { .wrap { padding: 3.5rem 1.5rem 4rem; } }
 
-  /* ========== FLEX UTILITIES ========== */
-  .flex { display: flex; }
-  .inline-flex { display: inline-flex; }
-  .items-center { align-items: center; }
-  .justify-between { justify-content: space-between; }
-  .flex-col { flex-direction: column; }
-  .gap-1 { gap: 0.25rem; }
-  .gap-2 { gap: 0.5rem; }
-  .gap-3 { gap: 0.75rem; }
-  @media (min-width: 640px) {
-    .sm-flex-row { flex-direction: row; }
-    .sm-items-center { align-items: center; }
-    .sm-justify-between { justify-content: space-between; }
-  }
-
-  /* ========== SPACING ========== */
-  .mb-1 { margin-bottom: 0.25rem; }
-  .mb-15 { margin-bottom: 0.375rem; }
-  .mb-2 { margin-bottom: 0.5rem; }
-  .mb-3 { margin-bottom: 0.75rem; }
-  .mb-4 { margin-bottom: 1rem; }
-  .mb-8 { margin-bottom: 2rem; }
-  .mb-10 { margin-bottom: 2.5rem; }
-  .mb-12 { margin-bottom: 3rem; }
-  .mt-1 { margin-top: 0.25rem; }
-  .mt-6 { margin-top: 1.5rem; }
-  .pt-6 { padding-top: 1.5rem; }
-  .pb-6 { padding-bottom: 1.5rem; }
-  .pl-4 { padding-left: 1rem; }
-  .px-4 { padding-left: 1rem; padding-right: 1rem; }
-  .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-  .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-  .p-5 { padding: 1.25rem; }
-  @media (min-width: 640px) { .sm-p-6 { padding: 1.5rem; } }
-  .space-y-4 > * + * { margin-top: 1rem; }
-  .space-y-5 > * + * { margin-top: 1.25rem; }
-
-  /* ========== BORDERS / RADIUS ========== */
-  .border-b { border-bottom: 1px solid #1e293b; }
-  .border-t { border-top: 1px solid #1e293b; }
-  .border-panel { border: 1px solid #1e293b; }
-  .rounded-full { border-radius: 9999px; }
-  .rounded-xl { border-radius: 0.75rem; }
-  .rounded-md { border-radius: 0.375rem; }
-
-  /* ========== BACKGROUNDS ========== */
-  .bg-amber-dot { background: #fbbf24; }
-  .bg-slate-dot { background: #475569; }
-  .bg-panel { background: rgba(15, 23, 42, 0.6); }
-
-  /* ========== TEXT ========== */
-  .text-xxs { font-size: 0.65rem; line-height: 1.1; }
-  .text-xs { font-size: 0.75rem; line-height: 1rem; }
-  .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-  .text-base { font-size: 1rem; line-height: 1.5rem; }
-  .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-  .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-  @media (min-width: 640px) {
-    .sm-text-base { font-size: 1rem; line-height: 1.5rem; }
-    .sm-text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-    .sm-text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-  }
-  .text-white { color: #ffffff; }
-  .text-slate-200 { color: #e2e8f0; }
-  .text-slate-300 { color: #cbd5e1; }
-  .text-slate-400 { color: #94a3b8; }
-  .text-slate-500 { color: #64748b; }
-  .text-amber-400 { color: #fbbf24; }
-  .tracking-widest { letter-spacing: 0.1em; }
-  .tracking-wider { letter-spacing: 0.05em; }
-  .tracking-tight { letter-spacing: -0.025em; }
-  .leading-relaxed { line-height: 1.625; }
-  .leading-snug { line-height: 1.375; }
-  .uppercase { text-transform: uppercase; }
-  .font-bold { font-weight: 700; }
-  .font-semibold { font-weight: 600; }
-  .font-extrabold { font-weight: 800; }
-  .text-left { text-align: left; }
-
-  /* ========== DISPLAY ========== */
-  .block { display: block; }
-  .inline-block { display: inline-block; }
-  .whitespace-nowrap { white-space: nowrap; }
-  .align-top { vertical-align: top; }
-  .overflow-hidden { overflow: hidden; }
-  .overflow-x-auto { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-  /* ========== SIZING ========== */
-  .w-full { width: 100%; }
-  .w-15 { width: 0.375rem; }
-  .h-15 { height: 0.375rem; }
-  .w-2 { width: 0.5rem; }
-  .h-2 { height: 0.5rem; }
-  .min-h-screen { min-height: 100vh; }
-
-  /* ========== ANIMATION ========== */
-  .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-  }
-
-  /* ========== SECTION HEADING DOTS ========== */
-  .sec-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 8px; vertical-align: middle; }
-
-  /* ========== PHASE PILLS ========== */
-  .ph { font-size: 0.7rem; font-weight: 600; padding: 3px 9px; border-radius: 3px; display: inline-block; letter-spacing: 0.5px; white-space: nowrap; }
-  .ph-active { background: rgba(239,68,68,0.12); color: #ef4444; }
-  .ph-pause { background: rgba(245,158,11,0.12); color: #f59e0b; }
-  .ph-cease { background: rgba(6,182,212,0.12); color: #06b6d4; }
-
-  /* ========== CITATION CHIP (direct link, no JS) ========== */
-  .cite {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.15rem;
-    height: 1.15rem;
-    margin: 0 0.15rem;
-    background: rgba(148, 163, 184, 0.12);
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    vertical-align: baseline;
-    transform: translateY(-1px);
-    text-decoration: none;
-  }
-  .cite:hover, .cite:focus {
-    background: rgba(251, 191, 36, 0.22);
-    border-color: rgba(251, 191, 36, 0.6);
-    outline: none;
-  }
-  .cite svg {
-    width: 0.65rem;
-    height: 0.65rem;
-    color: rgb(148, 163, 184);
-    transition: color 0.15s ease;
-  }
-  .cite:hover svg, .cite:focus svg { color: rgb(251, 191, 36); }
-  .cite-num {
-    position: absolute;
-    top: -0.35rem;
-    right: -0.35rem;
-    background: rgb(251, 191, 36);
-    color: rgb(15, 23, 42);
-    font-size: 0.55rem;
-    font-weight: 700;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.85;
-  }
-  .cite:hover .cite-num, .cite:focus .cite-num { opacity: 1; }
-
-  /* ========== CONTENT PILL (for domain labels) ========== */
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+  /* ===== Masthead ===== */
+  .masthead { border-bottom: 3px solid var(--rule-strong); padding-bottom: 1.25rem; margin-bottom: 2.75rem; }
+  .kicker {
+    font: 500 0.75rem/1.2 var(--mono);
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    padding: 0.15rem 0.55rem;
-    border-radius: 9999px;
-    background: rgba(148, 163, 184, 0.1);
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    color: rgb(203, 213, 225);
-    white-space: nowrap;
-    flex-shrink: 0;
+    color: var(--ink-2);
   }
-
-  /* ========== THEATRE CARD + HEADER ========== */
-  .theatre-card {
-    background: #111827;
-    border: 1px solid #1e2a3f;
-    border-radius: 6px;
-    padding: 22px 24px;
-    margin-bottom: 16px;
-  }
-  .th-hdr {
-    padding-bottom: 14px;
-    margin-bottom: 18px;
-    border-bottom: 1px solid #1e2a3f;
-  }
-  .th-badge {
-    display: inline-block;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 10px;
+  .masthead h1 {
+    font-size: 2.4rem;
+    line-height: 1.05;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: -0.02em;
+    margin: 0.6rem 0 0.5rem;
+  }
+  @media (min-width: 640px) { .masthead h1 { font-size: 3.25rem; } }
+  .masthead .period { font: 400 0.95rem/1.4 var(--mono); color: var(--ink-2); }
+
+  /* ===== Section headings ===== */
+  .sec { margin-bottom: 3.5rem; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 0.5rem; margin-bottom: 1.5rem;
+  }
+  .sec-num { font: 500 0.8rem/1 var(--mono); color: var(--ink-3); }
+  .sec-head h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .sec-head .sec-sub { font-size: 0.85rem; color: var(--ink-3); }
+
+  .label {
+    font: 500 0.7rem/1.2 var(--mono);
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #f59e0b;
-    background: rgba(245,158,11,0.12);
-    padding: 3px 9px;
-    border-radius: 3px;
-    margin-bottom: 10px;
-  }
-  .th-name {
-    font-size: 20px;
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.25;
-    letter-spacing: -0.2px;
-    margin-bottom: 4px;
-  }
-  @media (min-width: 640px) { .th-name { font-size: 24px; } }
-  .th-sub {
-    font-size: 14px;
-    color: #f59e0b;
-    font-weight: 500;
-    letter-spacing: 0.1px;
+    color: var(--ink-3);
   }
 
-  /* ========== TABLE ========== */
-  table { border-collapse: collapse; }
-  th, td { text-align: left; }
+  /* ===== BLUF ===== */
+  .bluf { border-left: 3px solid var(--ink); padding: 0.1rem 0 0.1rem 1.1rem; margin-bottom: 2rem; }
+  .bluf .label { margin-bottom: 0.5rem; }
+  .bluf p { font-size: 1.1rem; line-height: 1.6; }
+  @media (min-width: 640px) { .bluf p { font-size: 1.2rem; } }
 
-  /* ========== PRINT ========== */
+  /* ===== Draft notes ===== */
+  .note {
+    border: 1px dashed var(--ink-3);
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    color: var(--ink-2);
+    margin: -1rem 0 2rem;
+  }
+  .note .label { color: var(--ink); margin-right: 0.4rem; }
+  .note--inline { margin: 0 0 2rem; }
+
+  .sub-head { border-bottom: 1px solid var(--ink); padding-bottom: 0.5rem; margin: 2.5rem 0 1.5rem; }
+  .kcd-list { border-top: 1px solid var(--rule); }
+  .kcd { display: grid; grid-template-columns: 2.25rem 1fr; gap: 0 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+  .kcd-n { font: 500 0.8rem/1.6rem var(--mono); color: var(--ink-3); }
+  .kcd-name { font-size: 1rem; font-weight: 700; line-height: 1.6rem; margin: 0 0 0.2rem; }
+  .kcd-text { font-size: 0.95rem; line-height: 1.6; }
+  .kcd-scope { font-size: 0.9rem; color: var(--ink-2); margin: -0.75rem 0 1.25rem; }
+  .kcd-scope .label { margin-right: 0.5rem; }
+  .kcd-scope .nw { white-space: nowrap; }
+  .sub-head h3 { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  @media (max-width: 700px) { .bluf p { font-size: 1rem; line-height: 1.6; } }
+
+  /* ===== Comic strips ===== */
+  :root { --blue: #1f4e8c; }
+  .cx-intro { font-size: 0.85rem; color: var(--ink-2); margin: -0.5rem 0 2rem; line-height: 1.8; }
+  .cx-key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin: 0 0.35rem 0 0.15rem; vertical-align: -1px; }
+  .cx-key-blue { background: var(--blue); }
+  .cx-key-red { background: var(--accent); margin-left: 0.6rem; }
+  .cx-tag { font: 500 0.72rem/1.4 var(--mono); letter-spacing: 0.06em; color: var(--ink-3); margin: -0.4rem 0 0.5rem; }
+  .cx-conf { font-size: 0.84rem; line-height: 1.5; color: var(--ink-2); margin-bottom: 1rem; }
+  .cx-chip { display: inline-block; margin-right: 0.35rem; padding: 0.15rem 0.5rem; border: 1px solid var(--ink); border-radius: 999px; font: 600 0.72rem/1.3 var(--sans); color: var(--ink); text-decoration: none; }
+  .cx-chip:hover { background: var(--panel); }
+  .cx-chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cx-scale { border: 1px solid var(--rule); background: #ffffff; padding: 0.85rem 1rem; margin: -1rem 0 2.25rem; scroll-margin-top: 1rem; }
+  .cx-scale .label { margin-bottom: 0.5rem; }
+  .cx-scale dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.35rem 1rem; font-size: 0.84rem; line-height: 1.45; }
+  .cx-scale dt { font-weight: 700; }
+  .cx-scale dd { margin: 0; color: var(--ink-2); }
+  @media (max-width: 480px) { .cx-scale dl { grid-template-columns: 1fr; gap: 0; } .cx-scale dd { margin-bottom: 0.45rem; } }
+  .cx-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+  .cx-panel { margin: 0; border: 2px solid var(--ink); background: #ffffff; display: flex; flex-direction: column; }
+  .cx-panel svg { display: block; width: 100%; height: auto; border-bottom: 2px solid var(--ink); }
+  .cx-panel figcaption { padding: 0.6rem 0.7rem 0.75rem; font-size: 0.86rem; line-height: 1.45; color: var(--ink-2); }
+  .cx-panel figcaption strong { color: var(--ink); font-weight: 700; }
+  .cx-n { display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; margin-right: 0.4rem; background: var(--ink); color: #fff; font: 600 0.7rem/1 var(--mono); border-radius: 50%; vertical-align: 1px; }
+  .cx-swipe { display: none; }
+  .cx-take { border-left: 3px solid var(--accent); background: var(--panel); padding: 0.85rem 1rem; margin: 1rem 0 1rem; }
+  .cx-take p { font-size: 0.95rem; line-height: 1.55; }
+  .cx-take p + p { margin-top: 0.5rem; }
+  .cx-take .label { display: block; margin-bottom: 0.1rem; }
+  .cx-full { border-top: 1px solid var(--rule); }
+  .cx-full > summary { cursor: pointer; list-style: none; font: 500 0.75rem/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; padding: 0.9rem 0; color: var(--ink); }
+  .cx-full > summary::-webkit-details-marker { display: none; }
+  .cx-full > summary::before { content: '+'; display: inline-block; width: 1.1rem; font-weight: 700; }
+  .cx-full[open] > summary::before { content: '−'; }
+  .cx-full > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cx-full[open] { padding-bottom: 0.5rem; }
+  /* art */
+  .cx-blue { color: var(--blue); }
+  .cx-red { color: var(--accent); }
+  .cx-ground { stroke: #cfccc4; stroke-width: 2; }
+  .cx-bubble rect, .cx-bubble path { fill: #fff; stroke: var(--ink); stroke-width: 1.8; stroke-linejoin: round; }
+  .cx-bubble .cx-seam { stroke: #fff; stroke-width: 3; }
+  .cx-bubble text { font: 700 13px var(--sans); fill: var(--ink); }
+  .cx-badge rect { fill: var(--ink); }
+  .cx-badge.cx-badge-red rect { fill: var(--accent); }
+  .cx-badge text { font: 600 11px var(--mono); fill: #fff; }
+  .cx-label { font: 600 9.5px var(--mono); letter-spacing: 0.06em; fill: var(--ink-2); }
+  .cx-val { font-size: 13px; fill: var(--ink); }
+  .cx-red-t { fill: var(--accent); }
+  .cx-blue-t { fill: var(--blue); }
+  .cx-trail { fill: none; stroke-width: 1.8; stroke-dasharray: 4 4; }
+  .cx-blue-s { stroke: var(--blue); }
+  .cx-red-s { stroke: var(--accent); }
+  .cx-speed path { stroke-width: 2.2; stroke-linecap: round; }
+  .cx-q { font: 700 20px var(--sans); fill: var(--blue); }
+  .cx-axis { stroke: var(--ink); stroke-width: 1.5; }
+  .cx-bar { fill: #d8d5cd; }
+  .cx-bar-red { fill: var(--accent); }
+  .cx-arrow { fill: none; stroke: var(--accent); stroke-width: 2.2; }
+  .cx-arrowhead { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .cx-cone { stroke-width: 1.4; stroke-dasharray: 4 4; }
+  .cx-red-cone { fill: rgba(200, 16, 46, 0.07); stroke: var(--accent); }
+  .cx-blue-cone { fill: rgba(31, 78, 140, 0.08); stroke: var(--blue); }
+  .cx-reticle { fill: none; stroke: var(--accent); stroke-width: 2; }
+  .cx-window path { stroke: var(--blue); stroke-width: 1.6; stroke-dasharray: 6 5; }
+  .cx-faded { opacity: 0.3; }
+  .cx-pipe rect { fill: #fff; stroke: var(--accent); stroke-width: 2.2; }
+  .cx-pipe path { stroke: var(--accent); stroke-width: 2.2; }
+  .cx-drop path { fill: var(--accent); opacity: 0.8; }
+  .cx-road { fill: none; stroke: #e2dfd8; stroke-width: 24; stroke-linecap: round; }
+  .cx-road-line { fill: none; stroke: #ffffff; stroke-width: 2; stroke-dasharray: 8 8; }
+  .cx-clock circle { fill: #fff; stroke: var(--ink); stroke-width: 2.2; }
+  .cx-clock path { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; }
+  @media (max-width: 700px) {
+    .cx-strip {
+      display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 0.75rem;
+      margin: 0 -1rem; padding: 0 1rem 0.25rem; scroll-padding: 0 1rem;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .cx-strip::-webkit-scrollbar { display: none; }
+    .cx-panel { flex: 0 0 84%; scroll-snap-align: start; }
+    .cx-swipe { display: block; font: 500 0.7rem/1 var(--mono); letter-spacing: 0.08em; color: var(--ink-3); text-align: right; margin-top: 0.5rem; }
+  }
   @media print {
-    body { background: white !important; color: black !important; }
-    .no-print { display: none !important; }
+    .cx-strip { display: grid !important; grid-template-columns: repeat(3, 1fr); overflow: visible; margin: 0; padding: 0; }
+    .cx-swipe { display: none !important; }
+    .cx-full > summary { display: none; }
   }
 
-  .src-group { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; margin-left: 0.4rem; vertical-align: middle; }
-  .src-pill { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.15rem 0.5rem; background: rgba(148, 163, 184, 0.1); border: 1px solid rgba(148, 163, 184, 0.25); border-radius: 4px; color: rgb(148, 163, 184); font-size: 0.7rem; font-weight: 500; text-decoration: none; transition: all 0.15s ease; line-height: 1.2; white-space: nowrap; }
-  .src-pill:hover, .src-pill:focus { background: rgba(251, 191, 36, 0.15); border-color: rgba(251, 191, 36, 0.5); color: rgb(251, 191, 36); outline: none; }
-  .src-pill svg { flex-shrink: 0; }
-  details summary::-webkit-details-marker { display: none; }
-  details summary::marker { content: ""; }
-  details[open] summary span:first-child { transform: rotate(0deg); }
+  /* ===== Learning topics ===== */
+  .topic { padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--rule); }
+  .topic:last-of-type { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+  .fn {
+    display: inline-block;
+    font: 500 0.72rem/1 var(--mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-top: 2px solid var(--accent);
+    padding-top: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+  .topic h3 { font-size: 1.45rem; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 1rem; }
+  @media (min-width: 640px) { .topic h3 { font-size: 1.65rem; } }
+
+  .meta { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 1rem; font-size: 0.88rem; margin-bottom: 1.75rem; }
+  .meta dt { font: 500 0.7rem/1.9 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+  .meta dd { margin: 0; color: var(--ink-2); }
+  @media (max-width: 480px) {
+    .meta { grid-template-columns: 1fr; gap: 0; }
+    .meta dd { margin-bottom: 0.4rem; }
+  }
+
+  .findings { width: 100%; border-collapse: collapse; margin-bottom: 1.75rem; font-size: 0.95rem; }
+  .findings th {
+    text-align: left;
+    font: 500 0.7rem/1.2 var(--mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding: 0 1rem 0.6rem 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .findings td { vertical-align: top; padding: 0.85rem 1rem 0.85rem 0; border-bottom: 1px solid var(--rule); }
+  .findings td:first-child { width: 30%; font-weight: 600; }
+  .findings td:last-child, .findings th:last-child { padding-right: 0; }
+  @media (max-width: 600px) {
+    .findings thead { display: none; }
+    .findings, .findings tbody, .findings tr, .findings td { display: block; width: 100% !important; }
+    .findings tr { border-bottom: 1px solid var(--rule); padding: 0.85rem 0; }
+    .findings td { border: 0; padding: 0; }
+    .findings td:first-child { margin-bottom: 0.25rem; }
+  }
+
+  .cite { display: block; margin-top: 0.35rem; font: 400 0.75rem/1.4 var(--sans); font-style: normal; color: var(--ink-3); }
+  .cite a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+  .cite a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .callout { margin-bottom: 1.25rem; }
+  .callout .label { margin-bottom: 0.4rem; }
+  .callout p { color: var(--ink); }
+  .callout--q { background: var(--panel); padding: 1rem 1.1rem; border-left: 3px solid var(--accent); }
+  .callout--q p { font-style: italic; }
+
+  /* ===== Conflict map ===== */
+  .map-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.6rem 1rem; margin-bottom: 0.75rem; }
+  .map-focus, .map-zoom { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }
+  .map-focus .label { margin-right: 0.3rem; }
+  .map-btn {
+    font: 500 0.78rem/1 var(--sans);
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    padding: 0.42rem 0.72rem;
+    cursor: pointer;
+  }
+  .map-btn:hover { background: var(--panel); }
+  .map-btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  .map-btn:focus-visible, .ml-chip:focus-visible, .md-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .map-btn--sq { border-radius: 3px; width: 2rem; height: 2rem; padding: 0; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; }
+  .map-hint { font: 400 0.72rem/1.2 var(--mono); color: var(--ink-3); margin-left: 0.35rem; }
+  .hint-touch { display: none; }
+  @media (hover: none) { .hint-touch { display: inline; } .hint-mouse { display: none; } }
+
+  .map-frame { position: relative; border: 1px solid var(--ink); background: var(--paper); overflow: hidden; min-height: 220px; }
+  .map-frame svg { display: block; width: 100%; height: auto; cursor: grab; }
+  .map-frame svg:active { cursor: grabbing; }
+  .map-err { padding: 2rem 1rem; font-size: 0.9rem; color: var(--ink-2); }
+  .m-land { fill: #e2dfd8; stroke: var(--paper); stroke-width: 0.7; vector-effect: non-scaling-stroke; }
+  .m-land.s-priority { fill: #efc3c9; }
+  .m-land.s-active { fill: #c3beb3; }
+  .m-land.s-watch { fill: url(#m-hatch); }
+  .m-zone { fill: rgba(17, 17, 17, 0.04); stroke: var(--ink); stroke-width: 1; stroke-dasharray: 3 3; pointer-events: none; }
+  .m-zone.s-priority { stroke: var(--accent); fill: rgba(200, 16, 46, 0.05); }
+  .m-dot { stroke: var(--paper); stroke-width: 1.5; }
+  .m-dot.s-priority { fill: var(--accent); }
+  .m-dot.s-active { fill: var(--ink); }
+  .m-dot.s-watch { fill: #ffffff; stroke: var(--ink); stroke-width: 1.75; }
+  .m-dot.s-archive { fill: #b3b0a8; }
+  .m-ring { fill: none; stroke: var(--ink); stroke-width: 1.5; display: none; }
+  .m-mk { outline: none; }
+  .m-mk.is-sel .m-ring, .m-mk:hover .m-ring, .m-mk:focus-visible .m-ring { display: block; }
+  .m-mk:focus-visible .m-ring { stroke: var(--accent); stroke-width: 2; }
+  .m-hit { fill: transparent; cursor: pointer; }
+  .m-lead { stroke: var(--ink); stroke-width: 0.75; }
+  .m-true { fill: var(--ink); }
+  .m-move-up { fill: var(--accent); }
+  .m-move-down { fill: var(--ink); }
+  .m-lab {
+    font: 500 10.5px var(--mono);
+    letter-spacing: 0.04em;
+    fill: var(--ink);
+    paint-order: stroke;
+    stroke: var(--paper);
+    stroke-width: 3px;
+    stroke-linejoin: round;
+    pointer-events: none;
+  }
+  .m-labels-off .m-lab { display: none; }
+  .m-mk.is-sel .m-lab, .m-mk:hover .m-lab, .m-mk:focus-visible .m-lab { display: block; }
+
+  .map-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem 1.1rem; font-size: 0.78rem; color: var(--ink-2); margin: 0.75rem 0 1.25rem; }
+  .map-legend > span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .map-legend svg { display: block; overflow: visible; }
+  .map-legend > [hidden] { display: none; }
+
+  .md-swatch { display: inline-block; flex: none; width: 10px; height: 10px; border-radius: 50%; }
+  .md-swatch.s-priority { background: var(--accent); }
+  .md-swatch.s-active { background: var(--ink); }
+  .md-swatch.s-watch { background: #ffffff; box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .md-swatch.s-archive { background: #b3b0a8; }
+
+  .map-detail { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.9rem 0; min-height: 5.25rem; margin-bottom: 1.25rem; }
+  .md-empty { font-size: 0.88rem; color: var(--ink-3); }
+  .md-head { display: flex; align-items: center; flex-wrap: wrap; gap: 0.2rem 0.55rem; margin-bottom: 0.2rem; }
+  .md-head code { font: 500 0.75rem/1 var(--mono); letter-spacing: 0.06em; color: var(--ink-3); }
+  .md-head h3 { font-size: 1.05rem; font-weight: 700; }
+  .md-meta { font-size: 0.85rem; color: var(--ink-2); margin-bottom: 0.35rem; }
+  .md-meta .up { color: var(--accent); }
+  .md-latest { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.3rem; }
+  .md-latest .label, .md-phase .label { display: block; margin-bottom: 0.15rem; }
+  .md-latest .label, .md-phase .label { margin-right: 0.4rem; }
+  .md-sub { margin-top: 0.85rem; padding-top: 0.75rem; border-top: 1px dashed var(--rule); }
+  .md-sub h4 { margin: 0 0 0.25rem; font-size: 0.92rem; font-weight: 700; }
+  .md-src { font-size: 0.78rem; color: var(--ink-3); margin-bottom: 0.4rem; }
+  .md-src a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+  .md-phase { font-size: 0.88rem; color: var(--ink-2); margin-bottom: 0.6rem; }
+  .md-note { font-size: 0.85rem; color: var(--ink-3); }
+  .md-link { font-size: 0.85rem; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+  .ml-group { display: flex; gap: 0.5rem 0.75rem; align-items: baseline; margin-bottom: 0.65rem; }
+  .ml-group > .label { flex: none; width: 4.75rem; }
+  .ml-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .ml-chip {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font: 400 0.8rem/1.2 var(--sans);
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.32rem 0.65rem;
+    cursor: pointer;
+    text-align: left;
+  }
+  .ml-chip:hover { border-color: var(--ink-3); }
+  .ml-chip[aria-pressed="true"] { border-color: var(--ink); background: var(--panel); }
+  .ml-chip code { font: 500 0.7rem/1 var(--mono); letter-spacing: 0.04em; color: var(--ink-3); }
+  .ml-move { color: var(--accent); font-size: 0.7rem; }
+  @media (max-width: 560px) {
+    .ml-group { display: block; }
+    .ml-group > .label { display: block; width: auto; margin-bottom: 0.35rem; }
+  }
+  @media print { .map-bar, .map-detail { display: none; } }
+
+  /* ===== Footer ===== */
+  .feedback {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem;
+    border: 1px solid var(--ink); background: #ffffff; padding: 1rem 1.1rem; margin-bottom: 2.5rem;
+  }
+  .feedback .label { color: var(--ink); margin-bottom: 0.2rem; }
+  .feedback p { font-size: 0.88rem; color: var(--ink-2); }
+  .fb-btn { display: inline-block; background: var(--ink); color: #ffffff; font: 600 0.82rem/1 var(--sans); padding: 0.7rem 1rem; text-decoration: none; }
+  .fb-btn:hover { background: var(--accent); }
+  .fb-btn:focus-visible, .ft-link:focus-visible, footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  footer { border-top: 3px solid var(--rule-strong); padding-top: 1rem; font: 400 0.75rem/1.6 var(--mono); color: var(--ink-3); }
+  .ft-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; }
+  .ft-block { border-top: 1px solid var(--rule); margin-top: 1rem; padding-top: 1rem; }
+  .ft-block .label { margin-bottom: 0.5rem; }
+  .ft-block p { font-family: var(--sans); font-size: 0.8rem; line-height: 1.6; color: var(--ink-2); max-width: 40rem; margin-bottom: 0.5rem; }
+  footer details { margin-bottom: 0.35rem; }
+  footer summary { cursor: pointer; font-weight: 600; color: var(--ink-2); padding: 0.2rem 0; list-style: none; }
+  footer summary::-webkit-details-marker { display: none; }
+  footer summary::before { content: '▸'; display: inline-block; width: 1rem; }
+  footer details[open] > summary::before { content: '▾'; }
+  footer ul { list-style: none; margin: 0.25rem 0 0.5rem; padding-left: 1rem; }
+  footer li { margin-bottom: 0.2rem; }
+  footer li a, .ft-link { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+  footer li a:hover, .ft-link:hover { color: var(--accent); }
+  @media print { .feedback { display: none; } }
+
+  @media print {
+    .note { display: none; }
+    body { background: #fff; }
+    .topic { break-inside: avoid-page; }
+  }
 </style>
 </head>
 <body>
 
+
 <div class="wrap">
 
-  <!-- Header -->
-  <header class="border-b pb-6 mb-10">
-    <div class="flex items-center gap-3 mb-2">
-      <div class="w-2 h-2 rounded-full bg-amber-dot animate-pulse"></div>
-      <span class="font-mono text-xs tracking-widest text-amber-400 uppercase">Conflict Studies and Insights</span>
-    </div>
-    <h1 class="text-3xl sm-text-4xl font-extrabold tracking-tight text-white">Weekly Brief</h1>
-    <p class="text-slate-400 mt-1 text-sm font-mono">21 September – 28 September 2026</p>
+  <header class="masthead">
+    <div class="kicker">Conflict Studies and Insights</div>
+    <h1>Biweekly Conflict Insights</h1>
+    <p class="period">15–28 September 2026</p>
   </header>
 
-  <!-- BLUF -->
-  <section class="mb-12">
-    <h2 class="font-mono text-xs tracking-widest uppercase mb-3" style="color:#8896aa;"><span class="sec-dot" style="background:#f59e0b"></span>BLUF — Bottom Line Up Front</h2>
-        <div class="rounded-md p-5 sm-p-6" style="background:#111827; border:1px solid #1e2a3f; border-left:3px solid #f59e0b;">
-      <p class="text-base sm-text-lg leading-relaxed" style="color:#e2e8f0;">
-        Across all theatres, operations have shifted decisively toward permanent area denial, subterranean denial, and multi-theatre A2/AD consolidation: Ukraine disrupted Russian infiltration corridors via UGV demining and EW interdiction; Israel fortified permanent security postures in Lebanon and Gaza to prevent force reconstitution; Iran and its proxies expanded a dual-chokepoint maritime and subterranean threat envelope.
-      </p>
+  <!-- ===== 01 Conflicts monitored (interactive map) ===== -->
+  <section class="sec" id="monitor">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>Conflicts Monitored</h2>
+      <span class="sec-sub">15 conflicts · status as of 28 September 2026</span>
+    </div>
+
+    <div class="map-bar">
+      <div class="map-focus" role="group" aria-label="Focus the map on a region">
+        <span class="label">Focus</span>
+        <button type="button" class="map-btn" data-focus="world" aria-pressed="true">World</button>
+        <button type="button" class="map-btn" data-focus="europe" aria-pressed="false">Europe</button>
+        <button type="button" class="map-btn" data-focus="middleeast" aria-pressed="false">Middle East</button>
+        <button type="button" class="map-btn" data-focus="southasia" aria-pressed="false">South Asia</button>
+        <button type="button" class="map-btn" data-focus="indopacific" aria-pressed="false">Indo-Pacific</button>
+        <button type="button" class="map-btn" data-focus="americas" aria-pressed="false">Americas</button>
+      </div>
+      <div class="map-zoom">
+        <button type="button" class="map-btn map-btn--sq" data-zoom="in" aria-label="Zoom in">+</button>
+        <button type="button" class="map-btn map-btn--sq" data-zoom="out" aria-label="Zoom out">−</button>
+        <button type="button" class="map-btn map-btn--sq" data-zoom="reset" aria-label="Reset map view">↺</button>
+        <span class="map-hint"><span class="hint-mouse">Scroll to zoom · drag to pan</span><span class="hint-touch">Pinch to zoom · two fingers to pan</span></span>
+      </div>
+    </div>
+
+    <div class="map-frame" id="map">
+      <noscript><p class="map-err">The interactive map needs JavaScript.</p></noscript>
+    </div>
+
+    <div class="map-detail" id="map-detail" aria-live="polite"></div>
+
+    <div class="map-legend" aria-label="Map legend">
+      <span><span class="md-swatch s-priority"></span>Priority</span>
+      <span><span class="md-swatch s-active"></span>Active</span>
+      <span><span class="md-swatch s-watch"></span>Watch</span>
+      <span><svg width="34" height="14" aria-hidden="true"><circle cx="6" cy="7" r="6" fill="#6b6b6b"/><circle cx="19" cy="7" r="4.5" fill="#6b6b6b"/><circle cx="29" cy="7" r="3.2" fill="#6b6b6b"/></svg>Tier 1 (large) to Tier 3 (small)</span>
+      <span><svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="#111" stroke-dasharray="3 3"/></svg>Maritime / zone watch</span>
+      <span id="legend-move"><span style="color:var(--accent)">▲</span>▼ Status moved this period</span>
+    </div>
+
+    <div class="map-list" id="map-list" hidden></div>
+
+    <div class="sub-head" id="developments"><h3>Key Conflict Developments</h3></div>
+    <p class="kcd-scope"><span class="label">Covering</span><span class="nw">Russia–Ukraine</span> · <span class="nw">Israel–Lebanon</span> · <span class="nw">Israel–Gaza</span> · <span class="nw">US–Israel–Iran</span> · <span class="nw">Thailand–Cambodia</span></p>
+    <div class="kcd-list">
+    <article class="kcd">
+      <div class="kcd-n">01</div>
+      <div>
+        <h4 class="kcd-name">Russia–Ukraine</h4>
+        <p class="kcd-text">Ukraine adapted Operation Vivaldi by deploying UGVs to demine 30 km of supply routes while utilising EW, UAS interdiction, and counter-drone strikes to sever the ISR–C2–logistics chain supporting Russian motorcycle- and ATV-borne infiltration units north of Lyman. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-26-2026/" target="_blank" rel="noopener">ISW, 26 Sep</a></span></p>
+      </div>
+    </article>
+    <article class="kcd">
+      <div class="kcd-n">02</div>
+      <div>
+        <h4 class="kcd-name">Israel–Lebanon</h4>
+        <p class="kcd-text">Israel reorganised its footprint into a permanent Yellow Zone posture using hardened C2 nodes, concealed vehicle parks, and overhead protection, utilising sensor-to-shooter links with indirect fires to counter Hezbollah’s dispersed UAS and ATGM threats. <span class="cite">Source: <a href="https://www.aa.com.tr/en/middle-east/israeli-army-prepares-for-new-phase-of-fighting-in-southern-lebanon-report/4068944" target="_blank" rel="noopener">Anadolu Agency</a></span></p>
+      </div>
+    </article>
+    <article class="kcd">
+      <div class="kcd-n">03</div>
+      <div>
+        <h4 class="kcd-name">Israel–Gaza</h4>
+        <p class="kcd-text">Israel transitioned to a persistent counter-reconstitution campaign along the Yellow Line, fusing FININT and real-time ISR to dismantle a 2 km subterranean tunnel network and execute precision strikes against Hamas’s leadership and financial infrastructure. <span class="cite">Source: <a href="https://caliber.az/en/post/israeli-army-says-troops-dismantled-two-kilometre-tunnel-in-southern-gaza" target="_blank" rel="noopener">Caliber.az</a></span></p>
+      </div>
+    </article>
+    <article class="kcd">
+      <div class="kcd-n">04</div>
+      <div>
+        <h4 class="kcd-name">US–Israel–Iran</h4>
+        <p class="kcd-text">Tehran and its proxies expanded a multi-theatre A2/AD envelope—combining Strait of Hormuz harassment, subterranean expansion at Natanz, and Houthi consolidation over the Bab al-Mandeb choke point—prompting US air-route supply interdictions and explicit Israeli preparation for deep-penetration counter-facility strikes. <span class="cite">Source: <a href="https://www.timesofisrael.com/report-israeli-official-claims-renewed-strikes-on-iran-only-a-matter-of-time/" target="_blank" rel="noopener">Times of Israel</a> · <a href="https://m.koreaherald.com/article/10886187" target="_blank" rel="noopener">The Korea Herald</a></span></p>
+      </div>
+    </article>
+    <article class="kcd">
+      <div class="kcd-n">05</div>
+      <div>
+        <h4 class="kcd-name">Thailand–Cambodia</h4>
+        <p class="kcd-text">The Thai Army placed forward troops along sensitive border sectors—including Mounts 225/350 and the Ta Kwai temple area—on high combat readiness, establishing a dispersed, hardened defensive posture to deter localised indirect fires, mine hazards, and UAS escalation. <span class="cite">Source: <a href="https://www.thaipbsworld.com/thailand-cambodia-standoff/army-chief-orders-troops-on-alert-along-thai-cambodian-border" target="_blank" rel="noopener">Thai PBS World</a></span></p>
+      </div>
+    </article>
     </div>
   </section>
 
-  <!-- Conflict Status Chart -->
-  <section class="mb-12">
-    <h2 class="font-mono text-xs tracking-widest uppercase mb-3" style="color:#8896aa;"><span class="sec-dot" style="background:#f59e0b"></span>Conflict Status Chart</h2>
-    <div class="rounded-md" style="background:#111827; border:1px solid #1e2a3f; overflow:hidden; position:relative;">
-      <div class="overflow-x-auto" style="-webkit-overflow-scrolling:touch;">
-        <table class="text-sm" style="width:100%; min-width:780px; border-collapse:collapse;">
-          <thead style="background:#1a2236; border-bottom:1px solid #1e2a3f;">
-            <tr class="text-left">
-              <th class="px-4 py-3 font-mono text-xs uppercase tracking-wider" style="color:#8896aa; white-space:nowrap;">Theatre</th>
-              <th class="px-4 py-3 font-mono text-xs uppercase tracking-wider" style="color:#8896aa; white-space:nowrap;">Phase</th>
-              <th class="px-4 py-3 font-mono text-xs uppercase tracking-wider" style="color:#8896aa; white-space:nowrap;">Trend</th>
-              <th class="px-4 py-3 font-mono text-xs uppercase tracking-wider" style="color:#8896aa; min-width:300px;">Progress to date</th>
-            </tr>
-          </thead>
+  <!-- ===== 02 Key learning topics ===== -->
+  <section class="sec" id="learning">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>Key Learning Topics</h2>
+      <span class="sec-sub">Manoeuvre · Sense &amp; Strike · Sustainment</span>
+    </div>
+    <p class="cx-intro"><span class="cx-key cx-key-blue"></span>Blue = the side the lesson is drawn from <span class="cx-key cx-key-red"></span>Red = opposing force. Based on Russia–Ukraine reporting. Open the full analysis under each strip for details and sources.</p>
+    <div class="cx-scale" id="confidence">
+      <p class="label">How to read the ratings</p>
+      <dl>
+        <dt>Preliminary</dt><dd>An early observation from this fortnight. It may change as more reporting comes in.</dd>
+        <dt>High confidence</dt><dd>Several independent, reliable sources agree.</dd>
+        <dt>Medium confidence</dt><dd>Credible reporting, but key facts come from one side or have not been independently verified.</dd>
+        <dt>Low confidence</dt><dd>Thin or single-source reporting. Treat it as a possibility, not a finding.</dd>
+      </dl>
+    </div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="cx-soldier" viewBox="0 0 40 72">
+      <circle cx="20" cy="21" r="8" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M9.5 19 Q20 3 30.5 19 L33 20.5 L7 20.5 Z" fill="currentColor"/>
+      <path d="M12 31 L28 31 L30 52 L10 52 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M12 33 L5 46 M28 33 L35 45 M15 52 L13 69 M25 52 L27 69" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="cx-soldier-point" viewBox="0 0 40 72">
+      <circle cx="20" cy="21" r="8" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M9.5 19 Q20 3 30.5 19 L33 20.5 L7 20.5 Z" fill="currentColor"/>
+      <path d="M12 31 L28 31 L30 52 L10 52 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M12 33 L5 46 M28 33 L39 23 M15 52 L13 69 M25 52 L27 69" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="cx-quad" viewBox="0 0 44 24">
+      <path d="M15 13 L6 7 M29 13 L38 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <ellipse cx="6" cy="6" rx="6" ry="1.8" fill="currentColor"/>
+      <ellipse cx="38" cy="6" rx="6" ry="1.8" fill="currentColor"/>
+      <rect x="14" y="10" width="16" height="8" rx="3" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+    </symbol>
+    <symbol id="cx-prop" viewBox="0 0 50 30">
+      <path d="M4 15 L40 3 L34 15 L40 27 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M34 15 L44 15" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M45 6 L45 24" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="cx-jet" viewBox="0 0 62 30">
+      <path d="M44 12 L60 15 L44 18 Z" fill="currentColor" opacity="0.45"/>
+      <path d="M2 15 L42 5 L37 15 L42 25 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <rect x="32" y="12" width="12" height="6" rx="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="cx-apc" viewBox="0 0 72 38">
+      <path d="M42 10 L60 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M26 14 L28 8 L42 8 L44 14" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M4 24 L12 14 L52 14 L64 22 L68 24 L68 30 L4 30 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <g fill="#ffffff" stroke="currentColor" stroke-width="2"><circle cx="13" cy="31" r="4"/><circle cx="25" cy="31" r="4"/><circle cx="37" cy="31" r="4"/><circle cx="49" cy="31" r="4"/><circle cx="60" cy="31" r="4"/></g>
+    </symbol>
+    <symbol id="cx-tanker" viewBox="0 0 96 42">
+      <path d="M4 32 L90 32" stroke="currentColor" stroke-width="2.2"/>
+      <rect x="4" y="8" width="58" height="22" rx="10" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <text x="33" y="23" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="9" font-weight="600" fill="currentColor">FUEL</text>
+      <path d="M64 14 L82 14 L90 22 L90 32 L64 32 Z" fill="#ffffff" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M68 17 L80 17 L85 22 L68 22 Z" fill="currentColor" opacity="0.25"/>
+      <g fill="#ffffff" stroke="currentColor" stroke-width="2"><circle cx="16" cy="35" r="5"/><circle cx="30" cy="35" r="5"/><circle cx="72" cy="35" r="5"/><circle cx="84" cy="35" r="5"/></g>
+    </symbol>
+    <symbol id="cx-gen" viewBox="0 0 50 40">
+      <rect x="36" y="3" width="5" height="8" fill="currentColor"/>
+      <rect x="3" y="10" width="44" height="27" rx="3" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M8 16 L8 31 M12 16 L12 31" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M27 14 L20 25 L26 25 L22 34 L34 21 L27 21 L31 14 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="cx-gauge" viewBox="0 0 44 28">
+      <path d="M4 24 A18 18 0 0 1 40 24" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <text x="4" y="12" font-family="ui-monospace, Menlo, monospace" font-size="8" font-weight="700" fill="currentColor">E</text>
+      <text x="36" y="12" font-family="ui-monospace, Menlo, monospace" font-size="8" font-weight="700" fill="currentColor">F</text>
+      <path d="M22 24 L8 19" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="22" cy="24" r="2.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="cx-mast-off" viewBox="0 0 40 70">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3" opacity="0.4">
+        <path d="M11 13 A12 12 0 0 1 29 13"/><path d="M6 8 A18 18 0 0 1 34 8"/>
+      </g>
+      <path d="M20 22 L20 66 M10 66 L30 66 M20 50 L12 66 M20 50 L28 66" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <circle cx="20" cy="20" r="4" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M27 27 L37 37 M37 27 L27 37" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="cx-battery" viewBox="0 0 40 20">
+      <rect x="2" y="3" width="32" height="14" rx="2" fill="#ffffff" stroke="currentColor" stroke-width="2.2"/>
+      <rect x="34" y="7" width="4" height="6" fill="currentColor"/>
+      <rect x="5" y="6" width="5" height="8" fill="currentColor"/>
+    </symbol>
+    <symbol id="cx-burst" viewBox="0 0 40 40">
+      <polygon points="20,1 25,13 39,9 29,20 39,31 25,27 20,39 15,27 1,31 11,20 1,9 15,13" fill="#ffffff" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="20,10 23,17 30,16 25,21 29,27 22,24 20,30 18,24 11,27 15,21 10,16 17,17" fill="currentColor" opacity="0.8"/>
+    </symbol>
+  </defs>
+</svg>
+
+    <!-- Manoeuvre -->
+    <article class="topic">
+      <div class="fn">Manoeuvre</div>
+      <h3>Operation Vivaldi: restoring a window for manoeuvre</h3>
+      <p class="cx-tag">Russia–Ukraine, north of Lyman · 15–28 Sep 2026</p>
+      <p class="cx-conf"><a class="cx-chip" href="#confidence">Preliminary · Medium confidence</a> Ukraine’s 3rd Army Corps reported the gains, but Reuters could not verify them, and the fuel-to-jamming link is ISW’s assessment.</p>
+      <div class="cx-strip">
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Red surveillance drone watches a Blue armoured vehicle inside its view cone, with a target reticle on the vehicle."><path class="cx-ground" d="M0 180 L320 180"/><polygon class="cx-cone cx-red-cone" points="176,40 104,180 250,180"/><use href="#cx-quad" x="150" y="16" width="52" height="28" class="cx-red" /><use href="#cx-apc" x="136" y="138" width="80" height="42" class="cx-blue" /><g class="cx-reticle"><circle cx="176" cy="156" r="26"/><path d="M176 124 L176 134 M176 178 L176 188 M144 156 L154 156 M198 156 L208 156"/></g><use href="#cx-soldier" x="18" y="100" width="44" height="80" class="cx-blue" /><g class="cx-bubble"><rect x="8" y="22" width="100" height="44" rx="10"/><path d="M34 65 L50 65 L42 100 Z"/><path d="M35.5 65 L48.5 65" class="cx-seam"/><text x="58.0" y="42" text-anchor="middle">They see</text><text x="58.0" y="58" text-anchor="middle">every move.</text></g></svg>
+          <figcaption><span class="cx-n">1</span><strong>Seen means hit.</strong> Red drones watched the ground non-stop. Blue could not mass or move without being spotted and struck.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue drone strikes a Red fuel tanker. Nearby, a Red generator’s fuel gauge reads empty and a Red jamming mast is switched off."><path class="cx-ground" d="M0 180 L320 180"/><path class="cx-trail cx-blue-s" d="M74 64 L74 118"/><use href="#cx-quad" x="50" y="40" width="48" height="26" class="cx-blue" /><use href="#cx-tanker" x="16" y="134" width="108" height="47" class="cx-red" /><use href="#cx-burst" x="50" y="114" width="44" height="44" class="cx-red" /><use href="#cx-gauge" x="180" y="96" width="50" height="32" class="cx-red" /><use href="#cx-gen" x="176" y="136" width="58" height="46" class="cx-red" /><use href="#cx-mast-off" x="252" y="96" width="48" height="84" class="cx-red" /><text class="cx-label cx-red-t" x="70" y="196" text-anchor="middle">FUEL ▼</text><text class="cx-label cx-red-t" x="205" y="196" text-anchor="middle">POWER ▼</text><text class="cx-label cx-red-t" x="276" y="196" text-anchor="middle">JAMMING ▼</text></svg>
+          <figcaption><span class="cx-n">2</span><strong>Hit the fuel.</strong> Blue struck Red’s logistics and fuel. Less fuel may have meant less power for Red’s generator-run jammers.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="Blue armoured vehicles move through a gap marked Window while Blue drones fly overhead and the Red surveillance drone is faded out."><path class="cx-ground" d="M0 180 L320 180"/><g class="cx-window"><path d="M150 36 L150 180"/><path d="M234 36 L234 180"/></g><text class="cx-label cx-blue-t" x="192" y="30" text-anchor="middle">WINDOW</text><g class="cx-faded"><use href="#cx-quad" x="30" y="16" width="52" height="28" class="cx-red" /></g><use href="#cx-quad" x="170" y="52" width="44" height="24" class="cx-blue" /><use href="#cx-quad" x="250" y="72" width="44" height="24" class="cx-blue" /><g class="cx-speed cx-blue-s"><path d="M8 150 L34 150"/><path d="M4 162 L30 162"/><path d="M126 150 L148 150"/><path d="M122 162 L144 162"/></g><use href="#cx-apc" x="36" y="138" width="80" height="42" class="cx-blue" /><use href="#cx-apc" x="158" y="138" width="80" height="42" class="cx-blue" /><g class="cx-bubble"><rect x="86" y="62" width="86" height="28" rx="10"/><path d="M100 89 L116 89 L108 138 Z"/><path d="M101.5 89 L114.5 89" class="cx-seam"/><text x="129.0" y="82" text-anchor="middle">Move now!</text></g></svg>
+          <figcaption><span class="cx-n">3</span><strong>A window opens.</strong> With Red’s jamming weaker, Blue drones flew more freely and a short window for movement opened. A limited gain, not a breakthrough.</figcaption>
+        </figure>
+      </div>
+      <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
+      <div class="cx-take">
+        <p><span class="label">Lesson</span>An enemy’s watch-and-strike system may break at its support links, like fuel and power, not just at its sensors. This link is assessed, not proven.</p>
+        <p><span class="label">Questions to ask</span>What keeps the enemy’s sensors and strike systems running, and what would show they have actually weakened?</p>
+      </div>
+      <details class="cx-full">
+        <summary>Read the full analysis</summary>
+        <dl class="meta">
+          <dt>Theatre</dt><dd>Russia–Ukraine, north of Lyman</dd>
+          <dt>Reporting period</dt><dd>15–28 September 2026</dd>
+          <dt>Learning status</dt><dd>Preliminary observation · Medium confidence</dd>
+        </dl>
+        <table class="findings">
+          <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
           <tbody>
-            <tr style="border-bottom:1px solid #1e2a3f;">
-              <td class="px-4 py-4 align-top font-semibold whitespace-nowrap" style="color:#ffffff;">Russia–Ukraine</td>
-              <td class="px-4 py-4 align-top whitespace-nowrap"><span class="ph ph-active">Asymmetric Deep Strikes</span></td>
-              <td class="px-4 py-4 align-top font-semibold" style="color:#94a3b8; min-width:150px;"><span style="font-size:1rem;">→</span> Frontline Stagnation</td>
-              <td class="px-4 py-4 align-top leading-relaxed" style="color:#cbd5e1;">Ground operations remain locked within the high-density ~40 km drone &quot;kill zone&quot; in Donbas. Ukraine maintains strategic long-range UAV campaigns against Russian oil refineries and maritime arteries, while Russia executes heavy ballistic/drone volleys against Ukraine's urban energy grids and industrial nodes.</td>
-            </tr>
-            <tr style="border-bottom:1px solid #1e2a3f;">
-              <td class="px-4 py-4 align-top font-semibold whitespace-nowrap" style="color:#ffffff;">Israel–Lebanon</td>
-              <td class="px-4 py-4 align-top whitespace-nowrap"><span class="ph ph-active">Active Enforcement</span></td>
-              <td class="px-4 py-4 align-top font-semibold" style="color:#94a3b8; min-width:150px;"><span style="font-size:1rem;">→</span> Posture Restructuring</td>
-              <td class="px-4 py-4 align-top leading-relaxed" style="color:#cbd5e1;">The IDF is reorganising its positions along the 10 km &quot;Yellow Line&quot; buffer zone in southern Lebanon to entrench a long-term forward posture. Frequent IAF precision enforcement strikes continue targeting suspected Hezbollah arms reconstitution while LAF pilot zone deployments face operational friction.</td>
-            </tr>
-            <tr style="border-bottom:1px solid #1e2a3f;">
-              <td class="px-4 py-4 align-top font-semibold whitespace-nowrap" style="color:#ffffff;">Israel–Gaza</td>
-              <td class="px-4 py-4 align-top whitespace-nowrap"><span class="ph ph-active">Perimeter Enforcement</span></td>
-              <td class="px-4 py-4 align-top font-semibold" style="color:#94a3b8; min-width:150px;"><span style="font-size:1rem;">→</span> Static Control</td>
-              <td class="px-4 py-4 align-top leading-relaxed" style="color:#cbd5e1;">The IDF maintains strict control over the &quot;Yellow Line&quot; perimeter and buffer zones covering ~70% of Gaza territory. Quadcopter and targeted strikes persist against suspected non-state insurgent positions, while right-wing Israeli political movements push to establish forward outposts near former settlement zones.</td>
-            </tr>
-            <tr style="border-bottom:1px solid #1e2a3f;">
-              <td class="px-4 py-4 align-top font-semibold whitespace-nowrap" style="color:#ffffff;">Israel–US–Iran</td>
-              <td class="px-4 py-4 align-top whitespace-nowrap"><span class="ph ph-active">Hormuz Transit Standoff</span></td>
-              <td class="px-4 py-4 align-top font-semibold" style="color:#94a3b8; min-width:150px;"><span style="font-size:1rem;">→</span> High Kinetic Readiness</td>
-              <td class="px-4 py-4 align-top leading-relaxed" style="color:#cbd5e1;">High-intensity direct air exchanges remain in a temporary operational pause. US CENTCOM maintains forward-basing aerial refuelling assets (KC-135/KC-46) at Ramon Air Base while Oman-brokered diplomatic talks remain deadlocked over Iranian attempts to enforce tolling and transit management in the Strait of Hormuz.</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-4 align-top font-semibold whitespace-nowrap" style="color:#ffffff;">Thailand–Cambodia</td>
-              <td class="px-4 py-4 align-top whitespace-nowrap"><span class="ph ph-pause">Physical Hardening</span></td>
-              <td class="px-4 py-4 align-top font-semibold" style="color:#94a3b8; min-width:150px;"><span style="font-size:1rem;">→</span> Permanent Terrain Anchoring</td>
-              <td class="px-4 py-4 align-top leading-relaxed" style="color:#cbd5e1;">Royal Thai Armed Forces combat engineering units continue advancing Phase II physical barrier construction along disputed perimeter sectors in Chanthaburi and Oddar Meanchey, using concrete panels and container lines to permanently solidify the tactical status quo despite Cambodian diplomatic protests.</td>
-            </tr>
+            <tr><td>Operating problem</td><td>Persistent drone observation and strikes made it difficult to concentrate and move ground forces without detection.</td></tr>
+            <tr><td>What Ukraine did</td><td>Ukraine’s 3rd Army Corps reported disrupting Russian logistics and fuel supplies before and during its advance. It also described counter-drone measures and strict information security intended to reduce Russian awareness. ISW assessed that reduced fuel availability may have strained generator-powered Russian EW, improving Ukrainian drone freedom of action in support of limited mechanised advances. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-17-2026/" target="_blank" rel="noopener">ISW, 17 Sep</a></span></td></tr>
+            <tr><td>What changed on the ground</td><td>Ukraine’s corps reported clearing Russian infiltration groups and recapturing territory; Reuters could not independently verify its initial figures. ISW assessed that the operation demonstrated a limited return of tactical manoeuvre, not a general breakthrough. <span class="cite">Source: <a href="https://www.reuters.com/world/europe/ukraine-launches-offensive-push-north-donetsk-region-senior-commander-says-2026-09-15/" target="_blank" rel="noopener">Reuters, 15 Sep</a> · <a href="https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-september-20-2026" target="_blank" rel="noopener">Critical Threats, 20 Sep</a></span></td></tr>
+            <tr><td>Learning point</td><td>Striking logistics may have affected more than resupply: it may also have reduced the power available to Russian EW. That suggests a possible chain — fuel disruption → weaker EW → greater Ukrainian drone freedom → a temporary opportunity for ground movement. It is an assessed mechanism, not a proven causal account of the operation. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-17-2026/" target="_blank" rel="noopener">ISW, 17 Sep</a></span></td></tr>
           </tbody>
         </table>
+        <div class="callout">
+          <div class="label">Preliminary observations</div>
+          <p>The weak point in an opponent’s reconnaissance–strike system may sit in its support dependencies, not only in its sensors or drones. Disrupting those dependencies could briefly make manoeuvre possible. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-17-2026/" target="_blank" rel="noopener">ISW, 17 Sep</a></span></p>
+        </div>
+        <div class="callout callout--q">
+          <div class="label">Validation question</div>
+          <p>In a dense, connected environment, which dependencies keep an opposing surveillance-and-strike system functioning, and what evidence would indicate that its effectiveness has actually fallen?</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- Sense & Strike -->
+    <article class="topic">
+      <div class="fn">Sense &amp; Strike</div>
+      <h3>Counter-UAS measures outpaced by jet-powered attack drones</h3>
+      <p class="cx-tag">Russia–Ukraine · 15–28 Sep 2026</p>
+      <p class="cx-conf"><a class="cx-chip" href="#confidence">Preliminary · Medium confidence</a> The interception rates come from Ukraine’s air force, reported by Reuters, and have not been independently verified.</p>
+      <div class="cx-strip">
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue soldier launches an interceptor drone that destroys a slow propeller-driven Red drone. About 9 in 10 were stopped."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier" x="22" y="100" width="44" height="80" class="cx-blue" /><path class="cx-trail cx-blue-s" d="M58 112 Q100 60 150 80"/><use href="#cx-prop" x="214" y="50" width="66" height="40" class="cx-red" /><use href="#cx-quad" x="150" y="66" width="48" height="26" class="cx-blue" /><use href="#cx-burst" x="190" y="50" width="36" height="36" class="cx-red" /><g class="cx-bubble"><rect x="64" y="34" width="78" height="28" rx="10"/><path d="M74 61 L90 61 L50 100 Z"/><path d="M75.5 61 L88.5 61" class="cx-seam"/><text x="103.0" y="54" text-anchor="middle">Got it!</text></g><g class="cx-badge "><rect x="186" y="148" width="122" height="22" rx="3"/><text x="247.0" y="163" text-anchor="middle">≈ 9 in 10 stopped</text></g></svg>
+          <figcaption><span class="cx-n">1</span><strong>It worked.</strong> Cheap Blue interceptor drones stopped about 9 in 10 slow, propeller-driven Red attack drones.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A fast Red jet drone flies high over a Blue interceptor drone that cannot keep up. About 6 in 10 were stopped."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier" x="22" y="100" width="44" height="80" class="cx-blue" /><use href="#cx-jet" x="178" y="26" width="90" height="44" class="cx-red" /><g class="cx-speed cx-red-s"><path d="M272 38 L306 38"/><path d="M276 48 L316 48"/><path d="M272 58 L302 58"/></g><use href="#cx-quad" x="128" y="112" width="48" height="26" class="cx-blue" /><path class="cx-trail cx-blue-s" d="M170 112 Q190 80 196 62"/><text class="cx-q" x="184" y="128">?</text><g class="cx-bubble"><rect x="56" y="34" width="92" height="28" rx="10"/><path d="M66 61 L82 61 L50 100 Z"/><path d="M67.5 61 L80.5 61" class="cx-seam"/><text x="102.0" y="54" text-anchor="middle">Too fast!</text></g><g class="cx-badge cx-badge-red"><rect x="186" y="148" width="122" height="22" rx="3"/><text x="247.0" y="163" text-anchor="middle">≈ 6 in 10 stopped</text></g></svg>
+          <figcaption><span class="cx-n">2</span><strong>Red changed the drone.</strong> Red switched to faster, higher-flying jet-powered drones. Interceptions fell to about 6 in 10.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue soldier points at a bar chart showing interception falling from 90 percent against the old drone to 60 percent against the jet drone."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-soldier-point" x="30" y="100" width="44" height="80" class="cx-blue" /><path class="cx-axis" d="M150 160 L306 160"/><rect class="cx-bar" x="166" y="52" width="42" height="108"/><rect class="cx-bar cx-bar-red" x="244" y="88" width="42" height="72"/><text class="cx-label cx-val" x="187" y="46" text-anchor="middle">90%</text><text class="cx-label cx-val cx-red-t" x="265" y="82" text-anchor="middle">60%</text><text class="cx-label " x="187" y="174" text-anchor="middle">OLD DRONE</text><text class="cx-label " x="265" y="174" text-anchor="middle">JET DRONE</text><path class="cx-arrow" d="M212 56 Q236 50 246 76"/><path class="cx-arrowhead" d="M240 72 L247 80 L251 70"/><g class="cx-bubble"><rect x="8" y="16" width="140" height="44" rx="10"/><path d="M50 59 L66 59 L58 100 Z"/><path d="M51.5 59 L64.5 59" class="cx-seam"/><text x="78.0" y="36" text-anchor="middle">Still working vs.</text><text x="78.0" y="52" text-anchor="middle">what’s flying now?</text></g></svg>
+          <figcaption><span class="cx-n">3</span><strong>Spot the drop. Adapt fast.</strong> The old counter still works on the old drone. The danger is the lag between noticing the drop and fielding an affordable fix at scale.</figcaption>
+        </figure>
       </div>
-    </div>
+      <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
+      <div class="cx-take">
+        <p><span class="label">Lesson</span>A counter that beats today’s drone can fail against a modified one.</p>
+        <p><span class="label">Questions to ask</span>Can our counter-drone kit spot a changed threat and adapt, without losing cover against the others?</p>
+      </div>
+      <details class="cx-full">
+        <summary>Read the full analysis</summary>
+        <dl class="meta">
+          <dt>Theatre</dt><dd>Russia–Ukraine</dd>
+          <dt>Reporting period</dt><dd>15–28 September 2026</dd>
+          <dt>Learning status</dt><dd>Preliminary observation · Medium confidence</dd>
+        </dl>
+        <table class="findings">
+          <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
+          <tbody>
+            <tr><td>Previously effective response</td><td>Ukraine developed relatively cheap interceptor drones against slower, propeller-driven attack drones. Its air force reported intercepting more than 90% of those earlier variants. <span class="cite">Source: <a href="https://www.reuters.com/business/aerospace-defense/jet-powered-russian-drones-strain-ukraines-air-defences-2026-09-22/" target="_blank" rel="noopener">Reuters, 22 Sep</a> · <a href="https://www.reuters.com/business/aerospace-defense/ukraine-races-counter-russias-jet-powered-drone-attacks-2026-09-15/" target="_blank" rel="noopener">Reuters, 15 Sep</a></span></td></tr>
+            <tr><td>Russia’s adaptation</td><td>Russia expanded use of jet-powered variants. Reuters reported that their speed and higher flight profiles reduced the effectiveness of existing interceptor drones and some mobile air-defence teams.</td></tr>
+            <tr><td>Observed performance gap</td><td>Ukraine’s air force reported about 60% interception of the newer variants. That does not mean all Ukrainian air defence is obsolete; it identifies a performance gap against a changed target set.</td></tr>
+            <tr><td>Response under development</td><td>Faster interceptors, other lower-cost weapons, and different engagement approaches. Reuters reported successful individual intercepts, alongside difficult trials and unresolved production and funding constraints. None is yet demonstrated here as a replacement at scale.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <div class="label">Preliminary observations</div>
+          <p>A countermeasure can remain effective against the threat it was built for while becoming inadequate against a modified variant. The attacker did not simply add more drones; it changed the target’s speed and flight profile enough to put a successful defensive method outside its useful engagement conditions. The critical issue is the time lag between detecting that performance drop and fielding an affordable replacement at scale.</p>
+        </div>
+        <div class="callout callout--q">
+          <div class="label">Validation question</div>
+          <p>If a protection concept depends on a particular class of counter-UAS system, its useful test is not whether it defeats today’s reference drone. It is whether the concept can recognise and respond to a changed threat envelope while preserving coverage of other threats.</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- Sustainment -->
+    <article class="topic">
+      <div class="fn">Sustainment</div>
+      <h3>When fuel disruption affects more than mobility</h3>
+      <p class="cx-tag">Russia–Ukraine · 15–28 Sep 2026</p>
+      <p class="cx-conf"><a class="cx-chip" href="#confidence">Preliminary · Medium confidence</a> Medium for the pipeline shutdown, which Ukraine’s 3rd Army Corps reported. Lower for its effect on Russian drones and jamming, which has not been measured.</p>
+      <div class="cx-strip">
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Blue drone strike bursts a Red diesel pipeline, with fuel spilling out."><path class="cx-ground" d="M0 180 L320 180"/><text class="cx-label cx-red-t" x="14" y="112" text-anchor="start">DIESEL PIPELINE</text><g class="cx-pipe"><rect x="-4" y="120" width="328" height="18"/><path d="M40 118 L40 140 M100 118 L100 140 M220 118 L220 140 M280 118 L280 140"/></g><path class="cx-trail cx-blue-s" d="M226 56 Q200 80 176 112"/><use href="#cx-quad" x="210" y="30" width="48" height="26" class="cx-blue" /><use href="#cx-burst" x="128" y="96" width="64" height="64" class="cx-red" /><g class="cx-drop"><path d="M150 164 q-5 8 0 11 q5 -3 0 -11 Z"/><path d="M172 170 q-5 8 0 11 q5 -3 0 -11 Z"/><path d="M160 152 q-4 6 0 9 q4 -3 0 -9 Z"/></g></svg>
+          <figcaption><span class="cx-n">1</span><strong>Pipeline cut.</strong> Blue says its strikes shut a pipeline carrying much of Red’s diesel in the area.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Red generator with its fuel gauge on empty, a nearly flat drone battery, and a Red jamming mast switched off."><path class="cx-ground" d="M0 180 L320 180"/><use href="#cx-gauge" x="36" y="74" width="56" height="36" class="cx-red" /><use href="#cx-gen" x="28" y="118" width="74" height="60" class="cx-red" /><use href="#cx-battery" x="128" y="138" width="66" height="33" class="cx-red" /><use href="#cx-mast-off" x="240" y="92" width="50" height="88" class="cx-red" /><text class="cx-label cx-red-t" x="65" y="196" text-anchor="middle">GENERATOR</text><text class="cx-label cx-red-t" x="160" y="196" text-anchor="middle">DRONE BATTERY</text><text class="cx-label cx-red-t" x="265" y="196" text-anchor="middle">JAMMER</text></svg>
+          <figcaption><span class="cx-n">2</span><strong>No fuel, no power.</strong> Less diesel means fewer running generators: drone batteries go uncharged and jammers go quiet.</figcaption>
+        </figure>
+        <figure class="cx-panel">
+          <svg viewBox="0 0 320 200" role="img" aria-label="A Red fuel tanker drives along a long winding road while a Blue drone watches it from above. A clock shows the delay."><path class="cx-road" d="M-6 176 C 60 176, 90 130, 160 140 S 270 120, 330 104"/><path class="cx-road-line" d="M-6 176 C 60 176, 90 130, 160 140 S 270 120, 330 104"/><polygon class="cx-cone cx-blue-cone" points="262,40 176,146 250,120"/><use href="#cx-quad" x="240" y="16" width="48" height="26" class="cx-blue" /><use href="#cx-tanker" x="150" y="100" width="96" height="42" class="cx-red" /><g class="cx-clock"><circle cx="72" cy="70" r="20"/><path d="M72 58 L72 70 L82 76"/></g><text class="cx-label " x="72" y="110" text-anchor="middle">LONGER ROUTE</text></svg>
+          <figcaption><span class="cx-n">3</span><strong>The workaround.</strong> Red switched to road tankers. Fuel still arrives, but on a longer, slower and more exposed route.</figcaption>
+        </figure>
+      </div>
+      <p class="cx-swipe" aria-hidden="true">Swipe for the next panel →</p>
+      <div class="cx-take">
+        <p><span class="label">Lesson</span>Fuel powers sensors, jammers and comms, not just vehicles. Cutting it can blind a force before it stops it moving.</p>
+        <p><span class="label">Questions to ask</span>Which of our sensing, EW and comms kit runs on fuel-powered electricity, and how long could it last through a disruption?</p>
+      </div>
+      <details class="cx-full">
+        <summary>Read the full analysis</summary>
+        <dl class="meta">
+          <dt>Theatre</dt><dd>Russia–Ukraine</dd>
+          <dt>Reporting period</dt><dd>15–28 September 2026</dd>
+          <dt>Function</dt><dd>Sustainment, with links to sensing, EW and manoeuvre</dd>
+          <dt>Learning status</dt><dd>Preliminary observation · Medium confidence in the reported disruption; lower confidence in its precise battlefield effects</dd>
+        </dl>
+        <table class="findings">
+          <thead><tr><th>Question</th><th>Preliminary findings</th></tr></thead>
+          <tbody>
+            <tr><td>What changed?</td><td>Ukraine’s 3rd Army Corps reported that strikes shut a pipeline supplying a substantial share of Russian diesel in occupied Luhansk. It said Russian forces had to move fuel by a longer tanker route. These quantities and route effects come from Ukrainian military reporting. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-22-2026/" target="_blank" rel="noopener">ISW, 22 Sep</a></span></td></tr>
+            <tr><td>Why is this different?</td><td>Ukraine’s corps said reduced fuel availability would make it harder to run generators, charge drone batteries and operate EW equipment. ISW assessed that the interdiction supported Ukrainian counteroffensive operations north of Lyman. That is a plausible fuel → electrical power → drone/EW availability → battlefield freedom of action chain, but its individual links have not all been independently measured. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-22-2026/" target="_blank" rel="noopener">ISW, 22 Sep</a></span></td></tr>
+            <tr><td>What was the countermeasure?</td><td>Russian forces reportedly shifted to road-tanker delivery. The open question is whether that substitution restores fuel reliably or creates a slower, more exposed supply chain. <span class="cite">Source: <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-22-2026/" target="_blank" rel="noopener">ISW, 22 Sep</a></span></td></tr>
+            <tr><td>What is not proven?</td><td>We cannot conclude that fuel disruption alone caused Ukrainian advances, quantify how much Russian drone/EW activity fell, or judge how quickly Russian forces adapted.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <div class="label">Preliminary observations</div>
+          <p>Preliminary CSI observation — Explore: a fuel supply system can be a hidden dependency of the sense-and-strike system, not only of vehicles. Its disruption may reduce battlefield awareness or protection before it visibly stops manoeuvre. Conversely, shifting to tankers may preserve supply but change its cost, predictability and vulnerability.</p>
+        </div>
+        <div class="callout callout--q">
+          <div class="label">Validation question</div>
+          <p>Which critical sensing, EW, communications and support functions depend on fuel-powered electricity, and how long could they operate through a disruption?</p>
+        </div>
+      </details>
+    </article>
   </section>
 
-  <!-- Key Developments -->
-  <section class="mb-12">
-    <h2 class="font-mono text-xs tracking-widest uppercase mb-8" style="color:#8896aa;"><span class="sec-dot" style="background:#f59e0b"></span>Key Developments</h2>
-
-    <article class="theatre-card">
-      <div class="th-hdr">
-        <span class="th-badge">Theatre 01</span>
-        <h3 class="th-name">Russia – Ukraine</h3>
-        <div class="th-sub">UGV Route-Clearance &amp; EW Interdiction around Lyman</div>
-      </div>
-      <div class="space-y-5 text-sm sm-text-base">
-        <div>
-          <div class="flex items-center gap-2 mb-15"><span class="pill">Manoeuvre</span><span class="pill">Fires &amp; EW</span></div>
-          <div class="font-semibold mb-15" style="color:#ffffff;">Ukraine isolates Russian infiltration forces around Lyman</div>
-          <p class="leading-relaxed" style="color:#cbd5e1;"><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-26-2026/" target="_blank" rel="noopener" style="color:#f59e0b;">Ukraine adapted Operation Vivaldi around Lyman by targeting the reinforcement and supply links supporting Russian infiltration groups rather than immediately clearing each forward position</a>. Ukrainian forces combined UGV route-clearance, EW, strikes on drone teams and command posts, and interdiction of ATV- and motorcycle-borne reinforcements to isolate Russian troops north and northwest of Lyman before clearing them. The approach demonstrates how limited manoeuvre can be restored in a drone-saturated battlespace by breaking the adversary’s ISR–C2–logistics chain.<span class="src-group"><a class="src-pill" href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-26-2026/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg><span>isw</span></a></span></p>
-        </div>
-      </div>
-      <div class="mt-6 pl-4" style="border-left:2px solid rgba(245,158,11,0.55);">
-        <div class="font-mono" style="font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#f59e0b; margin-bottom:6px; font-weight:700;">Implication</div>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0;">Small infiltration groups become operationally ineffective if their resupply, reinforcement and casualty-evacuation routes are interdicted. Prioritise fires, UAS and EW against mobility corridors, rather than committing infantry immediately to every forward clearance fight.</p>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0; margin-top:0.85rem;">Ukrainian UGVs reportedly demined 30 km of routes in two nights toward Shandryholove. This illustrates how robotic breaching and route-clearance systems can restore movement tempo while reducing sapper exposure in mine- and drone-threatened terrain.</p>
-      </div>
-    </article>
-
-    <article class="theatre-card">
-      <div class="th-hdr">
-        <span class="th-badge">Theatre 02</span>
-        <h3 class="th-name">Israel – Lebanon</h3>
-        <div class="th-sub">Transition to an Enduring Layered Security Zone</div>
-      </div>
-      <div class="space-y-5 text-sm sm-text-base">
-        <div>
-          <div class="flex items-center gap-2 mb-15"><span class="pill">Manoeuvre</span><span class="pill">Area Security</span></div>
-          <div class="font-semibold mb-15" style="color:#ffffff;">Israel transitions to enduring security-zone control in southern Lebanon</div>
-          <p class="leading-relaxed" style="color:#cbd5e1;">Israel’s most significant operational development this week was the transition from clearance operations to a more permanent, layered security-zone posture in southern Lebanon. <a href="https://www.aa.com.tr/en/middle-east/israeli-army-prepares-for-new-phase-of-fighting-in-southern-lebanon-report/4068944" target="_blank" rel="noopener" style="color:#f59e0b;">The IDF reportedly began reorganising forces within the &quot;Yellow Zone&quot;, reducing and redeploying troops while establishing a new line of forward positions for an extended deployment</a>. Hezbollah’s attempted explosive-drone attack on Israeli troops and Israel’s subsequent strikes on suspected drone-launch and anti-tank missile sites illustrate the evolving contest: Israel is seeking to hold key terrain and movement corridors with a more sustainable footprint, while Hezbollah is relying on dispersed UAS, anti-tank and covert cells to impose force-protection costs and challenge Israeli freedom of movement.<span class="src-group"><a class="src-pill" href="https://www.aa.com.tr/en/middle-east/israeli-army-prepares-for-new-phase-of-fighting-in-southern-lebanon-report/4068944" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg><span>anadolu</span></a></span></p>
-        </div>
-      </div>
-      <div class="mt-6 pl-4" style="border-left:2px solid rgba(245,158,11,0.55);">
-        <div class="font-mono" style="font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#f59e0b; margin-bottom:6px; font-weight:700;">Implication</div>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0;">A forward line alone is vulnerable to UAS, ATGM and IED attack. Enduring control requires mutually supporting posts, protected logistics routes, reserve/reaction forces, persistent ISR and the ability to strike beyond the immediate line of contact.</p>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0; margin-top:0.85rem;">New positions must be built for drone- and ATGM-dominated warfare: overhead protection, dispersed shelters, decoys, hardened C2, concealed vehicle parks and rapid route repair are essential from the outset, not later improvements.</p>
-      </div>
-    </article>
-
-    <article class="theatre-card">
-      <div class="th-hdr">
-        <span class="th-badge">Theatre 03</span>
-        <h3 class="th-name">Israel – Gaza</h3>
-        <div class="th-sub">Counter-Reconstitution: Tunnel Demolition &amp; Finance-Node Targeting</div>
-      </div>
-      <div class="space-y-5 text-sm sm-text-base">
-        <div>
-          <div class="flex items-center gap-2 mb-15"><span class="pill">Manoeuvre</span></div>
-          <div class="font-semibold mb-15" style="color:#ffffff;">Shift toward a persistent, limited-security-zone campaign rather than a large manoeuvre offensive</div>
-          <p class="leading-relaxed" style="color:#cbd5e1;">The key operational development was the IDF’s continued transition to an enduring counter-reconstitution posture inside and around the Gaza security-control area, illustrated by <a href="https://caliber.az/en/post/israeli-army-says-troops-dismantled-two-kilometre-tunnel-in-southern-gaza" target="_blank" rel="noopener" style="color:#f59e0b;">the reported demolition of a 2 km underground tunnel in southern Gaza’s &quot;Yellow Line&quot;</a> and <a href="https://www.gov.il/en/pages/joint-statement-by-pm-netanyahu-and-defense-minister-katz-23-sep-2026" target="_blank" rel="noopener" style="color:#f59e0b;">a precision strike that Israel says killed Hamas finance department head Muhammad Abu Alwan in Khan Younis</a>. Rather than signalling a return to broad, division-level urban clearance, these actions suggest a campaign focused on denying Hamas the means to regenerate: degrading remaining subterranean infrastructure, maintaining access and surveillance over selected terrain, and selectively targeting leadership and financial nodes. The development also underlines that a ceasefire or reduced-intensity framework does not end ground-force requirements; it shifts them toward persistent ISR, protected mobility, route/tunnel exploitation and intelligence-led raids.<span class="src-group"><a class="src-pill" href="https://caliber.az/en/post/israeli-army-says-troops-dismantled-two-kilometre-tunnel-in-southern-gaza" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg><span>caliber</span></a><a class="src-pill" href="https://www.gov.il/en/pages/joint-statement-by-pm-netanyahu-and-defense-minister-katz-23-sep-2026" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg><span>gov.il</span></a></span></p>
-        </div>
-      </div>
-      <div class="mt-6 pl-4" style="border-left:2px solid rgba(245,158,11,0.55);">
-        <div class="font-mono" style="font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#f59e0b; margin-bottom:6px; font-weight:700;">Implication</div>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0;">Land forces must transition mentally and doctrinally from large-scale combat operations (LSCO) focused on &quot;clear and hold&quot; to continuous counter-reconstitution operations. The primary objective shifts from territorial conquest to denying the enemy the capacity to reorganise, re-arm, and rebuild infrastructure.</p>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0; margin-top:0.85rem;">Achieving effective counter-reconstitution demands an unblinking ISR umbrella over the operational area. Ground units become sensory nodes feeding real-time targeting cycles, requiring seamless fusion between tactical ground patrols, overhead UAS, and financial/human intelligence (FININT/HUMINT).</p>
-      </div>
-    </article>
-
-    <article class="theatre-card">
-      <div class="th-hdr">
-        <span class="th-badge">Theatre 04</span>
-        <h3 class="th-name">Israel – US – Iran</h3>
-        <div class="th-sub">Dual-Chokepoint A2/AD: Hormuz Blockade &amp; Bab al-Mandeb Consolidation</div>
-      </div>
-      <div class="space-y-5 text-sm sm-text-base">
-        <div>
-          <div class="flex items-center gap-2 mb-15"><span class="pill">Operational Development</span></div>
-          <div class="font-semibold mb-15" style="color:#ffffff;">Maritime chokepoint escalation and nuclear-infrastructure targeting posture</div>
-          <p class="leading-relaxed" style="color:#cbd5e1;">Trilateral tensions across the Israel–US–Iran axis were characterised by escalation along key maritime chokepoints and targeting posture surrounding Iran's nuclear infrastructure. Iran expanded efforts to enforce a transit blockade in the Strait of Hormuz through asymmetric maritime harassment while utilising domestic and proxy subterranean fortification — notably expanding underground works at Natanz and along Yemen's Bab al-Mandeb coast alongside IRGC advisers. Concurrently, US naval enforcement against Iranian ports forced Tehran to rely on alternative air supply routes for missile components. In response to Iranian nuclear facility reinforcement, <a href="https://www.timesofisrael.com/report-israeli-official-claims-renewed-strikes-on-iran-only-a-matter-of-time/" target="_blank" rel="noopener" style="color:#f59e0b;">Israeli leadership reaffirmed readiness to execute unilateral or coalition precision strikes</a>, signalling that regional operational pauses remain temporary while strategic red lines are tested.<span class="src-group"><a class="src-pill" href="https://www.timesofisrael.com/report-israeli-official-claims-renewed-strikes-on-iran-only-a-matter-of-time/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg><span>timesofisrael</span></a></span></p>
-        </div>
-      </div>
-      <div class="mt-6" style="margin-top:2.25rem;">
-        <div class="flex items-center gap-2 mb-15"><span class="pill">Houthi &amp; Regional Proxies</span></div>
-        <div class="font-semibold mb-15" style="color:#ffffff;">Red Sea interdiction and Saudi escalation</div>
-        <p class="leading-relaxed text-sm sm-text-base" style="color:#cbd5e1;">Operational developments among Iran’s regional proxies were dominated by the Houthi movement consolidating territorial and operational control over Yemen’s west coast and the vital Bab al-Mandeb shipping corridor. Following the seizure of Mokha and Mayun Island, Houthi forces blunted government counter-offensives around key heights in Lahj, firmly locking down the Red Sea choke point. Concurrently, <a href="https://m.koreaherald.com/article/10886187" target="_blank" rel="noopener" style="color:#f59e0b;">the Houthis escalated long-range fires into Saudi Arabia, launching ballistic missiles and sUAS swarms targeting Riyadh and southern defence sites, drawing heavy Saudi air strikes against Houthi military sites in Taiz</a>. Supported by embedded IRGC technical advisers, Houthi coastal anti-access/area-denial (A2/AD) capabilities now directly complement Iranian maritime interdiction efforts across the wider Middle Eastern maritime domain.<span class="src-group"><a class="src-pill" href="https://m.koreaherald.com/article/10886187" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg><span>koreaherald</span></a></span></p>
-      </div>
-      <div class="mt-6 pl-4" style="border-left:2px solid rgba(245,158,11,0.55);">
-        <div class="font-mono" style="font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#f59e0b; margin-bottom:6px; font-weight:700;">Implication</div>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0;">The simultaneous threat to the Strait of Hormuz and the Bab al-Mandeb Strait establishes a coordinated, multi-theatre A2/AD envelope. Ground forces can no longer rely on secure maritime logistics in littoral zones. Expeditionary army units operating in or near these theatres must field organic, shore-based anti-ship cruise missiles (ASCMs), mobile coastal radars, and amphibious breaching capabilities to clear or secure critical choke points.</p>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0; margin-top:0.85rem;">Operating against heavily fortified or time-sensitive targets requires compressing the sensor-to-shooter cycle. Tactical army units must seamlessly fuse real-time overhead ISR with ground-based precision fires to exploit brief windows of exposure when forces emerge from subterranean complexes.</p>
-      </div>
-    </article>
-
-    <article class="theatre-card">
-      <div class="th-hdr">
-        <span class="th-badge">Theatre 05</span>
-        <h3 class="th-name">Thailand – Cambodia</h3>
-        <div class="th-sub">Combat-Readiness Order at Mounts 225/350 and Ta Kwai</div>
-      </div>
-      <div class="space-y-5 text-sm sm-text-base">
-        <div>
-          <div class="flex items-center gap-2 mb-15"><span class="pill">Strategic</span></div>
-          <div class="font-semibold mb-15" style="color:#ffffff;">Heightened contingency readiness at sensitive border terrain</div>
-          <p class="leading-relaxed" style="color:#cbd5e1;">The most significant development during 21–28 September was <a href="https://www.thaipbsworld.com/thailand-cambodia-standoff/army-chief-orders-troops-on-alert-along-thai-cambodian-border" target="_blank" rel="noopener" style="color:#f59e0b;">the Thai Army’s order for troops at key Thai–Cambodian border locations — including Mounts 225 and 350 and the Ta Kwai temple area — to maintain combat readiness</a>. The order indicates that Bangkok is sustaining a heightened contingency posture around tactically and politically sensitive terrain, where small-scale incidents involving patrols, fortifications, mines or unmanned systems could escalate rapidly. This more likely reflects preparation for localised border contingencies and force-protection requirements than an immediate indication of planned large-scale cross-border operations.<span class="src-group"><a class="src-pill" href="https://www.thaipbsworld.com/thailand-cambodia-standoff/army-chief-orders-troops-on-alert-along-thai-cambodian-border" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg><span>thaipbsworld</span></a></span></p>
-        </div>
-      </div>
-      <div class="mt-6 pl-4" style="border-left:2px solid rgba(245,158,11,0.55);">
-        <div class="font-mono" style="font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#f59e0b; margin-bottom:6px; font-weight:700;">Implication</div>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0;">A ceasefire environment may still demand combat-ready forward forces. Units require rehearsed transition drills from monitoring and presence patrols to local defence, protected reinforcement and controlled counteraction.</p>
-        <p class="text-sm sm-text-base leading-relaxed" style="color:#e2e8f0; margin-top:0.85rem;">Standing defensive positions on key terrain are primary targets for preemptive or retaliatory mortar salvos. Command nodes, supply caches, and troop staging areas must remain dispersed, camouflaged, and mobile to reduce signatures and avoid single-point destruction from localised indirect fire.</p>
-      </div>
-    </article>
-
+  <section class="feedback">
+    <div>
+      <div class="label">Feedback &amp; Reflections</div>
+      <p>Share your feedback and reflections on this edition.</p>
+    </div>
+    <a class="fb-btn" href="https://form.gov.sg/69f02112e786500cb50b40a6" target="_blank" rel="noopener">Share your thoughts →</a>
   </section>
 
-  <!-- Watch Areas -->
-  <section class="mb-10">
-    <h2 class="font-mono text-xs tracking-widest uppercase mb-4" style="color:#8896aa;"><span class="sec-dot" style="background:#f59e0b"></span>Watch Areas — Next 7 Days</h2>
-    <div class="bg-panel border-panel rounded-xl p-5 sm-p-6">
-      <p class="text-sm sm-text-base leading-relaxed text-slate-400" style="font-style:italic;">Watch Areas not published in this edition.</p>
+  <footer>
+    <div class="ft-row">
+      <span>Conflict Studies and Insights · Biweekly Conflict Insights · 15–28 September 2026</span>
+      <span>Published 8 October 2026</span>
     </div>
-  </section>
-
-  <!-- Feedback -->
-  <section class="mb-10">
-    <div class="rounded-md p-5 sm-p-6 flex flex-col sm-flex-row sm-items-center sm-justify-between gap-3" style="background:#111827; border:1px solid #1e2a3f;">
-      <div>
-        <div class="font-mono text-xs tracking-widest uppercase mb-1" style="color:#f59e0b;">Feedback & Reflections</div>
-        <p class="text-sm" style="color:#94a3b8;">Share your feedback and reflections on this week's brief.</p>
-      </div>
-      <a href="https://form.gov.sg/69f02112e786500cb50b40a6" target="_blank" rel="noopener" style="display:inline-block; background:#f59e0b; color:#0a0e17; font-weight:700; font-size:0.8rem; letter-spacing:1px; text-transform:uppercase; padding:10px 22px; border-radius:4px; white-space:nowrap; text-decoration:none;">Share Your Thoughts →</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t pt-6 flex flex-col gap-4 text-xs font-mono text-slate-500">
-    <div class="flex flex-col sm-flex-row sm-items-center sm-justify-between gap-2">
-      <div class="flex items-center gap-2">
-        <span class="inline-block w-15 h-15 rounded-full bg-slate-dot"></span>
-        <span>Conflict Studies and Insights · Weekly Brief · 21 September – 28 September 2026</span>
-      </div>
-      <div>Generated 28 September 2026</div>
-    </div>
-    <div class="border-t pt-4">
-      <div class="mb-2 uppercase tracking-widest" style="color:#8896aa;">Previous Editions</div>
-      <details open style="margin-bottom:0.5rem;">
-        <summary style="cursor:pointer; color:#8896aa; font-weight:700; padding:0.25rem 0; list-style:none; outline:none;">
-          <span style="display:inline-block; width:0.9em; transition:transform 0.15s;">▾</span> September 2026
-        </summary>
-        <ul class="space-y-1" style="padding-left:1.4em; margin-top:0.25rem;">
-          <li><a href="/14-21-sep-2026.html" style="color:#f59e0b;">14 September – 21 September 2026</a> · Week 22</li>
-          <li><a href="/7-14-sep-2026.html" style="color:#f59e0b;">7 September – 14 September 2026</a> · Week 21</li>
+    <div class="ft-block">
+      <div class="label">Previous editions · Weekly Brief archive</div>
+      <details open>
+        <summary>September 2026</summary>
+        <ul>
+          <li><a href="/21-28-sep-2026.html">21 September – 28 September 2026</a> · Week 23</li>
+          <li><a href="/14-21-sep-2026.html">14 September – 21 September 2026</a> · Week 22</li>
+          <li><a href="/7-14-sep-2026.html">7 September – 14 September 2026</a> · Week 21</li>
         </ul>
       </details>
-      <details style="margin-bottom:0.5rem;">
-        <summary style="cursor:pointer; color:#8896aa; font-weight:700; padding:0.25rem 0; list-style:none; outline:none;">
-          <span style="display:inline-block; width:0.9em; transition:transform 0.15s;">▸</span> August 2026
-        </summary>
-        <ul class="space-y-1" style="padding-left:1.4em; margin-top:0.25rem;">
-          <li><a href="/31-aug-7-sep-2026.html" style="color:#f59e0b;">31 August – 7 September 2026</a> · Week 20</li>
-          <li><a href="/24-31-aug-2026.html" style="color:#f59e0b;">24 August – 31 August 2026</a> · Week 19</li>
-          <li><a href="/17-24-aug-2026.html" style="color:#f59e0b;">17 August – 24 August 2026</a> · Week 18</li>
-          <li><a href="/10-17-aug-2026.html" style="color:#f59e0b;">10 August – 17 August 2026</a> · Week 17</li>
-          <li><a href="/3-10-aug-2026.html" style="color:#f59e0b;">3 August – 10 August 2026</a> · Week 16</li>
+      <details>
+        <summary>August 2026</summary>
+        <ul>
+          <li><a href="/31-aug-7-sep-2026.html">31 August – 7 September 2026</a> · Week 20</li>
+          <li><a href="/24-31-aug-2026.html">24 August – 31 August 2026</a> · Week 19</li>
+          <li><a href="/17-24-aug-2026.html">17 August – 24 August 2026</a> · Week 18</li>
+          <li><a href="/10-17-aug-2026.html">10 August – 17 August 2026</a> · Week 17</li>
+          <li><a href="/3-10-aug-2026.html">3 August – 10 August 2026</a> · Week 16</li>
         </ul>
       </details>
-      <details style="margin-bottom:0.5rem;">
-        <summary style="cursor:pointer; color:#8896aa; font-weight:700; padding:0.25rem 0; list-style:none; outline:none;">
-          <span style="display:inline-block; width:0.9em; transition:transform 0.15s;">▸</span> July 2026
-        </summary>
-        <ul class="space-y-1" style="padding-left:1.4em; margin-top:0.25rem;">
-          <li><a href="/27-jul-3-aug-2026.html" style="color:#f59e0b;">27 July – 3 August 2026</a> · Week 15</li>
-          <li><a href="/20-27-jul-2026.html" style="color:#f59e0b;">20 July – 27 July 2026</a> · Week 14</li>
-          <li><a href="/13-20-jul-2026.html" style="color:#f59e0b;">13 July – 20 July 2026</a> · Week 13</li>
-          <li><a href="/6-13-jul-2026.html" style="color:#f59e0b;">6 July – 13 July 2026</a> · Week 12</li>
-          <li><a href="/29-jun-6-jul-2026.html" style="color:#f59e0b;">29 June – 6 July 2026</a> · Week 11</li>
+      <details>
+        <summary>July 2026</summary>
+        <ul>
+          <li><a href="/27-jul-3-aug-2026.html">27 July – 3 August 2026</a> · Week 15</li>
+          <li><a href="/20-27-jul-2026.html">20 July – 27 July 2026</a> · Week 14</li>
+          <li><a href="/13-20-jul-2026.html">13 July – 20 July 2026</a> · Week 13</li>
+          <li><a href="/6-13-jul-2026.html">6 July – 13 July 2026</a> · Week 12</li>
+          <li><a href="/29-jun-6-jul-2026.html">29 June – 6 July 2026</a> · Week 11</li>
         </ul>
       </details>
-      <details style="margin-bottom:0.5rem;">
-        <summary style="cursor:pointer; color:#8896aa; font-weight:700; padding:0.25rem 0; list-style:none; outline:none;">
-          <span style="display:inline-block; width:0.9em; transition:transform 0.15s;">▸</span> June 2026
-        </summary>
-        <ul class="space-y-1" style="padding-left:1.4em; margin-top:0.25rem;">
-          <li><a href="/22-29-jun-2026.html" style="color:#f59e0b;">22 June – 29 June 2026</a> · Week 10</li>
-          <li><a href="/15-22-jun-2026.html" style="color:#f59e0b;">15 June – 22 June 2026</a> · Week 9</li>
-          <li><a href="/8-15-jun-2026.html" style="color:#f59e0b;">8 June – 15 June 2026</a> · Week 8</li>
-          <li><a href="/1-8-jun-2026.html" style="color:#f59e0b;">1 June – 8 June 2026</a> · Week 7</li>
-          <li><a href="/25-may-1-jun-2026.html" style="color:#f59e0b;">25 May – 1 June 2026</a> · Week 6</li>
+      <details>
+        <summary>June 2026</summary>
+        <ul>
+          <li><a href="/22-29-jun-2026.html">22 June – 29 June 2026</a> · Week 10</li>
+          <li><a href="/15-22-jun-2026.html">15 June – 22 June 2026</a> · Week 9</li>
+          <li><a href="/8-15-jun-2026.html">8 June – 15 June 2026</a> · Week 8</li>
+          <li><a href="/1-8-jun-2026.html">1 June – 8 June 2026</a> · Week 7</li>
+          <li><a href="/25-may-1-jun-2026.html">25 May – 1 June 2026</a> · Week 6</li>
         </ul>
       </details>
-      <details style="margin-bottom:0.5rem;">
-        <summary style="cursor:pointer; color:#8896aa; font-weight:700; padding:0.25rem 0; list-style:none; outline:none;">
-          <span style="display:inline-block; width:0.9em; transition:transform 0.15s;">▸</span> May 2026
-        </summary>
-        <ul class="space-y-1" style="padding-left:1.4em; margin-top:0.25rem;">
-          <li><a href="/18-25-may-2026.html" style="color:#f59e0b;">18 May – 25 May 2026</a> · Week 5</li>
-          <li><a href="/11-18-may-2026.html" style="color:#f59e0b;">11 May – 18 May 2026</a> · Week 4</li>
-          <li><a href="/4-11-may-2026.html" style="color:#f59e0b;">4 May – 11 May 2026</a> · Week 3</li>
-          <li><a href="/27-apr-4-may-2026.html" style="color:#f59e0b;">27 April – 4 May 2026</a> · Week 2</li>
+      <details>
+        <summary>May 2026</summary>
+        <ul>
+          <li><a href="/18-25-may-2026.html">18 May – 25 May 2026</a> · Week 5</li>
+          <li><a href="/11-18-may-2026.html">11 May – 18 May 2026</a> · Week 4</li>
+          <li><a href="/4-11-may-2026.html">4 May – 11 May 2026</a> · Week 3</li>
+          <li><a href="/27-apr-4-may-2026.html">27 April – 4 May 2026</a> · Week 2</li>
         </ul>
       </details>
-      <details style="margin-bottom:0.25rem;">
-        <summary style="cursor:pointer; color:#8896aa; font-weight:700; padding:0.25rem 0; list-style:none; outline:none;">
-          <span style="display:inline-block; width:0.9em; transition:transform 0.15s;">▸</span> April 2026
-        </summary>
-        <ul class="space-y-1" style="padding-left:1.4em; margin-top:0.25rem;">
-          <li><a href="/20-27-apr-2026.html" style="color:#f59e0b;">20 April – 27 April 2026</a> · Inaugural Edition</li>
+      <details>
+        <summary>April 2026</summary>
+        <ul>
+          <li><a href="/20-27-apr-2026.html">20 April – 27 April 2026</a> · Inaugural Edition</li>
         </ul>
       </details>
     </div>
-    <div class="border-t pt-4">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="inline-block" style="width:6px;height:6px;border-radius:50%;background:#f59e0b;"></span>
-        <span class="uppercase tracking-widest" style="color:#f59e0b;letter-spacing:2px;">Powered by Claude Coworker</span>
-      </div>
-      <p style="color:#8896aa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:0.8rem;line-height:1.6;max-width:42rem;margin-bottom:0.875rem;text-transform:none;letter-spacing:normal;">Desired end-state for using Claude Coworker to drive operational learning across 5 major conflicts — turning open-source signals into insights.</p>
-      <a href="/methodology.png" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.625rem;background:#111827;border:1px solid #1e2a3f;border-radius:6px;padding:0.625rem 0.875rem;color:#e2e8f0;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;text-transform:none;letter-spacing:normal;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#f59e0b'" onmouseout="this.style.borderColor='#1e2a3f'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span style="font-size:0.8rem;">View infographic</span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;flex-shrink:0;"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
-      </a>
+    <div class="ft-block">
+      <div class="label">Powered by Claude Coworker</div>
+      <p>Desired end-state for using Claude Coworker to drive operational learning across 5 major conflicts — turning open-source signals into insights.</p>
+      <a class="ft-link" href="/methodology.png" target="_blank" rel="noopener">View infographic →</a>
     </div>
   </footer>
 
 </div>
+<script src="assets/d3.v7.min.js"></script>
+<script src="assets/topojson-client.min.js"></script>
+<script>
+(function () {
+  /* ================================================================
+     CONFLICTS MONITORED — update this list each edition.
+     status : 'priority' | 'active' | 'watch' | 'archive'
+              Statuses are set by the CSI editor. Change one only when instructed.
+     tier   : 1 (large marker) to 3 (small marker)
+     at     : [longitude, latitude] of the marker
+     off    : optional [x, y] screen-pixel nudge for crowded areas (draws a leader line)
+     lab    : label side 'r' | 'l' | 't' | 'b'
+     move   : optional 'up' | 'down' if the status moved this period
+     zone   : optional maritime / zone watch circle { at: [lon, lat], r: radius in degrees }
+     shade  : countries shaded in the conflict's status colour (world-atlas names)
+     phase  : optional phase of the conflict, shown when the conflict is selected
+     latest : latest development shown when the conflict is selected (any length)
+     src    : optional [[label, url], ...] sources for the latest development
+     sub    : optional sub-section { title, text, src } shown under the latest development
+     src    : optional [[label, url], ...] sources for the latest line
+     ================================================================ */
+  var CONFLICTS = [
+    { code: 'RUS-UKR', name: 'Russia–Ukraine', status: 'priority', tier: 1, at: [37.5, 48.3], lab: 't', shade: ['Russia', 'Ukraine'],
+      phase: "Attritional war; high-tempo long-range strike and UAS contest",
+      latest: "Ukraine reportedly combined strikes against Russian logistics and energy supply with manoeuvre activity. Russian forces continued large drone attacks and targeted Ukrainian logistics, drone-related sites, communications, port infrastructure and vessels." },
+    { code: 'ISR-PAL', name: 'Israel–Palestine', status: 'active', tier: 1, at: [34.45, 31.45], off: [-9, 9], lab: 'l', shade: ['Israel', 'Palestine'],
+      phase: "Ceasefire framework unresolved; continuing strikes",
+      latest: "Continued Israeli strikes caused casualties. Negotiations remain deadlocked over Hamas disarmament and Israeli withdrawal, while humanitarian conditions remain severe." },
+    { code: 'ISR-LBN', name: 'Israel–Lebanon', status: 'priority', tier: 1, at: [35.8, 33.4], off: [9, -9], lab: 'l', shade: ['Lebanon'],
+      phase: "Fragile ceasefire under pressure",
+      latest: "Israeli strikes in southern Lebanon continued despite the ceasefire, with Reuters reporting rising concern over renewed campaign activity after escalating strikes." },
+    { code: 'US-ISR-IRN', name: 'US–Israel–Iran', status: 'priority', tier: 1, at: [53.5, 32.5], lab: 't', zone: { at: [56.4, 26.5], r: 1.8 }, shade: ['Iran'],
+      phase: "Active coercive and negotiation contest centred on Hormuz",
+      latest: "US–Iran contacts explored a phased arrangement linking reopening Hormuz with reduced US pressure, while Iran stated it would not make nuclear concessions and could keep the strait restricted." },
+    { code: 'THA-KHM', name: 'Thailand–Cambodia', status: 'active', tier: 1, at: [103.6, 14.3], lab: 'b', shade: ['Thailand', 'Cambodia'],
+      phase: "Fragile ceasefire; unresolved border tensions",
+      latest: "Maritime conciliation began, but land-border displacement and closed crossings continue months after the ceasefire; reporting indicates that military positions and disputed territorial claims remain unresolved." },
+    { code: 'US-VEN', name: 'US–Venezuela', status: 'watch', tier: 2, at: [-66.5, 7.5], lab: 'b', zone: { at: [-67, 14], r: 5 }, shade: ['Venezuela'],
+      latest: "Caracas remains under provisional leadership following the direct US intervention and removal of Nicolás Maduro, as exiled opposition figures push for internal transition." },
+    { code: 'SCS', name: 'South China Sea / territorial disputes', status: 'active', tier: 2, at: [114.5, 12.5], lab: 'b', zone: { at: [114.5, 12.5], r: 6.5 },
+      latest: "Frequent vessel blockades and ramming incidents continue between Chinese and Philippine coast guards near contested shoals." },
+    { code: 'TWN', name: 'Taiwan Strait tensions', status: 'active', tier: 2, at: [120.9, 23.7], lab: 'r', zone: { at: [119.6, 24.2], r: 2.2 }, shade: ['Taiwan'],
+      latest: "Beijing continues intensive grey-zone operations designed to push US military presence back from the first island chain." },
+    { code: 'CHN-JPN', name: 'China–Japan tensions', status: 'active', tier: 3, at: [124.5, 27.8], lab: 'r',
+      latest: "A severe diplomatic crisis persists, marked by Beijing’s export curbs on dual-use materials and rare earths alongside sharp drops in tourism." },
+    { code: 'KOR', name: 'Korean Peninsula tensions', status: 'watch', tier: 3, at: [127.2, 38.3], lab: 'r', shade: ['North Korea', 'South Korea'],
+      latest: "Pyongyang has updated ruling party structures to consolidate wartime nuclear command and control, aligning with Seoul’s hardening defence posture." },
+    { code: 'IND-PAK', name: 'India–Pakistan tensions', status: 'watch', tier: 3, at: [75.3, 33.8], lab: 'r', shade: ['India', 'Pakistan'],
+      latest: "Diplomatic friction has deepened following an accidental naval ship collision in the Arabian Sea and ongoing disputes over the Indus Waters Treaty." },
+    { code: 'MMR', name: 'Myanmar civil war', status: 'watch', tier: 3, at: [96.0, 21.0], lab: 'l', shade: ['Myanmar'],
+      latest: "The junta has escalated aerial bombing campaigns, notably striking a crowded market in Rakhine State, causing massive civilian casualties." },
+    { code: 'SDN', name: 'Sudanese civil war', status: 'watch', tier: 2, at: [29.5, 14.5], lab: 'l', shade: ['Sudan'],
+      latest: "Catastrophic levels of displacement and food insecurity persist as fighting between the SAF and RSF ravages the Kordofan and Darfur regions." },
+    { code: 'RUS-EUR', name: 'Russia–Europe tensions', status: 'watch', tier: 2, at: [19.5, 57.0], lab: 't', zone: { at: [19.5, 57.0], r: 6 },
+      latest: "Russia sent NATO a letter threatening to use its entire arsenal, including nuclear weapons, if the alliance tried to cut off Kaliningrad. On 30 September NATO Secretary General Mark Rutte said there is no immediate threat to NATO territory and called the warning a distraction from Russia’s struggles in Ukraine.",
+      src: [["Euronews, 30 Sep", "https://www.euronews.com/2026/09/30/there-is-no-immediate-threat-to-nato-territory-natos-rutte-tells-euronews"]],
+      sub: { title: 'Grey-zone activity', text: "Estonia said on 29 September that Russian special services ordered an August arson attack on defence firm Milrem Robotics. It follows Germany’s 1 September attribution of an explosive drone attack at Leipzig/Halle Airport to Russia, as drone incursions, sabotage and threats to undersea infrastructure continue across Europe.",
+             src: [["Euronews, 29 Sep", "https://www.euronews.com/2026/09/29/estonia-slams-russian-sabotage-after-arson-attack-on-defence-company-milrem-robotics"], ["Wikipedia (Leipzig incidents)", "https://en.wikipedia.org/wiki/2026_Leipzig_Airport_drone_incidents"]] } },
+    { code: 'ME-SPILL', name: 'Middle East spillover (Syria, Iraq, Yemen)', status: 'active', tier: 1, at: [44.2, 15.4], lab: 'b', zone: { at: [42.3, 14.2], r: 3 }, shade: ['Syria', 'Iraq', 'Yemen'],
+      phase: "Active regional spillover and diplomatic containment",
+      latest: "Houthi control and Saudi-focused pressure keep the Red Sea/Yemen strand volatile, while Oman-mediated contacts and a Saudi truce proposal remain unresolved. Iraq approaches the 30 September coalition-withdrawal deadline without a matching militia-disarmament settlement." }
+  ];
 
+  var STATUS = {
+    priority: { label: 'Priority', rank: 3 },
+    active:   { label: 'Active',   rank: 2 },
+    watch:    { label: 'Watch',    rank: 1 },
+    archive:  { label: 'Archive',  rank: 0 }
+  };
+  var TIER_R = { 1: 7.5, 2: 6, 3: 4.5 };
+  var REGIONS = {
+    world:       [[-100, -22], [150, 64]],
+    hotspots:    [[8, 0], [146, 56]],        // opening view on phones: Europe to Japan
+    europe:      [[-12, 35], [52, 66]],
+    middleeast:  [[22, 10], [64, 40]],
+    southasia:   [[60, 6], [100, 37]],
+    indopacific: [[92, 0], [146, 45]],
+    americas:    [[-125, -8], [-40, 40]]
+  };
+
+  var frame = document.getElementById('map');
+  var detail = document.getElementById('map-detail');
+  var list = document.getElementById('map-list');
+  var narrow = function () { return frame.clientWidth < 560; };
+  var state = { focus: null, selected: null, hover: null };
+  var world, W, H, projection, svg, gMap, zones, markers, pattern, zoom;
+  var transform = null;
+
+  var countryStatus = {};
+  CONFLICTS.forEach(function (c) {
+    (c.shade || []).forEach(function (n) {
+      var cur = countryStatus[n];
+      if (!cur || STATUS[c.status].rank > STATUS[cur].rank) countryStatus[n] = c.status;
+    });
+  });
+
+  function byCode(code) { return CONFLICTS.filter(function (c) { return c.code === code; })[0]; }
+
+  function labelPos(pos, r) {
+    var g = r + 4;
+    if (pos === 'l') return [-g, 0, 'end'];
+    if (pos === 't') return [0, -g - 4, 'middle'];
+    if (pos === 'b') return [0, g + 6, 'middle'];
+    return [g, 0, 'start'];
+  }
+
+  function build() {
+    frame.innerHTML = '';
+    W = frame.clientWidth;
+    H = W < 560 ? Math.round(W * 0.82) : Math.round(Math.max(220, W * 0.46));   // taller on phones
+    var ms = Math.max(0.7, Math.min(1, W / 700));   // smaller markers on narrow screens
+    var land = topojson.feature(world, world.objects.countries);
+    land.features = land.features.filter(function (f) { return f.properties.name !== 'Antarctica'; });
+    projection = d3.geoNaturalEarth1().fitSize([W, H], land);
+    var path = d3.geoPath(projection);
+
+    svg = d3.select(frame).append('svg')
+      .attr('viewBox', '0 0 ' + W + ' ' + H)
+      .attr('role', 'img')
+      .attr('aria-label', 'World map of the 15 conflicts CSI monitors, marked by status. The list below the map gives the same information.');
+
+    pattern = svg.append('defs').append('pattern')
+      .attr('id', 'm-hatch').attr('patternUnits', 'userSpaceOnUse').attr('width', 5).attr('height', 5);
+    pattern.append('rect').attr('width', 5).attr('height', 5).attr('fill', '#e2dfd8');
+    pattern.append('line').attr('x1', 0).attr('y1', 0).attr('x2', 0).attr('y2', 5).attr('stroke', '#9d988d').attr('stroke-width', 1.5);
+
+    svg.append('rect').attr('width', W).attr('height', H).attr('fill', 'transparent');
+
+    gMap = svg.append('g');
+    gMap.selectAll('path').data(land.features).join('path')
+      .attr('class', function (d) { var s = countryStatus[d.properties.name]; return 'm-land' + (s ? ' s-' + s : ''); })
+      .attr('d', path);
+
+    CONFLICTS.forEach(function (c) {
+      c.p = projection(c.at);
+      if (c.zone) {
+        var zc = projection(c.zone.at), zn = projection([c.zone.at[0], c.zone.at[1] + c.zone.r]);
+        c.zp = zc;
+        c.zr = Math.hypot(zn[0] - zc[0], zn[1] - zc[1]);
+      }
+    });
+
+    var gOver = svg.append('g');
+    zones = gOver.append('g').selectAll('circle').data(CONFLICTS.filter(function (c) { return c.zone; })).join('circle')
+      .attr('class', function (c) { return 'm-zone s-' + c.status; });
+
+    markers = gOver.append('g').selectAll('g').data(CONFLICTS).join('g').attr('class', 'm-mk')
+      .attr('tabindex', 0).attr('role', 'button')
+      .attr('aria-label', function (c) { return c.name + ', ' + STATUS[c.status].label; });
+    markers.each(function (c) {
+      var g = d3.select(this), r = TIER_R[c.tier] * ms, off = (c.off || [0, 0]).map(function (v) { return v * ms; });
+      if (c.off) {
+        g.append('line').attr('class', 'm-lead').attr('x2', off[0]).attr('y2', off[1]);
+        g.append('circle').attr('class', 'm-true').attr('r', 1.6);
+      }
+      var m = g.append('g').attr('transform', 'translate(' + off[0] + ',' + off[1] + ')');
+      m.append('circle').attr('class', 'm-ring').attr('r', r + 4);
+      m.append('circle').attr('class', 'm-dot s-' + c.status).attr('r', r);
+      if (c.move) {
+        m.append('path').attr('class', 'm-move-' + c.move)
+          .attr('d', c.move === 'up' ? 'M0,-3.5L3.5,2.5L-3.5,2.5Z' : 'M0,3.5L3.5,-2.5L-3.5,-2.5Z')
+          .attr('transform', 'translate(' + (r + 3) + ',' + (-r - 2) + ')');
+      }
+      var lp = labelPos(c.lab, r);
+      m.append('text').attr('class', 'm-lab').attr('x', lp[0]).attr('y', lp[1])
+        .attr('text-anchor', lp[2]).attr('dominant-baseline', 'middle').text(c.code);
+      m.append('circle').attr('class', 'm-hit').attr('r', Math.max(r + 6, 12));
+    });
+    markers
+      .on('click', function (ev, c) { ev.stopPropagation(); select(c.code, false); })
+      .on('mouseenter', function (ev, c) { state.hover = c.code; renderDetail(); })
+      .on('mouseleave', function () { state.hover = null; renderDetail(); })
+      .on('keydown', function (ev, c) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); select(c.code, false); }
+      });
+
+    zoom = d3.zoom()
+      .scaleExtent([1, 16])
+      .extent([[0, 0], [W, H]])
+      .translateExtent([[0, 0], [W, H]])
+      .filter(function (ev) {
+        if (ev.type === 'touchstart') return ev.touches.length > 1;   // one finger scrolls the page
+        return (!ev.ctrlKey || ev.type === 'wheel') && !ev.button;
+      })
+      .on('zoom', function (ev) { transform = ev.transform; draw(); });
+    svg.call(zoom).on('dblclick.zoom', null).style('touch-action', 'pan-y');
+
+    focus(state.focus || (narrow() ? 'hotspots' : 'world'), false);
+    updateSelection();
+  }
+
+  function draw() {
+    var t = transform, k = t.k;
+    gMap.attr('transform', t);
+    pattern.attr('patternTransform', 'scale(' + (1 / k) + ') rotate(45)');
+    zones.attr('cx', function (c) { return t.applyX(c.zp[0]); })
+         .attr('cy', function (c) { return t.applyY(c.zp[1]); })
+         .attr('r', function (c) { return c.zr * k; });
+    markers.attr('transform', function (c) { return 'translate(' + t.applyX(c.p[0]) + ',' + t.applyY(c.p[1]) + ')'; });
+    svg.classed('m-labels-off', W * k < 640);
+  }
+
+  function setPressed(key) {
+    document.querySelectorAll('[data-focus]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-focus') === key));
+    });
+  }
+
+  function focus(key, animate) {
+    state.focus = key;
+    setPressed(key);
+    var b = REGIONS[key], pts = [], i, xs, ys;
+    for (i = 0; i <= 10; i++) {
+      var lon = b[0][0] + (b[1][0] - b[0][0]) * i / 10, lat = b[0][1] + (b[1][1] - b[0][1]) * i / 10;
+      pts.push(projection([lon, b[0][1]]), projection([lon, b[1][1]]), projection([b[0][0], lat]), projection([b[1][0], lat]));
+    }
+    xs = pts.map(function (p) { return p[0]; });
+    ys = pts.map(function (p) { return p[1]; });
+    var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs), y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
+    var k = Math.max(1, Math.min(16, 0.96 / Math.max((x1 - x0) / W, (y1 - y0) / H)));
+    var t = d3.zoomIdentity.translate(W / 2, H / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
+    (animate === false ? svg : svg.transition().duration(650)).call(zoom.transform, t);
+  }
+
+  function flyTo(c) {
+    var k = Math.max(transform ? transform.k : 1, 4.5);
+    var t = d3.zoomIdentity.translate(W / 2, H / 2).scale(k).translate(-c.p[0], -c.p[1]);
+    setPressed(null);
+    svg.transition().duration(650).call(zoom.transform, t);
+  }
+
+  function select(code, fly) {
+    state.selected = (!fly && state.selected === code) ? null : code;
+    updateSelection();
+    renderDetail();
+    if (fly && svg && state.selected) flyTo(byCode(code));
+  }
+
+  function updateSelection() {
+    if (markers) markers.classed('is-sel', function (c) { return c.code === state.selected; });
+    list.querySelectorAll('.ml-chip').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-code') === state.selected));
+    });
+  }
+
+  function sources(list) {
+    if (!list || !list.length) return '';
+    return '<p class="md-src">Source: ' + list.map(function (x) {
+      return '<a href="' + x[1] + '" target="_blank" rel="noopener">' + x[0] + '</a>';
+    }).join(' · ') + '</p>';
+  }
+
+  function renderDetail() {
+    var c = byCode(state.hover || state.selected);
+    if (!c) {
+      detail.innerHTML = '<p class="md-empty">Select a conflict on the map to see its latest development.</p>';
+      return;
+    }
+    var bits = [STATUS[c.status].label, 'Tier ' + c.tier];
+    if (c.move) bits.push(c.move === 'up' ? '<span class="up">▲</span> Status raised this period' : '▼ Status lowered this period');
+    if (c.zone) bits.push('Maritime / zone watch');
+    var body = '';
+    if (c.phase) {
+      body += '<p class="md-phase"><span class="label">Phase</span>' + c.phase + '</p>';
+    }
+    if (c.latest) {
+      body += '<p class="md-latest"><span class="label">Latest development</span>' + c.latest + '</p>';
+    }
+    body += sources(c.src);
+    if (c.sub) {
+      body += '<div class="md-sub"><h4>' + c.sub.title + '</h4><p class="md-latest">' + c.sub.text + '</p>' + sources(c.sub.src) + '</div>';
+    }
+    detail.innerHTML = '<div class="md-head"><span class="md-swatch s-' + c.status + '"></span><code>' + c.code + '</code><h3>' + c.name + '</h3></div>' +
+                       '<p class="md-meta">' + bits.join(' · ') + '</p>' + body;
+  }
+
+  function buildList() {
+    list.innerHTML = ['priority', 'active', 'watch', 'archive']
+      .filter(function (s) { return CONFLICTS.some(function (c) { return c.status === s; }); })
+      .map(function (s) {
+        var chips = CONFLICTS.filter(function (c) { return c.status === s; })
+          .sort(function (a, b) { return a.tier - b.tier; })
+          .map(function (c) {
+            return '<button type="button" class="ml-chip" data-code="' + c.code + '" aria-pressed="false">' +
+                   '<span class="md-swatch s-' + c.status + '"></span><code>' + c.code + '</code>' + c.name +
+                   (c.move ? ' <span class="ml-move" aria-label="status ' + (c.move === 'up' ? 'raised' : 'lowered') + '">' + (c.move === 'up' ? '▲' : '▼') + '</span>' : '') +
+                   '</button>';
+          }).join('');
+        return '<div class="ml-group"><span class="label">' + STATUS[s].label + '</span><div class="ml-chips">' + chips + '</div></div>';
+      }).join('');
+    list.addEventListener('click', function (e) {
+      var b = e.target.closest('.ml-chip');
+      if (b) select(b.getAttribute('data-code'), true);
+    });
+  }
+
+  document.querySelectorAll('[data-focus]').forEach(function (b) {
+    b.addEventListener('click', function () { if (svg) focus(b.getAttribute('data-focus')); });
+  });
+  document.querySelector('[data-zoom="in"]').addEventListener('click', function () { if (svg) svg.transition().duration(300).call(zoom.scaleBy, 1.6); });
+  document.querySelector('[data-zoom="out"]').addEventListener('click', function () { if (svg) svg.transition().duration(300).call(zoom.scaleBy, 1 / 1.6); });
+  document.querySelector('[data-zoom="reset"]').addEventListener('click', function () { if (svg) focus(narrow() ? 'hotspots' : 'world'); });
+
+  buildList();
+  renderDetail();
+  if (!CONFLICTS.some(function (c) { return c.move; })) document.getElementById('legend-move').hidden = true;
+
+  if (typeof d3 === 'undefined' || typeof topojson === 'undefined') {
+    frame.innerHTML = '<p class="map-err">The map could not load. The list below shows every monitored conflict.</p>';
+    list.hidden = false;
+    return;
+  }
+  fetch('assets/countries-110m.json')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (w) {
+      world = w;
+      build();
+      var lastW = frame.clientWidth, timer;
+      if ('ResizeObserver' in window) {
+        new ResizeObserver(function () {
+          if (Math.abs(frame.clientWidth - lastW) < 4) return;
+          lastW = frame.clientWidth;
+          clearTimeout(timer);
+          timer = setTimeout(build, 150);
+        }).observe(frame);
+      }
+    })
+    .catch(function () {
+      frame.innerHTML = '<p class="map-err">The map could not load. The list below shows every monitored conflict.</p>';
+      list.hidden = false;
+    });
+})();
+</script>
+<script>
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('details.cx-full').forEach(function (d) { d.open = true; });
+  });
+</script>
 </body>
 </html>
